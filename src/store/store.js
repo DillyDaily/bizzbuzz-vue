@@ -17,5 +17,14 @@ export const store = new Vuex.Store({
             {company: "company3", firs_name: "name3"},
             {company: "company4", firs_name: "name4"}
           ] 
+    },
+    getters: {
+
+    },
+    mutations: {
+
+    },
+    actions: {
+        
     }
 });
