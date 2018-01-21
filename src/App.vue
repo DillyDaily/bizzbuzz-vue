@@ -1,20 +1,19 @@
 <template>
   <div id="app">
-    <business-list></business-list>
-    <influencer-list></influencer-list>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
 import BusinessList from './components/BusinessList.vue';
-import InfluencerList from './components/InfluencerList.vue';
+import NavBar from './components/NavBar.vue';
 
 export default {
     name: 'app',
-    components: {
-      'business-list': BusinessList,
-      'influencer-list': InfluencerList
-    }
+    // components: {
+    //   'business-list': BusinessList,
+    //   'nav-bar': NavBar
+    // }
 }
 </script>
  
