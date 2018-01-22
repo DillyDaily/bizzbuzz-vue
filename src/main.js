@@ -3,8 +3,10 @@ import App from './App.vue'
 import { store } from './store/store'
 import VueRouter from 'vue-router'
 import Routes from './routes'
+import Vuetify from 'vuetify'
 
 Vue.use(VueRouter);
+Vue.use(Vuetify);
 
 const router = new VueRouter({
   routes: Routes
