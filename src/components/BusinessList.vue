@@ -39,9 +39,10 @@ export default {
     },
     computed: {
         openBusinesses() {
-      return this.$store.getters.openBusinesses
+            return this.$store.state.businesses
         }
     },
+
     created () {
         this.$store.dispatch('LOAD_BUSINESSES_LIST')
     },

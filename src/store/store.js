@@ -20,13 +20,16 @@ export const store = new Vuex.Store({
     mutations: {
         SET_BUSINESSES_LIST: (state, { list }) => {
             state.businesses = list
+            console.log('MUTATIONS LIST', list)
         }
     },
     getters: {
         openBusinesses: state => {
-            return console.log('HOLY SHIT SOMETHINGS WORKING')
-            state.businesses
-            // .filter(business => !business.completed)
+            return 
+            // console.log('****HOLY SHIT SOMETHING IS WORKING****')
+            // state.businesses
+            console.log("WHAT IS THIS ",state.businesses.filter(business => !business.completed))
+            // state.businesses.filter(business => !business.completed)
             }
     },
 });
