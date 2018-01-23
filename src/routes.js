@@ -17,6 +17,7 @@ import Login from './components/Login.vue';
 
 export default [
     { path: '/', component: SplashPage },                           //SplashPage
+    { path: '/register', component: RegisterBizz },            //Register Bizz
     { path: '/register/bizz', component: RegisterBizz },            //Register Bizz
     { path: '/register/buzz', component: RegisterBuzz },            //Register Buzz
     { path: '/bizz/profile/new', component: CreateProfileBizz },    //Create Profile Bizz
