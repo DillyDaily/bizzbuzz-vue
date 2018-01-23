@@ -4,16 +4,9 @@
         <v-toolbar-side-icon></v-toolbar-side-icon>
         <v-toolbar-title class="black--text"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
             <v-spacer></v-spacer>
-                <v-btn icon>
-                    <v-icon>search</v-icon>
-                </v-btn>
                 <h1> {{ title }} </h1>
-                <v-btn icon>
-                    <v-icon>refresh</v-icon>
-                </v-btn>
-                <v-btn icon>
-                    <v-icon>more_vert</v-icon>
-                </v-btn>
+                <!-- <router-link to ="/" exact tag="img" src="../assets/bee1.png"></router-link> -->
+                <!-- <router-link to ="/" exact tag="button">HOME</router-link> -->
         </v-toolbar>
     </div>
 </template>

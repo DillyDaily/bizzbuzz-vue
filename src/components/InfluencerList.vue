@@ -1,37 +1,37 @@
 <template>
-  <div id="business-list">
+  <div id="influencer-list">
+    <simple-nav></simple-nav>
     <h1>Get All influencers</h1>
-    <v-container>
-        <v-layout >
-        <v-flex xs12 sm6 offset-sm3>
+    
             <v-layout row wrap>
             <v-flex xs12>
             <v-card color="yellow darken-2" class="white--text">
                 <v-card-title primary-title>
-                <div class="welcome">Welcome to BizzBuzz Media</div>
-                <div class="welcome">Congrats on your Bizz! Now let's find you some Buzz...</div>
+                 <div class="welcome">Wow, man. Look at all that Buzz...</div>
                 </v-card-title>
             </v-card>
             </v-flex>
             </v-layout>
-        <div>
-          <p>First Name: {{ Influencers[1].first_name }}</p>
-          <p>Last Name: {{ Influencers[1].last_name }}</p>
+        <div v-for="influencer in Influencers" class="single-influencer">
+            <h2>INFLUENCER first name: {{ influencer.first_name }}</h2>
+            <h3>LAST name: {{ influencer.last_name }} </h3>
         </div>
-        </v-flex>
-      </v-layout>
-    </v-container>
+    
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
+          Influencers: []
       }
     },
-
+    components: {
+      'simple-nav': SimpleNav
+    },
     methods: {
       async register() {
           console.log('register btn was clicked')
@@ -52,7 +52,7 @@ export default {
             console.log('axios response: ', response.data)
             this.Influencers = response.data;
         })
-        console.log('BizzList component mounted')
+        console.log('BUZZList component mounted')
     }
 }
 

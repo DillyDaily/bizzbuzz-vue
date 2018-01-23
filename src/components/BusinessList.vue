@@ -2,7 +2,6 @@
   <div id="business-list">
     <simple-nav></simple-nav>
     <h1>Get All Businesses</h1>
-    
             <v-layout row wrap>
             <v-flex xs12>
             <v-card color="yellow darken-2" class="white--text">
@@ -12,10 +11,12 @@
             </v-card>
             </v-flex>
         </v-layout>
-        <div v-for="business in Businesses" class="single-business">
+        <!-- <div v-for="business in Businesses" class="single-business">
             <h2>COMPANY name: {{ business.company_name }}</h2>
             <h3>FIRST name: {{ business.first_name }} </h3>
-        </div>
+            <img src={{ business.image }}>
+        </div> -->
+        <div>OPEN Bizz: {{ openBusinesses }}</div>
     
   </div>
 </template>
@@ -34,26 +35,23 @@ export default {
       'simple-nav': SimpleNav
     },
     methods: {
-      async register() {
-          console.log('register btn was clicked')
-          const response = await AuthenticationService.register({
-              email: this.email,
-              password: this.password
-          })
-          console.log('response:', response)
-      }
-    },
-    computed: {
-      
     
     },
+    computed: {
+        openBusinesses() {
+      return this.$store.getters.openBusinesses
+        }
+    },
     created () {
-        axios.get('http://localhost:8000/businesses')
-        .then((response) => {
-            console.log('axios response: ', response.data)
-            this.Businesses = response.data;
-        })
-        console.log('BizzList component created')
+        this.$store.dispatch('LOAD_BUSINESSES_LIST')
+    },
+    mounted () {
+        // axios.get('http://localhost:8000/businesses')
+        // .then((response) => {
+        //     console.log('axios response: ', response.data)
+        //     this.Businesses = response.data;
+        // })
+        // console.log('BizzList component mounted')
     }
 }
 

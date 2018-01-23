@@ -6,25 +6,27 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        
+        allBusinesses: []
     },
     actions: {
-        // LOAD_BUSINESSES_LIST: function ({ commit }) {
-        //     axios.get('/localhost/8000/businesses').then((response) => {
-        //       commit('SET_PROJECT_LIST', { list: response.data })
-        //     }, (err) => {
-        //       console.log(err)
-        //     })
-        //   }
+        LOAD_BUSINESSES_LIST: function ({ commit }) {
+            axios.get('/businesses').then((response) => {
+              commit('SET_BUSINESSES_LIST', { list: response.data })
+            }, (err) => {
+              console.log(err)
+            })
+          }
         },
     mutations: {
-        // SET_BUSINESSES_LIST: (state, { list }) => {
-        //     state.businesses = list
-        // }
+        SET_BUSINESSES_LIST: (state, { list }) => {
+            state.businesses = list
+        }
     },
     getters: {
-        // openBusinesses: state => {
-        //     return state.businesses.filter(business => !business.completed)
-        //     }
+        openBusinesses: state => {
+            return console.log('HOLY SHIT SOMETHINGS WORKING')
+            state.businesses
+            // .filter(business => !business.completed)
+            }
     },
 });
