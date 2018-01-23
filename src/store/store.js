@@ -10,7 +10,7 @@ export const store = new Vuex.Store({
     },
     actions: {
         // LOAD_BUSINESSES_LIST: function ({ commit }) {
-        //     axios.get('/localhost/8080/businesses').then((response) => {
+        //     axios.get('/localhost/8000/businesses').then((response) => {
         //       commit('SET_PROJECT_LIST', { list: response.data })
         //     }, (err) => {
         //       console.log(err)

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <simple-nav></simple-nav>
     <h1>Bizz Register</h1>
     <v-container>
         <v-layout >
@@ -68,8 +69,9 @@
 </template>
 
 <script>
-import AuthenticationService from '../services/AuthenticationService.js'
-import axios from 'axios'
+import AuthenticationService from '../services/AuthenticationService.js';
+import axios from 'axios';
+import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
@@ -90,6 +92,9 @@ export default {
           (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
         ]
       }
+    },
+    components: {
+      'simple-nav': SimpleNav
     },
     // watch: {
     //     email (value) {
@@ -113,7 +118,7 @@ export default {
     mounted () {
         axios.get('http://localhost:8000/register')
         .then((response) => {
-            console.log(response.data)
+            console.log('axios response: ' + response.data)
             this.Business = response.data;
         })
         console.log('Register Biz component mounted')
