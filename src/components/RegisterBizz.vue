@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="register-bizz">
     <simple-nav></simple-nav>
     <h1>Bizz Register</h1>
     <v-container>
