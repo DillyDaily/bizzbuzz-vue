@@ -22,75 +22,75 @@
                 <input
                 type="email"
                 name="email"
-                v-model="email"
+                v-model="buzz.email"
                 placeholder="email"/>
                 <br>
                 <input
                 type="password"
                 name="password"
-                v-model="password"
+                v-model="buzz.password"
                 placeholder="password"/>
                 <br>
                 <input
                 type="text"
                 name="first_name"
-                v-model="first_name"
+                v-model="buzz.first_name"
                 placeholder="first name"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="last_name"
-                v-model="last_name"
+                v-model="buzz.last_name"
                 placeholder="last name"
                 required/>
                 <br>
                 <input
                 type="textarea"
                 name="description"
-                v-model="description"
+                v-model="buzz.description"
                 placeholder="description"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="personal_brand"
-                v-model="personal_brand"
+                v-model="buzz.personal_brand"
                 placeholder="personal brand"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="website"
-                v-model="website"
+                v-model="buzz.website"
                 placeholder="website"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="facebook"
-                v-model="facebook"
+                v-model="buzz.facebook"
                 placeholder="facebook profile"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="instagram"
-                v-model="instagram"
+                v-model="buzz.instagram"
                 placeholder="instagram profile"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="twitter"
-                v-model="twitter"
+                v-model="buzz.twitter"
                 placeholder="twitter profile"
                 required/>
                 <br>
                 <input
                 type="text"
                 name="image"
-                v-model="image"
+                v-model="buzz.image"
                 placeholder="image"
                 required/>
                 <br>
@@ -112,19 +112,20 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-        influencer: {},
+        buzz: {
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: '',
+            description: '',
+            personal_brand: '',
+            website: '',
+            facebook: '',
+            instagram: '',
+            twitter: '',
+            image: ''
+        },
         valid: false,
-        email: '',
-        password: '',
-        first_name: '',
-        last_name: '',
-        description: '',
-        personal_brand: '',
-        website: '',
-        facebook: '',
-        instagram: '',
-        twitter: '',
-        image: ''
       }
     },
     components: {
@@ -132,7 +133,22 @@ export default {
     },
 
     methods: {
-        
+      register() {
+            this.axios.post('/register/buzz', {
+                email: this.buzz.email,
+                password: this.buzz.password,
+                first_name: this.buzz.first_name,
+                last_name: this.buzz.last_name,
+                description: this.buzz.description,
+                personal_brand: this.buzz.personal_brand,
+                website: this.buzz.website,
+                facebook: this.buzz.facebook,
+                instagram: this.buzz.instagram,
+                twitter: this.buzz.twitter,
+                image: this.buzz.image,
+            }) 
+                this.$router.push('/businesses')
+        }
     },
     computed: {
     

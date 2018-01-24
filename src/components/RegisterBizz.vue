@@ -33,6 +33,7 @@
             <br>
             <button @click.prevent="register"> Register </button>
           </form>
+          <div v-if="submitted"></div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -56,6 +57,7 @@ export default {
             error: null
         },
         valid: false,
+        submitted: false,
         
         passwordRules: [
           (v) => !!v || 'Password is required',
@@ -78,8 +80,16 @@ export default {
     // },
     methods: {
         register() {
-            this.axios.post('/register/bizz')
-            // this.$router.push('/influencers')
+            this.axios.post('/register/bizz', {
+                email: this.bizz.email,
+                password: this.bizz.password,
+                first_name: this.bizz.first_name,
+                last_name: this.bizz.last_name,
+                description: this.bizz.description,
+                company_name: this.bizz.company_name,
+                image: this.bizz.image,
+            }) 
+                this.$router.push('/influencers')
         }
     },
     computed: {
@@ -87,12 +97,12 @@ export default {
     
     },
     mounted () {
-        axios.get('http://localhost:8000/register')
-        .then((response) => {
-            console.log('REGISTER PAGE axios response: ', response.data)
-            this.Business = response.data;
-        })
-        console.log('Register Biz component mounted')
+        // axios.get('http://localhost:8000/register')
+        // .then((response) => {
+        //     console.log('REGISTER PAGE axios response: ', response.data)
+        //     this.Business = response.data;
+        // })
+        // console.log('Register Biz component mounted')
     }
 }
 
