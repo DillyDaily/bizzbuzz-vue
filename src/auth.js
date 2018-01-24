@@ -10,7 +10,7 @@ module.exports = function () {
         __transitionThis = null,
         __transitionRedirectType = null;
 
-    function __userAuth(methodName, data) {
+    function __duckPunch(methodName, data) {
         var _this = this,
             success = data.success;
 
@@ -264,7 +264,7 @@ module.exports = function () {
             _fetchProcess.call(this, {}, data);
         }
         else {
-            return __userAuth.call(this, 'fetch', data);
+            return __duckPunch.call(this, 'fetch', data);
         }
     }
 
@@ -278,7 +278,7 @@ module.exports = function () {
     }
 
     function _refreshPerform(data) {
-        return __userAuth.call(this, 'refresh', data);
+        return __duckPunch.call(this, 'refresh', data);
     }
 
     function _refreshProcess(res, data) {
@@ -286,7 +286,7 @@ module.exports = function () {
     }
 
     function _registerPerform(data) {
-        return __userAuth.call(this, 'register', data);
+        return __duckPunch.call(this, 'register', data);
     }
 
     function _registerProcess(res, data) {
@@ -305,7 +305,7 @@ module.exports = function () {
     }
 
     function _loginPerform(data) {
-        return __userAuth.call(this, 'login', data);
+        return __duckPunch.call(this, 'login', data);
     }
 
     function _loginProcess(res, data) {
@@ -331,7 +331,7 @@ module.exports = function () {
         data = __utils.extend(this.options.logoutData, [data || {}]);
 
         if (data.makeRequest) {
-            return __userAuth.call(this, 'logout', data);
+            return __duckPunch.call(this, 'logout', data);
         }
         else {
             this.options.logoutProcess.call(this, null, data);
@@ -374,7 +374,7 @@ module.exports = function () {
             if (success) { success.call(this); }
         };
 
-        return __userAuth.call(this, 'impersonate', data);
+        return __duckPunch.call(this, 'impersonate', data);
     }
 
     function _impersonateProcess(res, data) {
@@ -396,7 +396,7 @@ module.exports = function () {
         data = __utils.extend(this.options.unimpersonateData, [data || {}]);
 
         if (data.makeRequest) {
-            return __userAuth.call(this, 'unimpersonate', data);
+            return __duckPunch.call(this, 'unimpersonate', data);
         }
         else {
             this.options.unimpersonateProcess.call(this, null, data);

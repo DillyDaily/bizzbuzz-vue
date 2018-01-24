@@ -73,11 +73,6 @@ export default {
     components: {
       'simple-nav': SimpleNav
     },
-    // watch: {
-    //     email (value) {
-    //         console.log('email has changed', value)
-    //     }
-    // },
     methods: {
         register() {
             this.axios.post('/register/bizz', {

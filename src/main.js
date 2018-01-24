@@ -7,6 +7,8 @@ import Vuetify from 'vuetify';
 import axios from 'axios';
 import VueAxios from 'vue-axios';
 
+Vue.config.productionTip = false
+
 Vue.use(VueRouter);
 Vue.use(Vuetify);
 
