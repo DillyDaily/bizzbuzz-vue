@@ -19,8 +19,8 @@ export default [
     { path: '/register', component: RegisterBizz },                 //Register Bizz
     { path: '/register/bizz', component: RegisterBizz },            //Register Bizz
     { path: '/register/buzz', component: RegisterBuzz },            //Register Buzz
-    { path: '/bizz/profile/new', component: CreateProfileBizz },    //Create Profile Bizz
-    { path: '/buzz/profile/new', component: CreateProfileBuzz },    //Create Profile Buzz
+    // { path: '/bizz/profile/new', component: CreateProfileBizz },    //Create Profile Bizz
+    // { path: '/buzz/profile/new', component: CreateProfileBuzz },    //Create Profile Buzz
     { path: '/success', component: ProfileSuccess },                //Success Creating Profile
     { path: '/businesses', component: BusinessList },               //Get All Bizz
     { path: '/influencers', component: InfluencerList },            //Get All Buzz
@@ -28,7 +28,7 @@ export default [
     { path: '/profile/buzz/:id', component: ProfileBuzz },          //Get One Buzz
     { path: '/contact/:id', component: SendMessage },               //Send a Message
     { path: '/messages/:id', component: Messages },                 //Get Own Messages
-    // { path: '/my/messages/:id', component: Messages },           //Get One Messages
+    // { path: '/my/messages/:id', component: Messages },              //Get One Messages
     { path: '/profile/bizz/edit/:id', component: EditBizz },        //Edit Own Bizz Profile
     { path: '/profile/buzz/edit/:id', component: EditBuzz },        //Edit Own Buzz Profile
     { path: '/login', component: Login },                           //Login

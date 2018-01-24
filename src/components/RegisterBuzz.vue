@@ -19,7 +19,18 @@
             </v-flex>
             </v-layout>
             <form class="shadow">
-
+                <input
+                type="email"
+                name="email"
+                v-model="email"
+                placeholder="email"/>
+                <br>
+                <input
+                type="password"
+                name="password"
+                v-model="password"
+                placeholder="password"/>
+                <br>
                 <input
                 type="text"
                 name="first_name"
@@ -85,7 +96,7 @@
                 <br>
                 <button 
                 @click.prevent="register">
-                Create Buzz Profile
+                Register
                 </button>
             </form>
       </v-flex>
@@ -101,8 +112,10 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-        Business: {},
+        influencer: {},
         valid: false,
+        email: '',
+        password: '',
         first_name: '',
         last_name: '',
         description: '',
