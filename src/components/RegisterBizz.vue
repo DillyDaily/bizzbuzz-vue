@@ -69,7 +69,6 @@
 </template>
 
 <script>
-import AuthenticationService from '../services/AuthenticationService.js';
 import axios from 'axios';
 import SimpleNav from './SimpleNav.vue';
 export default {
@@ -118,7 +117,7 @@ export default {
     mounted () {
         axios.get('http://localhost:8000/register')
         .then((response) => {
-            console.log('axios response: ' + response.data)
+            console.log('REGISTER PAGE axios response: ', response.data)
             this.Business = response.data;
         })
         console.log('Register Biz component mounted')

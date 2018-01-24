@@ -2,11 +2,9 @@
   <div>
     <nav-bar></nav-bar>
       <h1>This is the Splash Page</h1>
-        <router-link to ="/register" exact tag="button" class="button">REGISTER</router-link>
+        <router-link to ="/register/bizz" exact tag="button" class="button">BUSINESS</router-link>
+        <router-link to ="/register/buzz" exact tag="button" class="button">INFLUENCER</router-link>
         <router-link to ="/login" exact tag="button" class="button">LOGIN</router-link>
-        <div class="pointer" @click="clickMethod">
-          <img src = "../assets/bee1.png"/>
-        </div>
   </div>
 </template>
 
@@ -14,9 +12,7 @@
 import NavBar from './NavBar.vue';
 export default {
   methods: {
-  clickMethod() {
-      this.$router.push('businesses')
-      }
+
     },
   components: {
       'nav-bar': NavBar
@@ -34,9 +30,6 @@ export default {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
-.pointer {
-  cursor: pointer;
 }
 
 </style>
