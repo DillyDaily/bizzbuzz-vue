@@ -1,21 +1,11 @@
 <template>
 <div>
   <v-toolbar dark color="primary">
-    <v-toolbar-side-icon></v-toolbar-side-icon>
     <v-toolbar-title class="black--text"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
     <v-spacer></v-spacer>
-    <v-btn icon>
-      <v-icon>search</v-icon>
-    </v-btn>
     <h1>
       {{ title }}
     </h1>
-    <v-btn icon>
-      <v-icon>refresh</v-icon>
-    </v-btn>
-    <v-btn icon>
-      <v-icon>more_vert</v-icon>
-    </v-btn>
   </v-toolbar>
 
   <v-container>
@@ -35,17 +25,13 @@
         <v-text-field
           label="Name"
           v-model="name"
-          :error-messages="nameErrors"
-          @input="$v.name.$touch()"
-          @blur="$v.name.$touch()"
+   
           required
         ></v-text-field>
         <v-text-field
           label="E-mail"
           v-model="email"
-          :error-messages="emailErrors"
-          @input="$v.email.$touch()"
-          @blur="$v.email.$touch()"
+          
           required
         ></v-text-field>
         <!-- <v-checkbox
@@ -77,7 +63,7 @@ export default {
     },
     methods: {
       submit () {
-        this.$v.$touch()
+        console.log('submit btn clicked')
       }
     },
     computed: {

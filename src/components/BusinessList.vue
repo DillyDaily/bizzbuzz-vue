@@ -16,7 +16,7 @@
             <h3>FIRST name: {{ business.first_name }} </h3>
             <img src={{ business.image }}>
         </div> -->
-        <div>OPEN Bizz: {{ openBusinesses }}</div>
+        <div>OPEN Bizz: {{ allBusinesses }}</div>
     
   </div>
 </template>
@@ -28,7 +28,7 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-            Businesses: []
+            businesses: []
       }
     },
     components: {
@@ -38,7 +38,8 @@ export default {
     
     },
     computed: {
-        openBusinesses() {
+        allBusinesses() {
+            console.log("allBusinesses", this.$store.state)
             return this.$store.state.businesses
         }
     },

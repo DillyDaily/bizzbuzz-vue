@@ -12,11 +12,11 @@
             </v-card>
             </v-flex>
             </v-layout>
-        <div v-for="influencer in Influencers" class="single-influencer">
+        <!-- <div v-for="influencer in Influencers" class="single-influencer">
             <h2>INFLUENCER first name: {{ influencer.first_name }}</h2>
             <h3>LAST name: {{ influencer.last_name }} </h3>
-        </div>
-    
+        </div> -->
+        <div>OPEN Bizz: {{ allInfluencers }}</div>
   </div>
 </template>
 
@@ -26,33 +26,31 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-          Influencers: []
+          influencers: []
       }
     },
     components: {
       'simple-nav': SimpleNav
     },
     methods: {
-      async register() {
-          console.log('register btn was clicked')
-          const response = await AuthenticationService.register({
-              email: this.email,
-              password: this.password
-          })
-          console.log('response:', response)
-      }
+      
     },
     computed: {
-      
-    
+        allInfluencers() {
+            return this.$store.state.influencers
+        }
     },
+    created () {
+        this.$store.dispatch('LOAD_INFLUENCERS_LIST')
+    },
+
     mounted () {
-        axios.get('http://localhost:8000/influencers')
-        .then((response) => {
-            console.log('axios response: ', response.data)
-            this.Influencers = response.data;
-        })
-        console.log('BUZZList component mounted')
+        // axios.get('http://localhost:8000/influencers')
+        // .then((response) => {
+        //     console.log('axios response: ', response.data)
+        //     this.Influencers = response.data;
+        // })
+        // console.log('BUZZList component mounted')
     }
 }
 
