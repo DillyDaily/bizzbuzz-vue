@@ -28,6 +28,7 @@ export default [
     { path: '/profile/buzz/:id', component: ProfileBuzz },          //Get One Buzz
     { path: '/contact/:id', component: SendMessage },               //Send a Message
     { path: '/messages/:id', component: Messages },                 //Get Own Messages
+    // { path: '/my/messages/:id', component: Messages },           //Get One Messages
     { path: '/profile/bizz/edit/:id', component: EditBizz },        //Edit Own Bizz Profile
     { path: '/profile/buzz/edit/:id', component: EditBuzz },        //Edit Own Buzz Profile
     { path: '/login', component: Login },                           //Login

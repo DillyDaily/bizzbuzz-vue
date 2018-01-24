@@ -2,7 +2,7 @@
     <div id="simple-nav">
         <v-toolbar dark color="primary">
         <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title class="black--text"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
+        <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
             <v-spacer></v-spacer>
                 <h1> {{ title }} </h1>
                 <!-- <router-link to ="/" exact tag="img" src="../assets/bee1.png"></router-link> -->
@@ -20,7 +20,9 @@ export default {
       }
     },
     methods: {
-
+      clickMethod() {
+        this.$router.push('/')
+      }
     },
     computed: {
 
@@ -46,6 +48,9 @@ h1{
 .welcome {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 2vw;
+}
+#pointer {
+  cursor: pointer;
 }
 
 </style>
