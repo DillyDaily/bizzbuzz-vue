@@ -1,6 +1,6 @@
 <template>
   <div id="business-list">
-    <simple-nav></simple-nav>
+    <nav-bar-logged-in></nav-bar-logged-in>
     <v-container>
       <v-layout row wrap>
         <v-flex xs12>
@@ -18,19 +18,19 @@
           <v-card>
             <v-container fluid grid-list-md>
               <v-layout row>
-                <v-flex xs5 sm4 md3>
+                <v-flex xs12>
                   <v-card-media id="pointer" @click="clickMethod(business.id)" :src="business.image" height="250px" width="250px" />
                 </v-flex>
                 <v-flex>
                   <v-card-title primary-title>
-                    <div>
-                      <h3>Company Name: {{ business.company_name }} </h3>
-                      <div>Description: {{ business.description }} </div>
+                    <div >
+                      <h3 class="bizzcards">{{ business.company_name }} </h3>
+                      <div class="description">What we're about: {{ business.description }} </div>
                     </div>
                   </v-card-title>
                   <v-card-actions>
                     <v-btn flat color="green" @click="clickMethod(business.id)">
-                      <v-icon left light>account_circle</v-icon>
+                      <v-icon large left light>account_circle</v-icon>
                       View Profile</v-btn>
                   </v-card-actions>
                 </v-flex>
@@ -44,16 +44,16 @@
   </div>
 </template>
 
-<script>
+<script scoped>
   import axios from 'axios';
-  import SimpleNav from './SimpleNav.vue';
+  import NavBarLoggedIn from './NavBarLoggedIn.vue';
 
   export default {
     data: () => ({
 
     }),
     components: {
-      'simple-nav': SimpleNav
+      'nav-bar-logged-in': NavBarLoggedIn
     },
     methods: {
       clickMethod(id) {
@@ -82,6 +82,18 @@
 
   #pointer {
     cursor: pointer;
+  }
+
+  .welcome {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 3em;
+  }
+
+  .bizzcards {
+    font-family: 'Cabin Sketch', cursive;
+  }
+  .description {
+    font-family: 'Montserrat', sans-serif;
   }
 
 </style>

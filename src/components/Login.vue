@@ -20,7 +20,7 @@
             <br>
             <input type="password" name="password" v-model="password" placeholder="password" />
             <br>
-            <button type='submit'>Register</button>
+            <button type='submit'>Login</button>
           </form>
         </v-flex>
       </v-layout>

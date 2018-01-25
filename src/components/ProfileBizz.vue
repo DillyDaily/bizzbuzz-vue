@@ -53,7 +53,7 @@
 
     computed: {
       oneProfile() {
-        console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
+        // console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
         return this.$store.getters.loadedProfile(this.id)
       }
     },

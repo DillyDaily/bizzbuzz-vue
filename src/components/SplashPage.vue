@@ -5,6 +5,7 @@
         <router-link to ="/register/bizz" exact tag="button" class="button">BUSINESS</router-link>
         <router-link to ="/register/buzz" exact tag="button" class="button">INFLUENCER</router-link>
         <router-link to ="/login" exact tag="button" class="button">LOGIN</router-link>
+        <router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link>
   
   <!-- <v-container>
     <v-layout >
