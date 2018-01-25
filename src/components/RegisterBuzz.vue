@@ -24,76 +24,65 @@
                 name="email"
                 v-model="buzz.email"
                 placeholder="email"/>
-                <br>
                 <input
                 type="password"
                 name="password"
                 v-model="buzz.password"
                 placeholder="password"/>
-                <br>
                 <input
                 type="text"
                 name="first_name"
                 v-model="buzz.first_name"
                 placeholder="first name"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="last_name"
                 v-model="buzz.last_name"
                 placeholder="last name"
                 required/>
-                <br>
                 <input
                 type="textarea"
                 name="description"
                 v-model="buzz.description"
                 placeholder="description"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="personal_brand"
                 v-model="buzz.personal_brand"
                 placeholder="personal brand"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="website"
                 v-model="buzz.website"
                 placeholder="website"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="facebook"
                 v-model="buzz.facebook"
                 placeholder="facebook profile"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="instagram"
                 v-model="buzz.instagram"
                 placeholder="instagram profile"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="twitter"
                 v-model="buzz.twitter"
                 placeholder="twitter profile"
                 required/>
-                <br>
                 <input
                 type="text"
                 name="image"
                 v-model="buzz.image"
                 placeholder="image"
                 required/>
-                <br>
                 <button 
                 @click.prevent="register">
                 Register

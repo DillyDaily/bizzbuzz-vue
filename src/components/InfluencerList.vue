@@ -12,11 +12,10 @@
             </v-card>
             </v-flex>
             </v-layout>
-        <!-- <div v-for="influencer in Influencers" class="single-influencer">
-            <h2>INFLUENCER first name: {{ influencer.first_name }}</h2>
-            <h3>LAST name: {{ influencer.last_name }} </h3>
-        </div> -->
-        <div>OPEN Bizz: {{ allInfluencers }}</div>
+        <div v-for="influencer in allInfluencers">BUZZ: {{ influencer.personal_brand }} </div>
+        <div v-for="images in allInfluencers">IMAGE<img class="pics" :src="images.image"/></div>
+        <div v-for="descriptions in allInfluencers">Description: {{ descriptions.description }}</div>
+    
   </div>
 </template>
 

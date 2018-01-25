@@ -18,19 +18,12 @@
         
           <form class="shadow">
             <input type="email" name="email" v-model="bizz.email" placeholder="email"/>
-            <br>
             <input type="password" name="password" v-model="bizz.password" placeholder="password"/>
-            <br>
             <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
-            <br>
             <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
-            <br>
             <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
-            <br>
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <br>
             <input type="text" name="image" v-model="bizz.image" placeholder="image" required/>
-            <br>
             <button @click.prevent="register"> Register </button>
           </form>
           <div v-if="submitted"></div>
@@ -116,5 +109,15 @@ input {
     background-color: #eee;
     width: 100%;
     padding: 1%;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
 }
 </style>
