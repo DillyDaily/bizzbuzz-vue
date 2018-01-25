@@ -11,18 +11,19 @@
                   <v-flex>
                     <v-card-title primary-title>
                       <div>
-                        <h3>Company Name: </h3>
+                        <h3>Company Name: {{ oneProfile.company_name }} </h3>
                       </div>
                     </v-card-title>
                   <v-container column>
                     <v-layout row>
                     <v-flex xs12 >
                     <v-card-media
-                      src="http://placehold.it/250x250"
-                      height="250px"
+                    :src="oneProfile.image"
+                    height="250px"
+                    width="250px"
                     ></v-card-media>
                     <v-card-text>
-                      <div>Description: </div>
+                      <div>Description: {{ oneProfile.description }} </div>
                     </v-card-text>
                     </v-flex>
                     </v-layout>
@@ -48,13 +49,20 @@ import axios from 'axios';
 import SimpleNav from './SimpleNav.vue';
 export default {
 
-  computed: {
-    
-  },
   created () {
-        this.$store.dispatch('LOAD_BUSINESSES_LIST')
+    this.$store.dispatch('LOAD_BUSINESSES_LIST')
     },
-    components: {
+
+  props: ['id'],
+
+  computed: {
+    oneProfile() {
+      console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
+      return this.$store.getters.loadedProfile(this.id)
+    }
+  },
+
+  components: {
       'simple-nav': SimpleNav
     },
 }

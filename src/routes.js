@@ -24,13 +24,13 @@ export default [
     { path: '/success', component: ProfileSuccess },                //Success Creating Profile
     { path: '/businesses', component: BusinessList },               //Get All Bizz
     { path: '/influencers', component: InfluencerList },            //Get All Buzz
-    { path: '/profile/bizz/:id', component: ProfileBizz },          //Get One Bizz
+    { path: '/profile/bizz/:id', props: true, component: ProfileBizz },          //Get One Bizz
     { path: '/profile/buzz/:id', component: ProfileBuzz },          //Get One Buzz
 
     { path: '/contact/:id', component: SendMessage },               //Send a Message
     { path: '/my/messages/:id', component: Messages },              //Get All Own Messages
     { path: '/message/:id', component: Messages },                  //Get One Message
-    
+
     { path: '/profile/bizz/edit/:id', component: EditBizz },        //Edit Own Bizz Profile
     { path: '/profile/buzz/edit/:id', component: EditBuzz },        //Edit Own Buzz Profile
     { path: '/login', component: Login },                           //Login

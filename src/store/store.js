@@ -8,7 +8,7 @@ export const store = new Vuex.Store({
     state: {
         businesses: [],
         influencers: [],
-        // id: []
+        // oneBiz: []
     },
     actions: {
         LOAD_BUSINESSES_LIST: function ({ commit }) {
@@ -48,15 +48,13 @@ export const store = new Vuex.Store({
         }
     },
     getters: {
-        loadedProfiles (state) {
-            return state.loadedProfiles
-        },
         loadedProfile (state) {
             return (profileID) => {
-              return state.loadedProfiles.find((profile) => {
-                return profile.id == profileID    
+              return state.businesses.find((profile) => {
+                return profile.id == profileID   
+                console.log('profileID ', profileID) 
                 })
-            }
+            } 
         }
     }
 });

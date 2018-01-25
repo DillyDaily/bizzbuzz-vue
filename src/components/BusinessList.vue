@@ -74,7 +74,6 @@ export default {
             return this.$store.state.businesses
         }
     },
-
     created () {
         this.$store.dispatch('LOAD_BUSINESSES_LIST')
     },
