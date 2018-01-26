@@ -1,7 +1,7 @@
 <template>
   <div id="register-bizz">
     <simple-nav></simple-nav>
-    <h1>Bizz Register</h1>
+    <!-- <h1>Bizz Register</h1> -->
       <v-container>
         <v-layout >
           <v-flex xs12 sm6 offset-sm3>
@@ -96,7 +96,7 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 #register-bizz {
    margin: 20px auto;
 }

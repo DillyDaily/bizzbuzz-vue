@@ -1,8 +1,8 @@
 <template>
   <div id="business-list">
     <nav-bar-logged-in></nav-bar-logged-in>
-    <v-container>
-      <v-layout row wrap>
+    <v-container column>
+      <v-layout class="shadow" row wrap>
         <v-flex xs12>
           <v-card color="yellow darken-2" class="white--text">
             <v-card-title primary-title>
@@ -10,10 +10,6 @@
             </v-card-title>
           </v-card>
         </v-flex>
-      </v-layout>
-    </v-container>
-    <v-container column>
-      <v-layout row wrap>
         <v-flex xs12 sm10 md6 v-for="business in allBusinesses" :key="business.id">
           <v-card>
             <v-container fluid grid-list-md>
@@ -29,7 +25,7 @@
                     </div>
                   </v-card-title>
                   <v-card-actions>
-                    <v-btn flat color="green" @click="clickMethod(business.id)">
+                    <v-btn class="view" flat color="green" @click="clickMethod(business.id)">
                       <v-icon large left light>account_circle</v-icon>
                       View Profile</v-btn>
                   </v-card-actions>
@@ -74,7 +70,7 @@
 
 </script>
 
-<style>
+<style scoped>
   .pics {
     height: 250px;
     width: 250px;
@@ -95,5 +91,10 @@
   .description {
     font-family: 'Montserrat', sans-serif;
   }
-
+  .shadow{
+    padding: 20px;
+    -webkit-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+    -moz-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+    box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+  }
 </style>

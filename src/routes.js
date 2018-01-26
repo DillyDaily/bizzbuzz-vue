@@ -6,12 +6,11 @@ import BusinessList from './components/BusinessList.vue';
 import InfluencerList from './components/InfluencerList.vue';
 import ProfileBizz from './components/ProfileBizz.vue';
 import ProfileBuzz from './components/ProfileBuzz.vue';
-import MyProfile from './components/MyProfile.vue';
+import MyBizzProfile from './components/MyBizzProfile.vue';
+import MyBuzzProfile from './components/MyBuzzProfile.vue';
 import SendMessage from './components/SendMessage.vue';
 import Messages from './components/Messages.vue';
 import OneMessage from './components/OneMessage.vue';
-import EditBizz from './components/EditBizz.vue';
-import EditBuzz from './components/EditBuzz.vue';
 import Login from './components/Login.vue';
 
 export default [
@@ -28,8 +27,7 @@ export default [
     { path: '/my/messages/:id', props: true, component: Messages },               //Get All Own Messages
     { path: '/message/:id', props: true, component: OneMessage },                 //Get One Message
     
-    { path: '/my/profile/:id', props: true, component: MyProfile },                //Get Own Profile
-    { path: '/profile/bizz/edit/:id', props: true, component: EditBizz },         //Edit Own Bizz Profile
-    { path: '/profile/buzz/edit/:id', props: true, component: EditBuzz },         //Edit Own Buzz Profile
+    { path: '/my/bizz/profile/:id', props: true, component: MyBizzProfile },                //Get Own Profile
+    { path: '/my/buzz/profile/:id', props: true, component: MyBuzzProfile },                //Get Own Profile
     { path: '/login', component: Login },                                         //Login
 ]

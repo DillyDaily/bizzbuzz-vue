@@ -45,7 +45,7 @@ export default {
         this.$router.push('/')
         },
         profile(id) {
-            this.$router.push('/my/profile/' + id)
+            this.$router.push('/my/bizz/profile/' + id)
         },
                     mailbox(id) {
                     this.$router.push('/my/messages/' + id)
