@@ -15,7 +15,7 @@
               </v-card>
             </v-flex>
           </v-layout>
-          <form class="shadow">
+          <form @submit.prevent="userLogin"  class="shadow">
             <input type="email" name="email" v-model="email" placeholder="email" />
             <br>
             <input type="password" name="password" v-model="password" placeholder="password" />
@@ -30,7 +30,7 @@
 
 <script>
   import SimpleNav from './SimpleNav.vue';
-
+  import axios from 'axios';
   export default {
     name: 'Login',
     data() {
@@ -41,7 +41,15 @@
       }
     },
     methods: {
-      userLogin() {}
+      userLogin(e) {
+        console.log("ello");
+        console.log(this.email, this.password);
+        axios.post("http://localhost:8000/login", {email:this.email, password: this.password}).then((res)=>{
+          console.log(res);
+          localStorage.setItem("token", res.token);
+          this.$router.push('/influencers')
+        })
+      }
     },
     components: {
       'simple-nav': SimpleNav

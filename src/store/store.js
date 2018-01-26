@@ -7,26 +7,28 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         businesses: [],
-        influencers: [],
-        // oneBiz: []
+        influencers: []
     },
     actions: {
         LOAD_BUSINESSES_LIST: function ({ commit }) {
-            axios.get('/businesses').then((response) => {
+            let storedToken = localStorage.getItem('token');
+            axios.get('/businesses?token='+storedToken).then((response) => {
               commit('SET_BUSINESSES_LIST', { list: response.data })
             }, (err) => {
               console.log(err)
             })
         },
         LOAD_INFLUENCERS_LIST: function ({ commit }) {
-            axios.get('/influencers').then((response) => {
+            let storedToken = localStorage.getItem('token');
+            axios.get('/influencers?token='+storedToken).then((response) => {
               commit('SET_INFLUENCERS_LIST', { list: response.data })
             }, (err) => {
               console.log(err)
             })
         },
         LOAD_MESSAGES_LIST: function ({ commit }) {
-            axios.get('/messages').then((response) => {
+            let storedToken = localStorage.getItem('token');
+            axios.get('/messages?token='+storedToken).then((response) => {
               commit('SET_MESSAGES_LIST', { list: response.data })
             }, (err) => {
               console.log(err)

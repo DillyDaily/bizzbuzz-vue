@@ -16,18 +16,36 @@
           </v-flex>
         </v-layout>
         
-          <form class="shadow">
+         
+      <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+        <h1>Upload images</h1>
+        <div class="dropbox">
+          <input type="file" 
+                  :name="uploadFieldName" 
+                  :disabled="isSaving" 
+                  @change="filesChange($event.target.name, $event.target.files); 
+                  fileCount = $event.target.files.length" accept="image/*" 
+                  class="input-file">
+            <p v-if="isInitial">
+              Drag your file(s) here to begin<br> or click to browse
+            </p>
+            <p v-if="isSaving">
+              Uploading {{ fileCount }} files...
+            </p>
+        </div>
+      </form>
+          <button @click.prevent="register"> Register </button>
+          <!-- <form class="shadow">
             <input type="email" name="email" v-model="bizz.email" placeholder="email"/>
             <input type="password" name="password" v-model="bizz.password" placeholder="password"/>
             <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
             <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
             <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <input type="file" name="image" v-model="bizz.image" placeholder="image" accept=".jpg, .jpeg, .png" required/>
-            <!-- <input type="file" name="upload" accept=".jpg, .jpeg, .png"> -->
+            <input type="file" @change="onFileChange($e)" name="upload" accept=".jpg, .jpeg, .png" required/>
             <button @click.prevent="register"> Register </button>
-          </form>
-          <div v-if="submitted"></div>
+          </form> -->
+          <!-- <div v-if="submitted"></div> -->
         </v-flex>
       </v-layout>
     </v-container>
@@ -40,28 +58,28 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-        bizz: {
-            email: '',
-            password: '',
-            first_name: '',
-            last_name: '',
-            description: '',
-            company_name: '',
-            image: '',
-            error: null
-        },
-        valid: false,
-        submitted: false,
+        // bizz: {
+        //     email: '',
+        //     password: '',
+        //     first_name: '',
+        //     last_name: '',
+        //     description: '',
+        //     company_name: '',
+        //     upload: '',
+        //     error: null
+        // },
+        // valid: false,
+        // submitted: false,
         
-        passwordRules: [
-          (v) => !!v || 'Password is required',
-          (v) => v.length <= 10 || 'Password must be less than 10 characters'
-        ],
-        email: '',
-        emailRules: [
-          (v) => !!v || 'E-mail is required',
-          (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-        ]
+        // passwordRules: [
+        //   (v) => !!v || 'Password is required',
+        //   (v) => v.length <= 10 || 'Password must be less than 10 characters'
+        // ],
+        // email: '',
+        // emailRules: [
+        //   (v) => !!v || 'E-mail is required',
+        //   (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+        // ]
       }
     },
     components: {
@@ -76,28 +94,53 @@ export default {
                 last_name: this.bizz.last_name,
                 description: this.bizz.description,
                 company_name: this.bizz.company_name,
-                image: this.bizz.image,
+                // image: this.bizz.image,
             }) 
                 this.$router.push('/influencers')
         }
     },
+   
     computed: {
       
-    
     },
     mounted () {
-        // axios.get('http://localhost:8000/register')
-        // .then((response) => {
-        //     console.log('REGISTER PAGE axios response: ', response.data)
-        //     this.Business = response.data;
-        // })
-        // console.log('Register Biz component mounted')
+
     }
 }
 
 </script>
 
-<style scoped>
+<style scoped >
+.dropbox {
+    outline: 2px dashed grey; /* the dash box */
+    outline-offset: -10px;
+    background: lightcyan;
+    color: dimgray;
+    padding: 10px 10px;
+    min-height: 200px; /* minimum height */
+    position: relative;
+    cursor: pointer;
+  }
+
+  .input-file {
+    opacity: 0; /* invisible but it's there! */
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .dropbox:hover {
+    background: lightblue; /* when mouse over to the drop zone, change color */
+  }
+
+  .dropbox p {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+/* CSS */
 #register-bizz {
    margin: 20px auto;
 }

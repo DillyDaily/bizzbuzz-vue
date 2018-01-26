@@ -122,7 +122,7 @@ export default {
     },
 
     methods: {
-      register() {
+      register(e) {
             this.axios.post('/register/buzz', {
                 email: this.buzz.email,
                 password: this.buzz.password,
@@ -135,8 +135,10 @@ export default {
                 instagram: this.buzz.instagram,
                 twitter: this.buzz.twitter,
                 image: this.buzz.image,
-            }) 
+            }).then((res) => {
+                localStorage.setItem("token", res.token)
                 this.$router.push('/businesses')
+            }) 
         }
     },
     computed: {
