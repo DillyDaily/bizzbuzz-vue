@@ -136,8 +136,7 @@ export default {
                 twitter: this.buzz.twitter,
                 image: this.buzz.image,
             }).then((res) => {
-                localStorage.setItem("token", res.token)
-                this.$router.push('/businesses')
+                this.$router.push('/login')
             }) 
         }
     },

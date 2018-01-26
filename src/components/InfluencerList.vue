@@ -12,6 +12,7 @@
             </v-card>
             </v-flex>
             </v-layout>
+            <div>{{ allInfluencers }} </div>
         <div v-for="influencer in allInfluencers">BUZZ: {{ influencer.personal_brand }} </div>
         <div v-for="images in allInfluencers">IMAGE<img class="pics" :src="images.image"/></div>
         <div v-for="descriptions in allInfluencers">Description: {{ descriptions.description }}</div>

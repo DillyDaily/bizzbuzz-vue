@@ -45,9 +45,11 @@
         console.log("ello");
         console.log(this.email, this.password);
         axios.post("http://localhost:8000/login", {email:this.email, password: this.password}).then((res)=>{
-          console.log(res);
-          localStorage.setItem("token", res.token);
+          console.log('response', res);
+          localStorage.setItem("token", JSON.stringify(res.data));
           this.$router.push('/influencers')
+          this.$store.dispatch('LOAD_USER_OBJECT')
+          console.log('store state', this.$store.state)
         })
       }
     },
