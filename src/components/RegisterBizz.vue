@@ -23,7 +23,8 @@
             <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
             <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <input type="text" name="image" v-model="bizz.image" placeholder="image" required/>
+            <input type="file" name="image" v-model="bizz.image" placeholder="image" accept=".jpg, .jpeg, .png" required/>
+            <!-- <input type="file" name="upload" accept=".jpg, .jpeg, .png"> -->
             <button @click.prevent="register"> Register </button>
           </form>
           <div v-if="submitted"></div>

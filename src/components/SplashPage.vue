@@ -1,6 +1,8 @@
 <template>
-  <div>
+  <div class="splash-page">
     <simple-nav-bar></simple-nav-bar>
+  <div class="flowers">
+    <div id="grey">
     <v-container>
       <v-layout>
         <v-flex xs12 sm6 offset-sm3>
@@ -18,13 +20,19 @@
                   <div><router-link to ="/register/bizz" exact tag="button" class="button">BUSINESS</router-link></div>
                   <div><router-link to ="/register/buzz" exact tag="button" class="button">INFLUENCER</router-link></div>
                   <div><router-link to ="/login" exact tag="button" class="button">LOGIN</router-link></div>
-                  <div><router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link></div>
+                  <!-- <div><router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link></div> -->
                   </div>
             </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
     </v-container>
+    </div>
+  </div>
+<v-footer class="pa-3" id="foot">
+    <v-spacer></v-spacer>
+    <div>created by Alexis Finney © 2018</div>
+  </v-footer>
   </div>
 </template>
 
@@ -49,8 +57,20 @@ export default {
 </script>
 
 <style scoped>
+/* .splash-page { */
+  /* background-image: url("./assets/flowers.JPG") */
+/* } */
+#grey {
+  background-color: rgba(255, 255, 255, 0.637);
+  background-size: cover;
+  } 
+.flowers {
+  background-image: url("../assets/beeplant.jpg");
+  background-size: cover;
+} 
+
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(154, 194, 108); /* Green */
     border-radius: 3px;
     color: white;
     padding: 10% 24%; /* Some padding */
@@ -60,7 +80,7 @@ export default {
     margin-top:1em;
 }
 .btn-group button:hover {
-    background-color: #3e8e41;
+    background-color: rgb(96, 122, 67);
 }
 
 .shadow{
@@ -68,10 +88,15 @@ export default {
   -webkit-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
   -moz-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
   box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+  margin-top: 10%;
+  margin-bottom: 40%;
 }
 .welcome {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 2vw;
 }
+/* #foot {
+  position: fixed;
+} */
 
 </style>

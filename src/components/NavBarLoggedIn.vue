@@ -1,22 +1,24 @@
 <template>
     <div id="nav-bar-logged-in">
-      <v-toolbar color="white">
-        <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
-          <v-spacer></v-spacer>
-            <h1> {{ title }} </h1>
+      <v-layout>
+        <v-toolbar class="top-nav" color="white">
+          <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
             <v-spacer></v-spacer>
-            <!-- <v-layout> -->
-            <v-badge overlap color="red">
-                <span slot="badge">3</span>
-                  <v-avatar class="green" id="pointer" @click="mailbox">
-                    <v-icon color="white">notifications</v-icon>
+              <h1> {{ title }} </h1>
+              <v-spacer></v-spacer>
+              <!-- <v-layout> -->
+              <v-badge overlap color="red">
+                  <span slot="badge">3</span>
+                    <v-avatar class="green" id="pointer" @click="mailbox">
+                      <v-icon color="white">notifications</v-icon>
+                    </v-avatar>
+              </v-badge>
+                  <v-avatar class="green" id="pointer" @click="profile">
+                      <v-icon color="white">account_circle</v-icon>
                   </v-avatar>
-            </v-badge>
-                <v-avatar class="green" id="pointer" @click="profile">
-                    <v-icon color="white">account_circle</v-icon>
-                </v-avatar>
-            <!-- </v-layout> -->
-      </v-toolbar>
+              <!-- </v-layout> -->
+        </v-toolbar>
+      </v-layout>
     </div>
 </template>
 
@@ -57,9 +59,15 @@ export default {
 <style scoped>
 h1{
   font-family: 'Cabin Sketch', cursive;
+  font-size: 3em;
   color: #222;
 }
-
+.top-nav {
+  height: 6em;
+  padding-top: 1%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
 #bee1{
   height:3em;
 }

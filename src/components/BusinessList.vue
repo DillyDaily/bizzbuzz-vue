@@ -91,10 +91,10 @@
   .description {
     font-family: 'Montserrat', sans-serif;
   }
-  .shadow{
+  /* .shadow{
     padding: 20px;
     -webkit-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
     -moz-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
     box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
-  }
+  } */
 </style>

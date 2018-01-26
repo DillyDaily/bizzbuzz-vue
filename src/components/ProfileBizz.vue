@@ -16,8 +16,8 @@
                   </v-card-title>
                   <v-container column>
                     <v-layout row>
-                      <v-flex xs12>
-                        <v-card-media :src="oneProfile.image" height="250px" width="250px"></v-card-media>
+                      <v-flex xs12 sm6 med6>
+                        <v-card-media :src="oneProfile.image" height="400px" width="250px"></v-card-media>
                         <v-card-text>
                           <div>Description: {{ oneProfile.description }} </div>
                         </v-card-text>
