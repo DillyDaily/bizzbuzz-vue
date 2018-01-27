@@ -2,8 +2,8 @@
     <div id="nav-bar-logged-in">
       <v-layout>
         <v-toolbar class="top-nav" color="white">
-          <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
-          <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
+          <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
+          <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
             <v-spacer></v-spacer>
 
               <!-- <h1> {{ title }} </h1> -->
@@ -32,28 +32,17 @@ export default {
         title: "Bizz Buzz Media",
       }
     },
-    created() {
-        this.$store.dispatch('LOAD_BUSINESSES_LIST')
-    },
 
-    props: ['id'],
-
-    computed: {
-        oneProfile() {
-            console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
-        return this.$store.getters.loadedProfile(this.id)
-      }
-    },
     methods: {
-        clickMethod() {
+      home() {
         this.$router.push('/')
         },
-        profile(id) {
-            this.$router.push('/my/bizz/profile/'+this.$route.params.id)
-        },
-        mailbox(id) {
-        this.$router.push('/my/messages/'+id)
-        },
+      profile(id) {
+        this.$router.push('/my/bizz/profile/'+this.$store.state.user_id)
+      },
+      mailbox(id) {
+        this.$router.push('/my/messages/'+this.$store.state.user_id)
+      }
     },
 }
 </script>
