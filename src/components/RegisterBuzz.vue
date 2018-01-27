@@ -19,12 +19,10 @@
 
                     <v-form>
                         <v-text-field
-                        type="email"
                         name="email"
                         v-model="buzz.email"
                         label="email"/>
                         <v-text-field
-                        type="password"
                         name="password"
                         v-model="buzz.password"
                         label="password"/>

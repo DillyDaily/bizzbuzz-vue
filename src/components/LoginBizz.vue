@@ -16,13 +16,11 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-              <form @submit.prevent="userLogin"  class="shadow">
-                <input type="email" name="email" v-model="email" placeholder="email" />
-                <br>
-                <input type="password" name="password" v-model="password" placeholder="password" />
-                <br>
+              <v-form @submit.prevent="userLogin">
+                <v-text-field name="email" v-model="email" label="email" required/>
+                <v-text-field name="password" v-model="password" label="password" required/>
                 <button type='submit'>Login</button>
-              </form>
+              </v-form>
             </v-flex>
           </v-layout>
         </v-container>

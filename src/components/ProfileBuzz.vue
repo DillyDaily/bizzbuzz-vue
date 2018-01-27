@@ -27,7 +27,7 @@
                     </v-container>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn flat color="green" @click="clickMethod(oneProfile.id)">
+                      <v-btn id="msgbtn" flat @click="clickMethod(oneProfile.id)">
                         <v-icon left light>send</v-icon>
                         Message</v-btn>
                     </v-card-actions>
@@ -82,5 +82,11 @@
   background-image: url("../assets/beeplant.jpg");
   background-size: cover;
 } 
+#msgbtn{
+  color: rgb(154, 194, 108);
+}
+/* #msgbtn:hover {
+    background-color: rgb(96, 122, 67);
+} */
 
 </style>

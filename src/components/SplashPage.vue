@@ -17,8 +17,8 @@
                 </v-card-title>
               </v-card>
                   <div class="btn-group">
-                  <div><router-link to ="/register/bizz" exact tag="button" class="button">BUSINESS</router-link></div>
-                  <div><router-link to ="/register/buzz" exact tag="button" class="button">INFLUENCER</router-link></div>
+                  <div><router-link to ="/register/bizz" exact tag="button" class="button">CREATE BUSINESS ACCT</router-link></div>
+                  <div><router-link to ="/register/buzz" exact tag="button" class="button">CREATE INFLUENCER ACCT</router-link></div>
                   <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
                   <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
                   <!-- <div><router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link></div> -->
@@ -30,15 +30,14 @@
     </v-container>
     </div>
   </div>
-<v-footer class="pa-3" id="foot">
-    <v-spacer></v-spacer>
-    <div>created by Alexis Finney © 2018</div>
-  </v-footer>
+  <foot></foot>
   </div>
 </template>
 
 <script>
 import SimpleNav from './SimpleNav.vue';
+import Foot from './Foot.vue';
+
 export default {
   data() {
     return {
@@ -52,7 +51,8 @@ export default {
     }
   },
   components: {
-      'simple-nav-bar': SimpleNav
+      'simple-nav-bar': SimpleNav,
+      'foot': Foot
     },
 }
 </script>
@@ -93,8 +93,6 @@ export default {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 2vw;
 }
-/* #foot {
-  position: fixed;
-} */
+
 
 </style>

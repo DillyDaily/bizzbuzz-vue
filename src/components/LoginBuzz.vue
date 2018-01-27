@@ -70,7 +70,7 @@
   background-size: cover;
 } 
   button {
-    background-color: #4CAF50;
+    background-color: rgb(154, 194, 108);
     /* Green */
     border: none;
     color: white;

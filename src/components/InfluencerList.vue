@@ -40,19 +40,22 @@
       </v-container>
     </div>
     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script scoped>
   import axios from 'axios';
   import NavBarLoggedIn from './NavBarLoggedIn.vue';
+  import Foot from './Foot.vue';
 
   export default {
     data: () => ({
 
     }),
     components: {
-      'nav-bar-logged-in': NavBarLoggedIn
+      'nav-bar-logged-in': NavBarLoggedIn,
+      'foot': Foot
     },
     methods: {
       clickMethod(id) {

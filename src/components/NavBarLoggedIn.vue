@@ -10,7 +10,7 @@
               <v-container>
                 <v-layout>
                   <v-flex xs 6>
-                      <v-text-field prepend-icon="earch" color="white" hide-details single-line></v-text-field>
+                      <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
                   </v-flex>
                 </v-layout>
               </v-container>
