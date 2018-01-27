@@ -6,19 +6,26 @@
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
             <v-spacer></v-spacer>
 
-              <!-- <h1> {{ title }} </h1> -->
+            <div class="search-bar">
+              <v-container>
+                <v-layout>
+                  <v-flex xs 6>
+                      <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </div>
+
               <v-spacer></v-spacer>
-              <!-- <v-layout> -->
               <v-badge overlap color="red">
                   <span slot="badge">3</span>
-                    <v-avatar class="green" id="pointer" @click="mailbox">
+                    <v-avatar class="grey lighten-1" id="pointer" @click="mailbox">
                       <v-icon color="white">notifications</v-icon>
                     </v-avatar>
               </v-badge>
-                  <v-avatar class="green" id="pointer" @click="profile">
+                  <v-avatar class="grey lighten-1" id="pointer" @click="profile">
                       <v-icon color="white">account_circle</v-icon>
                   </v-avatar>
-              <!-- </v-layout> -->
         </v-toolbar>
       </v-layout>
     </div>
@@ -75,6 +82,11 @@ h1{
 #pointer {
   cursor: pointer;
 }
-
+.search-bar {
+  border-radius: 20px;
+  background-color: #BDBDBD;
+  height: 4em;
+  width: 50%
+}
 </style>
 
