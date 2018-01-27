@@ -1,6 +1,6 @@
 <template>
   <div id="profile-bizz">
-    <simple-nav></simple-nav>
+    <nav-bar-logged-in></nav-bar-logged-in>
     <h2>Bizz Profile</h2>
     <v-container>
       <v-layout row>
@@ -42,7 +42,7 @@
 
 <script>
   import axios from 'axios';
-  import SimpleNav from './SimpleNav.vue';
+  import NavBarLoggedIn from './NavBarLoggedIn.vue';
   export default {
 
     created() {
@@ -59,7 +59,7 @@
     },
 
     components: {
-      'simple-nav': SimpleNav
+      'nav-bar-logged-in': NavBarLoggedIn
     },
     methods: {
       clickMethod(id) {

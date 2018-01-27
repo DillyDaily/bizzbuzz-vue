@@ -71,6 +71,14 @@ export const store = new Vuex.Store({
                 console.log('profileID ', profileID) 
                 })
             } 
+        },
+        loadedBuzzProfile (state) {
+            return (profileID) => {
+              return state.influencers.find((profile) => {
+                return profile.id == profileID   
+                console.log('profileID ', profileID) 
+                })
+            } 
         }
     }
 });
