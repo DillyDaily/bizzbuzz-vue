@@ -136,7 +136,7 @@ export default {
                 twitter: this.buzz.twitter,
                 image: this.buzz.image,
             }).then((res) => {
-                this.$router.push('/login')
+                this.$router.push('/login/buzz')
             }) 
         }
     },

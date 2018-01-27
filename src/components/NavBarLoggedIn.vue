@@ -3,8 +3,10 @@
       <v-layout>
         <v-toolbar class="top-nav" color="white">
           <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
+          <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
             <v-spacer></v-spacer>
-              <h1> {{ title }} </h1>
+
+              <!-- <h1> {{ title }} </h1> -->
               <v-spacer></v-spacer>
               <!-- <v-layout> -->
               <v-badge overlap color="red">
@@ -47,11 +49,11 @@ export default {
         this.$router.push('/')
         },
         profile(id) {
-            this.$router.push('/my/bizz/profile/' + id)
+            this.$router.push('/my/bizz/profile/'+this.$route.params.id)
         },
-                    mailbox(id) {
-                    this.$router.push('/my/messages/' + id)
-                    },
+        mailbox(id) {
+        this.$router.push('/my/messages/'+id)
+        },
     },
 }
 </script>

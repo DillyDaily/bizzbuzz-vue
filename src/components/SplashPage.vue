@@ -1,6 +1,6 @@
 <template>
   <div class="splash-page">
-    <simple-nav-bar></simple-nav-bar>
+  <simple-nav-bar></simple-nav-bar>
   <div class="flowers">
     <div id="grey">
     <v-container>
@@ -11,7 +11,7 @@
               <v-card color="yellow darken-2" class="white--text">
                 <v-card-title primary-title>
                   <div>
-                  <h3 class="welcome">Welcome to BizzBuzz Media</h3>
+                   <h3 class="welcome">Welcome to BizzBuzz Media</h3>
                   <div class="grow">We're here to help you grow.</div>
                   </div>
                 </v-card-title>
@@ -58,9 +58,6 @@ export default {
 </script>
 
 <style scoped>
-/* .splash-page { */
-  /* background-image: url("./assets/flowers.JPG") */
-/* } */
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;

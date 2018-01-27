@@ -96,7 +96,7 @@ export default {
                 company_name: this.bizz.company_name,
                 image: this.bizz.image,
             }) 
-                this.$router.push('/influencers')
+                this.$router.push('/login/bizz')
         }
     },
    
