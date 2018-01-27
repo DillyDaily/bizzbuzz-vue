@@ -1,59 +1,62 @@
 <template>
   <div id="register-bizz">
     <simple-nav></simple-nav>
-    <!-- <h1>Bizz Register</h1> -->
-      <v-container>
-        <v-layout >
-          <v-flex xs12 sm6 offset-sm3>
-            <v-layout row wrap>
-            <v-flex xs12>
-            <v-card color="yellow darken-2" class="white--text">
-                <v-card-title primary-title>
-                <div class="welcome">Welcome to BizzBuzz Media</div>
-                <div class="welcome">Congrats on your Bizz! Now let's find you some Buzz...</div>
-                </v-card-title>
-            </v-card>
-          </v-flex>
-        </v-layout>
-        
-         
-      <!-- <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
-        <h1>image images</h1>
-        <div class="dropbox">
-          <input type="file" 
-                  :name="imageFieldName" 
-                  :disabled="isSaving" 
-                  @change="filesChange($event.target.name, $event.target.files); 
-                  fileCount = $event.target.files.length" accept="image/*" 
-                  class="input-file">
-            <p v-if="isInitial">
-              Drag your file(s) here to begin<br> or click to browse
-            </p>
-            <p v-if="isSaving">
-              imageing {{ fileCount }} files...
-            </p>
-        </div>
-      </form>
-          <button @click.prevent="register"> Register </button> -->
-          <v-form class="shadow">
-            <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
-            <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
-            <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
-            <input type="textarea" name="topics" v-model="bizz.topics" placeholder="topics" required/>
-            <input type="city" name="city" v-model="bizz.city" placeholder="city" required/>
-            <input type="state" name="state" v-model="bizz.state" placeholder="state" required/>
-            <input type="category" name="category" v-model="bizz.category" placeholder="category" required/>
-            <input type="email" name="email" v-model="bizz.email" placeholder="email" required/>
-            <input type="password" name="password" v-model="bizz.password" placeholder="password" required/>
-            <input type="text" name="image" v-model="bizz.image" placeholder="logo" required/>
-            <!-- <input type="file" @change="onFileChange()" name="image" accept=".jpg, .jpeg, .png" required/> -->
-            <button @click.prevent="register"> Register </button>
-          </v-form>
-          <div v-if="submitted"></div>
-        </v-flex>
-      </v-layout>
-    </v-container>
+      <div class="flowers">
+        <div id="grey">
+          <v-container>
+            <v-layout>
+              <v-flex xs12 sm8 offset-sm2>
+                <v-layout row wrap>
+                <v-flex xs12 >
+                <v-card color="yellow darken-2" class="white--text">
+                    <v-card-title primary-title>
+                    <div class="welcome">Welcome to BizzBuzz Media</div>
+                    <div class="welcome">Congrats on your Bizz! Now let's find you some Buzz...</div>
+                    </v-card-title>
+                </v-card>
+              </v-flex>
+            </v-layout>
+            
+            
+          <!-- <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+            <h1>image images</h1>
+            <div class="dropbox">
+              <input type="file" 
+                      :name="imageFieldName" 
+                      :disabled="isSaving" 
+                      @change="filesChange($event.target.name, $event.target.files); 
+                      fileCount = $event.target.files.length" accept="image/*" 
+                      class="input-file">
+                <p v-if="isInitial">
+                  Drag your file(s) here to begin<br> or click to browse
+                </p>
+                <p v-if="isSaving">
+                  imageing {{ fileCount }} files...
+                </p>
+            </div>
+          </form>
+              <button @click.prevent="register"> Register </button> -->
+              <v-form>
+                <v-text-field name="first_name" v-model="bizz.first_name" label="first name" required/>
+                <v-text-field name="last_name" v-model="bizz.last_name" label="last name" required/>
+                <v-text-field name="company_name" v-model="bizz.company_name" label="company name" required/>
+                <v-text-field name="description" v-model="bizz.description" label="description" textarea required/>
+                <v-text-field name="topics" v-model="bizz.topics" label="topics" required/>
+                <v-text-field name="city" v-model="bizz.city" label="city" required/>
+                <v-text-field name="state" v-model="bizz.state" label="state" required/>
+                <v-text-field name="category" v-model="bizz.category" label="category" required/>
+                <v-text-field name="email" v-model="bizz.email" label="email" required/>
+                <v-text-field name="password" v-model="bizz.password" label="password" required/>
+                <v-text-field name="image" v-model="bizz.image" label="logo" required/>
+                <!-- <input type="file" @change="onFileChange()" name="image" accept=".jpg, .jpeg, .png" required/> -->
+                <button @click.prevent="register"> Register </button>
+              </v-form>
+              <div v-if="submitted"></div>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -124,6 +127,14 @@ export default {
 </script>
 
 <style scoped >
+#grey {
+  background-color: rgba(255, 255, 255, 0.637);
+  background-size: cover;
+  } 
+.flowers {
+  background-image: url("../assets/beeplant.jpg");
+  background-size: cover;
+} 
 .dropbox {
     outline: 2px dashed grey; /* the dash box */
     outline-offset: -10px;
@@ -168,7 +179,7 @@ input {
     padding: 1%;
 }
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: rgb(154, 194, 108); /* Green */
     border: none;
     color: white;
     padding: 15px 32px;

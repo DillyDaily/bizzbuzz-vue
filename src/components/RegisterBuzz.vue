@@ -1,97 +1,90 @@
 <template>
-  <div id="register-buzz">
+  <div id="register-bizz">
     <simple-nav></simple-nav>
-    <h1>Buzz Register</h1>
-    <v-container>
-        <v-layout >
-        <v-flex xs12 sm6 offset-sm3>
-            <v-layout row wrap>
-            <v-flex xs12>
-            <v-card color="yellow darken-2" class="white--text">
-                <v-card-title primary-title>
-                <div class="welcome">Welcome to BizzBuzz Media</div>
-                <div class="welcome">Congrats on your Buzz! Now let's find you some Bizz...</div>
-                <div>
-                    <p>Create a profile so businesses can see what you're all about.</p>
-                </div>
-                </v-card-title>
-            </v-card>
+      <div class="flowers">
+        <div id="grey">
+          <v-container>
+            <v-layout >
+              <v-flex xs12 sm8 offset-sm2>
+                <v-layout row wrap>
+                <v-flex xs12 >
+                <v-card color="yellow darken-2" class="white--text">
+                    <v-card-title primary-title>
+                    <div class="welcome">Welcome to BizzBuzz Media</div>
+                    <div class="welcome">Great job creating all the Buzz! Now let's find you some Bizz...</div>
+                    </v-card-title>
+                </v-card>
+              </v-flex>
+            </v-layout>
+
+                    <v-form>
+                        <v-text-field
+                        type="email"
+                        name="email"
+                        v-model="buzz.email"
+                        label="email"/>
+                        <v-text-field
+                        type="password"
+                        name="password"
+                        v-model="buzz.password"
+                        label="password"/>
+                        <v-text-field
+                        name="first_name"
+                        v-model="buzz.first_name"
+                        label="first name"
+                        required/>
+                        <v-text-field
+                        name="last_name"
+                        v-model="buzz.last_name"
+                        label="last name"
+                        required/>
+                        <v-text-field
+                        name="description"
+                        v-model="buzz.description"
+                        label="description"
+                        textarea
+                        required/>
+                        <v-text-field
+                        name="topics"
+                        v-model="buzz.topics"
+                        label="topics"
+                        textarea
+                        required/>
+                        <v-text-field
+                        name="personal_brand"
+                        v-model="buzz.personal_brand"
+                        label="personal brand"
+                        required/>
+                        <v-text-field
+                        name="category"
+                        v-model="buzz.category"
+                        label="buzz category"
+                        required/>
+                        <v-text-field
+                        name="city"
+                        v-model="buzz.city"
+                        label="city"
+                        required/>
+                        <v-text-field
+                        name="state"
+                        v-model="buzz.state"
+                        label="state"
+                        required/>
+                        <v-text-field
+                        name="image"
+                        v-model="buzz.image"
+                        label="image"
+                        required/>
+                        <button 
+                        @click.prevent="register">
+                        Register
+                        </button>
+                    </v-form>
             </v-flex>
             </v-layout>
-            <form class="shadow">
-                <input
-                type="email"
-                name="email"
-                v-model="buzz.email"
-                placeholder="email"/>
-                <input
-                type="password"
-                name="password"
-                v-model="buzz.password"
-                placeholder="password"/>
-                <input
-                type="text"
-                name="first_name"
-                v-model="buzz.first_name"
-                placeholder="first name"
-                required/>
-                <input
-                type="text"
-                name="last_name"
-                v-model="buzz.last_name"
-                placeholder="last name"
-                required/>
-                <input
-                type="textarea"
-                name="description"
-                v-model="buzz.description"
-                placeholder="description"
-                required/>
-                <input
-                type="textarea"
-                name="topics"
-                v-model="buzz.topics"
-                placeholder="topics"
-                required/>
-                <input
-                type="text"
-                name="personal_brand"
-                v-model="buzz.personal_brand"
-                placeholder="personal brand"
-                required/>
-                <input
-                type="text"
-                name="category"
-                v-model="buzz.category"
-                placeholder="buzz category"
-                required/>
-                <input
-                type="text"
-                name="city"
-                v-model="buzz.city"
-                placeholder="city"
-                required/>
-                <input
-                type="text"
-                name="state"
-                v-model="buzz.state"
-                placeholder="state"
-                required/>
-                <input
-                type="text"
-                name="image"
-                v-model="buzz.image"
-                placeholder="image"
-                required/>
-                <button 
-                @click.prevent="register">
-                Register
-                </button>
-            </form>
-      </v-flex>
-    </v-layout>
-  </v-container>
-
+        </v-container>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -146,3 +139,67 @@ export default {
 }
 
 </script>
+
+<style scoped >
+#grey {
+  background-color: rgba(255, 255, 255, 0.637);
+  background-size: cover;
+  } 
+.flowers {
+  background-image: url("../assets/beeplant.jpg");
+  background-size: cover;
+} 
+.dropbox {
+    outline: 2px dashed grey; /* the dash box */
+    outline-offset: -10px;
+    background: lightcyan;
+    color: dimgray;
+    padding: 10px 10px;
+    min-height: 200px; /* minimum height */
+    position: relative;
+    cursor: pointer;
+  }
+
+  .input-file {
+    opacity: 0; /* invisible but it's there! */
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .dropbox:hover {
+    background: lightblue; /* when mouse over to the drop zone, change color */
+  }
+
+  .dropbox p {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+/* CSS */
+#register-bizz {
+   margin: 20px auto;
+}
+label{
+    display: block;
+    margin: 20px 0 10px;
+}
+input {
+    display: block;
+    background-color: #eee;
+    width: 100%;
+    padding: 1%;
+}
+button {
+    background-color: rgb(154, 194, 108); /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+</style>

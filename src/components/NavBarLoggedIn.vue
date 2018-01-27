@@ -10,7 +10,7 @@
               <v-container>
                 <v-layout>
                   <v-flex xs 6>
-                      <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
+                      <v-text-field prepend-icon="earch" color="white" hide-details single-line></v-text-field>
                   </v-flex>
                 </v-layout>
               </v-container>
@@ -25,6 +25,9 @@
               </v-badge>
                   <v-avatar class="grey lighten-1" id="pointer" @click="profile">
                       <v-icon color="white">account_circle</v-icon>
+                  </v-avatar>
+                  <v-avatar class="grey lighten-1" id="pointer" @click="profile">
+                      <v-icon color="white">more_vert</v-icon>
                   </v-avatar>
         </v-toolbar>
       </v-layout>

@@ -1,41 +1,37 @@
 <template>
-    <div id="simple-nav">
-        <v-toolbar dark color="primary">
-        <v-toolbar-side-icon></v-toolbar-side-icon>
-        <v-toolbar-title class="black--text" id="pointer" @click="clickMethod"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
-            <v-spacer></v-spacer>
-                <h1> {{ title }} </h1>
-                <!-- <router-link to ="/" exact tag="img" src="../assets/bee1.png"></router-link> -->
-                <!-- <router-link to ="/" exact tag="button">HOME</router-link> -->
+    <div id="nav-bar-logged-in">
+      <v-layout>
+        <v-toolbar class="top-nav" color="white">
+          <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
+          <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
         </v-toolbar>
+      </v-layout>
     </div>
 </template>
 
 <script>
 
 export default {
-    data(){
-      return {
-        title: "Bizz Buzz Media",
-      }
-    },
     methods: {
-      clickMethod() {
+      home() {
         this.$router.push('/')
-      }
+        }
     },
-    computed: {
-
-    }
 }
 </script>
 
 <style scoped>
 h1{
   font-family: 'Cabin Sketch', cursive;
+  font-size: 3em;
   color: #222;
 }
-
+.top-nav {
+  height: 6em;
+  padding-top: 1%;
+  padding-left: 7%;
+  padding-right: 7%;
+}
 #bee1{
   height:3em;
 }
@@ -52,6 +48,11 @@ h1{
 #pointer {
   cursor: pointer;
 }
-
+.search-bar {
+  border-radius: 20px;
+  background-color: #BDBDBD;
+  height: 4em;
+  width: 50%
+}
 </style>
 
