@@ -18,10 +18,10 @@
         
          
       <!-- <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
-        <h1>Upload images</h1>
+        <h1>image images</h1>
         <div class="dropbox">
           <input type="file" 
-                  :name="uploadFieldName" 
+                  :name="imageFieldName" 
                   :disabled="isSaving" 
                   @change="filesChange($event.target.name, $event.target.files); 
                   fileCount = $event.target.files.length" accept="image/*" 
@@ -30,19 +30,24 @@
               Drag your file(s) here to begin<br> or click to browse
             </p>
             <p v-if="isSaving">
-              Uploading {{ fileCount }} files...
+              imageing {{ fileCount }} files...
             </p>
         </div>
       </form>
           <button @click.prevent="register"> Register </button> -->
           <v-form class="shadow">
-            <input type="email" name="email" v-model="bizz.email" placeholder="email"/>
-            <input type="password" name="password" v-model="bizz.password" placeholder="password"/>
             <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
             <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
-            <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <input type="file" @change="onFileChange()" name="upload" accept=".jpg, .jpeg, .png" required/>
+            <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
+            <input type="textarea" name="topics" v-model="bizz.topics" placeholder="topics" required/>
+            <input type="city" name="city" v-model="bizz.city" placeholder="city" required/>
+            <input type="state" name="state" v-model="bizz.state" placeholder="state" required/>
+            <input type="category" name="category" v-model="bizz.category" placeholder="category" required/>
+            <input type="email" name="email" v-model="bizz.email" placeholder="email" required/>
+            <input type="password" name="password" v-model="bizz.password" placeholder="password" required/>
+            <input type="text" name="image" v-model="bizz.image" placeholder="logo" required/>
+            <!-- <input type="file" @change="onFileChange()" name="image" accept=".jpg, .jpeg, .png" required/> -->
             <button @click.prevent="register"> Register </button>
           </v-form>
           <div v-if="submitted"></div>
@@ -59,13 +64,17 @@ export default {
     data () {
         return {
         bizz: {
+          first_name: '',
+            last_name: '',
             email: '',
             password: '',
-            first_name: '',
-            last_name: '',
             description: '',
+            category: '',
+            topics: '',
+            city: '',
+            state: '',
             company_name: '',
-            upload: '',
+            image: '',
             error: null
         },
         valid: false,
@@ -88,13 +97,17 @@ export default {
     methods: {
         register() {
             this.axios.post('/register/bizz', {
-                email: this.bizz.email,
-                password: this.bizz.password,
+                company_name: this.bizz.company_name,
                 first_name: this.bizz.first_name,
                 last_name: this.bizz.last_name,
                 description: this.bizz.description,
-                company_name: this.bizz.company_name,
-                upload: this.bizz.image,
+                email: this.bizz.email,
+                password: this.bizz.password,
+                category: this.bizz.category,
+                topics: this.bizz.topics,
+                city: this.bizz.city,
+                state: this.bizz.state,
+                image: this.bizz.image,
             }) 
                 this.$router.push('/login/bizz')
         }
