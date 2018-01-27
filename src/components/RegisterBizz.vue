@@ -35,16 +35,16 @@
         </div>
       </form>
           <button @click.prevent="register"> Register </button> -->
-          <form class="shadow">
+          <v-form class="shadow">
             <input type="email" name="email" v-model="bizz.email" placeholder="email"/>
             <input type="password" name="password" v-model="bizz.password" placeholder="password"/>
             <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
             <input type="text" name="last_name" v-model="bizz.last_name" placeholder="last name" required/>
             <input type="textarea" name="description" v-model="bizz.description" placeholder="description" required/>
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
-            <input type="file" @change="onFileChange($e)" name="upload" accept=".jpg, .jpeg, .png" required/>
+            <input type="file" @change="onFileChange()" name="upload" accept=".jpg, .jpeg, .png" required/>
             <button @click.prevent="register"> Register </button>
-          </form>
+          </v-form>
           <div v-if="submitted"></div>
         </v-flex>
       </v-layout>
@@ -94,7 +94,7 @@ export default {
                 last_name: this.bizz.last_name,
                 description: this.bizz.description,
                 company_name: this.bizz.company_name,
-                image: this.bizz.image,
+                upload: this.bizz.image,
             }) 
                 this.$router.push('/login/bizz')
         }

@@ -48,6 +48,12 @@
                 placeholder="description"
                 required/>
                 <input
+                type="textarea"
+                name="topics"
+                v-model="buzz.topics"
+                placeholder="topics"
+                required/>
+                <input
                 type="text"
                 name="personal_brand"
                 v-model="buzz.personal_brand"
@@ -55,27 +61,21 @@
                 required/>
                 <input
                 type="text"
-                name="website"
-                v-model="buzz.website"
-                placeholder="website"
+                name="category"
+                v-model="buzz.category"
+                placeholder="buzz category"
                 required/>
                 <input
                 type="text"
-                name="facebook"
-                v-model="buzz.facebook"
-                placeholder="facebook profile"
+                name="city"
+                v-model="buzz.city"
+                placeholder="city"
                 required/>
                 <input
                 type="text"
-                name="instagram"
-                v-model="buzz.instagram"
-                placeholder="instagram profile"
-                required/>
-                <input
-                type="text"
-                name="twitter"
-                v-model="buzz.twitter"
-                placeholder="twitter profile"
+                name="state"
+                v-model="buzz.state"
+                placeholder="state"
                 required/>
                 <input
                 type="text"
