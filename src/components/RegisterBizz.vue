@@ -17,7 +17,7 @@
         </v-layout>
         
          
-      <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
+      <!-- <form enctype="multipart/form-data" novalidate v-if="isInitial || isSaving">
         <h1>Upload images</h1>
         <div class="dropbox">
           <input type="file" 
@@ -34,8 +34,8 @@
             </p>
         </div>
       </form>
-          <button @click.prevent="register"> Register </button>
-          <!-- <form class="shadow">
+          <button @click.prevent="register"> Register </button> -->
+          <form class="shadow">
             <input type="email" name="email" v-model="bizz.email" placeholder="email"/>
             <input type="password" name="password" v-model="bizz.password" placeholder="password"/>
             <input type="text" name="first_name" v-model="bizz.first_name" placeholder="first name" required/>
@@ -44,8 +44,8 @@
             <input type="text" name="company_name" v-model="bizz.company_name" placeholder="company name" required/>
             <input type="file" @change="onFileChange($e)" name="upload" accept=".jpg, .jpeg, .png" required/>
             <button @click.prevent="register"> Register </button>
-          </form> -->
-          <!-- <div v-if="submitted"></div> -->
+          </form>
+          <div v-if="submitted"></div>
         </v-flex>
       </v-layout>
     </v-container>
@@ -58,28 +58,28 @@ import SimpleNav from './SimpleNav.vue';
 export default {
     data () {
         return {
-        // bizz: {
-        //     email: '',
-        //     password: '',
-        //     first_name: '',
-        //     last_name: '',
-        //     description: '',
-        //     company_name: '',
-        //     upload: '',
-        //     error: null
-        // },
-        // valid: false,
-        // submitted: false,
+        bizz: {
+            email: '',
+            password: '',
+            first_name: '',
+            last_name: '',
+            description: '',
+            company_name: '',
+            upload: '',
+            error: null
+        },
+        valid: false,
+        submitted: false,
         
-        // passwordRules: [
-        //   (v) => !!v || 'Password is required',
-        //   (v) => v.length <= 10 || 'Password must be less than 10 characters'
-        // ],
-        // email: '',
-        // emailRules: [
-        //   (v) => !!v || 'E-mail is required',
-        //   (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-        // ]
+        passwordRules: [
+          (v) => !!v || 'Password is required',
+          (v) => v.length <= 10 || 'Password must be less than 10 characters'
+        ],
+        email: '',
+        emailRules: [
+          (v) => !!v || 'E-mail is required',
+          (v) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+        ]
       }
     },
     components: {
@@ -94,7 +94,7 @@ export default {
                 last_name: this.bizz.last_name,
                 description: this.bizz.description,
                 company_name: this.bizz.company_name,
-                // image: this.bizz.image,
+                image: this.bizz.image,
             }) 
                 this.$router.push('/influencers')
         }

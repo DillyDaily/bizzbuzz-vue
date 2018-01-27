@@ -1,7 +1,7 @@
 <template>
   <div>
     <simple-nav></simple-nav>
-    <h1>Login Page</h1>
+    <h1>BUZZ Login Page</h1>
     <v-container>
       <v-layout>
         <v-flex xs12 sm6 offset-sm3>
@@ -10,7 +10,7 @@
               <v-card color="yellow darken-2" class="white--text">
                 <v-card-title primary-title>
                   <div class="welcome">Welcome to BizzBuzz Media</div>
-                  <div class="welcome">Congrats on your Bizz! Now let's find you some Buzz...</div>
+                  <div class="welcome">Congrats on your Buzz! Now let's find you some Bizz...</div>
                 </v-card-title>
               </v-card>
             </v-flex>
@@ -42,12 +42,10 @@
     },
     methods: {
       userLogin(e) {
-        console.log("ello");
-        console.log(this.email, this.password);
-        axios.post("http://localhost:8000/login", {email:this.email, password: this.password}).then((res)=>{
+        axios.post("http://localhost:8000/login/buzz", {email:this.email, password: this.password}).then((res)=>{
           console.log('response', res);
           localStorage.setItem("token", JSON.stringify(res.data));
-          this.$router.push('/influencers')
+          this.$router.push('/businesses')
           this.$store.dispatch('LOAD_USER_OBJECT')
           console.log('store state', this.$store.state)
         })
@@ -66,9 +64,6 @@
     border: none;
     color: white;
     padding: 15px 32px;
-    /* text-align: center;
-    text-decoration: none; */
-    /* display: inline-block; */
     font-size: 16px;
   }
 

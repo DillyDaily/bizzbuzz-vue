@@ -63,7 +63,7 @@
     },
     methods: {
       clickMethod(id) {
-        this.$router.push('/contact/' + id)
+        this.$router.push('/contact/buzz/' + id)
       }
     }
   }

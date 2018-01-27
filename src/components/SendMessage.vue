@@ -33,8 +33,13 @@ export default {
     },
   methods: {
       send() {
-          this.axios.post('/contact/:id', {
+        let parsedToken = JSON.parse(localStorage.getItem('token'))
+        console.log(parsedToken)
+          this.axios.post('/contact/bizz/'+this.$route.params.id, {
+              token: parsedToken.token,
               message: this.bizz.message,
+              influencers_id: parsedToken.user_id
+
           }) 
               this.$router.push('/businesses')
       }

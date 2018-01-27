@@ -19,7 +19,8 @@
                   <div class="btn-group">
                   <div><router-link to ="/register/bizz" exact tag="button" class="button">BUSINESS</router-link></div>
                   <div><router-link to ="/register/buzz" exact tag="button" class="button">INFLUENCER</router-link></div>
-                  <div><router-link to ="/login" exact tag="button" class="button">LOGIN</router-link></div>
+                  <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
+                  <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
                   <!-- <div><router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link></div> -->
                   </div>
             </v-flex>

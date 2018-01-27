@@ -11,7 +11,8 @@ import MyBuzzProfile from './components/MyBuzzProfile.vue';
 import SendMessage from './components/SendMessage.vue';
 import Messages from './components/Messages.vue';
 import OneMessage from './components/OneMessage.vue';
-import Login from './components/Login.vue';
+import LoginBizz from './components/LoginBizz.vue';
+import LoginBuzz from './components/LoginBuzz.vue';
 
 export default [
     { path: '/', component: SplashPage },                                         //SplashPage
@@ -23,11 +24,13 @@ export default [
     { path: '/profile/bizz/:id', props: true, component: ProfileBizz },           //Get One Bizz
     { path: '/profile/buzz/:id', props: true, component: ProfileBuzz },           //Get One Buzz
     
-    { path: '/contact/:id', props: true, component: SendMessage },                //Send a Message
+    { path: '/contact/buzz/:id', props: true, component: SendMessage },                //Send a Message
     { path: '/my/messages/:id', props: true, component: Messages },               //Get All Own Messages
     { path: '/message/:id', props: true, component: OneMessage },                 //Get One Message
     
     { path: '/my/bizz/profile/:id', props: true, component: MyBizzProfile },                //Get Own Profile
     { path: '/my/buzz/profile/:id', props: true, component: MyBuzzProfile },                //Get Own Profile
-    { path: '/login', component: Login },                                         //Login
+    
+    { path: '/login/bizz', component: LoginBizz },                                         //Login
+    { path: '/login/buzz', component: LoginBuzz },                                         //Login
 ]

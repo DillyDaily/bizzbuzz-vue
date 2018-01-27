@@ -15,7 +15,7 @@ export const store = new Vuex.Store({
             let storedToken = localStorage.getItem('token');
             let parsedToken =  JSON.parse(storedToken)
             axios.get('/businesses?token='+parsedToken.token).then((response) => {
-              commit('SET_BUSINESS_LIST', { list: response.data })
+              commit('SET_BUSINESSES_LIST', { list: response.data })
             }, (err) => {
               console.log(err)
             })
