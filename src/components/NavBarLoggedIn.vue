@@ -4,38 +4,37 @@
         <v-toolbar class="top-nav" color="white">
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
-            <v-spacer></v-spacer>
+          <v-spacer></v-spacer>
 
-            <div class="search-bar">
-              <v-container>
-                <v-layout>
-                  <v-flex xs 6>
-                      <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </div>
-
+          <div class="search-bar">
+            <v-container>
+              <v-layout>
+                <v-flex xs 6>
+                    <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </div>
               <v-spacer></v-spacer>
-              <v-badge overlap color="red">
-                  <span slot="badge">3</span>
-                    <v-avatar class="grey lighten-1" id="pointer" @click="mailbox">
-                      <v-icon color="white">notifications</v-icon>
-                    </v-avatar>
-              </v-badge>
-                  <v-avatar class="grey lighten-1" id="pointer" @click="profile">
-                      <v-icon color="white">account_circle</v-icon>
-                  </v-avatar>
-                  <v-avatar class="grey lighten-1" id="pointer" @click="profile">
-                      <v-icon color="white">more_vert</v-icon>
-                  </v-avatar>
+          <v-badge overlap color="red">
+            <span slot="badge">3</span>
+              <v-avatar class="grey lighten-1" id="pointer" @click="mailbox">
+                <v-icon color="white">notifications</v-icon>
+              </v-avatar>
+          </v-badge>
+            <v-avatar class="grey lighten-1" id="pointer" @click="profile">
+                <v-icon color="white">account_circle</v-icon>
+            </v-avatar>
+            <v-avatar class="grey lighten-1" id="pointer" @click="userLogout">
+                <v-icon color="white">more_vert</v-icon>
+            </v-avatar>
         </v-toolbar>
       </v-layout>
     </div>
 </template>
 
 <script>
-
+import axios from 'axios'
 export default {
     data(){
       return {
@@ -52,6 +51,13 @@ export default {
       },
       mailbox(id) {
         this.$router.push('/my/messages/'+this.$store.state.user_id)
+      },
+      userLogout() {
+        axios.get("http://localhost:8000/logout").then(()=>{
+          console.log('token', token)
+          localStorage.removeItem("token");
+          this.$router.push('/')
+        })
       }
     },
 }
