@@ -6,15 +6,22 @@
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
           <v-spacer></v-spacer>
 
-          <div class="search-bar">
+          <!-- <div class="search-bar">
             <v-container>
               <v-layout>
                 <v-flex xs 6>
-                    <v-text-field prepend-icon="search" color="white" hide-details single-line></v-text-field>
+                    <v-text-field 
+                    prepend-icon="search" 
+                    color="white" 
+                    hide-details single-line
+                    v-model="search"
+                    placeholder="search"
+                   
+                    ></v-text-field>
                 </v-flex>
               </v-layout>
             </v-container>
-          </div>
+          </div> -->
               <v-spacer></v-spacer>
             <v-avatar class="grey lighten-1" id="pointer" @click="dashboard">
                 <v-icon color="white">dashboard</v-icon>
@@ -41,7 +48,7 @@ import axios from 'axios'
 export default {
     data(){
       return {
-        title: "Bizz Buzz Media",
+        search: ''
       }
     },
 

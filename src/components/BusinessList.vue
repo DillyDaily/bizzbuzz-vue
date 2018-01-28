@@ -3,6 +3,24 @@
     <div class="flowers">
     <div id="grey">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
+
+<div class="search-bar">
+            <v-container>
+              <v-layout>
+                <v-flex xs 6>
+                    <v-text-field 
+                    prepend-icon="search" 
+                    color="white" 
+                    hide-details single-line
+                    v-model="search"
+                    placeholder="search"
+                    label="search"
+                    ></v-text-field>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </div>
+
       <v-container column>
         <v-layout class="shadow" row wrap>
           <v-flex xs12>
@@ -12,7 +30,7 @@
               </v-card-title>
             </v-card>
           </v-flex>
-          <v-flex xs12 sm10 md6 class="white" v-for="business in allBusinesses" :key="business.id">
+          <v-flex xs12 sm10 md6 class="white" v-for="business in filteredBizz" :key="business.id">
             <v-card>
               <v-container fluid grid-list-md>
                 <v-layout row>
@@ -50,9 +68,11 @@
   import Foot from './Foot.vue';
 
   export default {
-    data: () => ({
-
-    }),
+    data() {
+      return {
+        search: '',
+      }
+    },
     components: {
       'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
       'foot': Foot
@@ -66,6 +86,11 @@
       allBusinesses() {
         console.log("allBusinesses", this.$store.state.businesses)
         return this.$store.state.businesses
+      },
+      filteredBizz() {
+        return this.$store.state.businesses.filter((business)=> {
+          return business.topics.match(this.search);
+        })
       }
     },
     created() {
