@@ -5,7 +5,7 @@
         <div id="grey">
         <v-container>
           <v-layout>
-            <v-flex xs12 sm6 offset-sm3 color="white">
+            <v-flex xs12 sm6 offset-sm3 class="white">
               <v-layout row wrap>
                 <v-flex xs12>
                   <v-card color="yellow darken-2" class="white--text">
@@ -62,10 +62,12 @@
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
+  height: 800px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
   background-size: cover;
+  height: 800px;
 } 
   button {
     background-color: rgb(154, 194, 108);

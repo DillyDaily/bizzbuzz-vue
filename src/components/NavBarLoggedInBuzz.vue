@@ -47,10 +47,10 @@ export default {
         this.$router.push('/')
         },
       profile(id) {
-        this.$router.push('/my/bizz/profile/'+this.$store.state.user_id)
+        this.$router.push('/my/buzz/profile/'+this.$store.state.user_id)
       },
       mailbox(id) {
-        this.$router.push('/my/bizz/messages/'+this.$store.state.user_id)
+        this.$router.push('/my/buzz/messages/'+this.$store.state.user_id)
       },
       userLogout() {
         axios.get("http://localhost:8000/logout").then(()=>{

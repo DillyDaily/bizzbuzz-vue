@@ -17,7 +17,7 @@
               </v-flex>
             </v-layout>
 
-                    <v-form>
+                    <v-form class="white">
                         <v-text-field
                         name="email"
                         v-model="buzz.email"

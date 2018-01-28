@@ -1,6 +1,6 @@
 <template>
   <div id="profile-bizz">
-    <nav-bar-logged-in></nav-bar-logged-in>
+    <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
       <v-container >
@@ -45,7 +45,7 @@
 
 <script>
   import axios from 'axios';
-  import NavBarLoggedIn from './NavBarLoggedIn.vue';
+  import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
   export default {
 
     created() {
@@ -62,7 +62,7 @@
     },
 
     components: {
-      'nav-bar-logged-in': NavBarLoggedIn
+      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz
     },
     methods: {
       clickMethod(id) {

@@ -36,7 +36,7 @@
             </div>
           </form>
               <button @click.prevent="register"> Register </button> -->
-              <v-form>
+              <v-form class="white">
                 <v-text-field name="first_name" v-model="bizz.first_name" label="first name" required/>
                 <v-text-field name="last_name" v-model="bizz.last_name" label="last name" required/>
                 <v-text-field name="company_name" v-model="bizz.company_name" label="company name" required/>

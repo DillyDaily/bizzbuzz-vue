@@ -2,7 +2,7 @@
   <div id="business-list">
     <div class="flowers">
     <div id="grey">
-    <nav-bar-logged-in></nav-bar-logged-in>
+    <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
       <v-container column>
         <v-layout class="shadow" row wrap>
           <v-flex xs12>
@@ -44,9 +44,9 @@
   </div>
 </template>
 
-<script scoped>
+<script>
   import axios from 'axios';
-  import NavBarLoggedIn from './NavBarLoggedIn.vue';
+  import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
   import Foot from './Foot.vue';
 
   export default {
@@ -54,7 +54,7 @@
 
     }),
     components: {
-      'nav-bar-logged-in': NavBarLoggedIn,
+      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
       'foot': Foot
     },
     methods: {

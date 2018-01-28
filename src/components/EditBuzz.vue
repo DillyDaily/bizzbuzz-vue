@@ -1,20 +1,21 @@
 <template>
   <div>
-    <router-view></router-view>
+    <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <h1>Edit Buzz Profile</h1>
     <!-- <nav-bar></nav-bar> -->
   </div>
 </template>
 
 <script>
-// import NavBar from './components/NavBar.vue';
+import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
+import Foot from './Foot.vue';
 
 export default {
     
     components: {
-      // 'business-list': BusinessList,
-      // 'nav-bar': NavBar
-    }
+      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
+      'foot': Foot
+    },
 }
 </script>
  

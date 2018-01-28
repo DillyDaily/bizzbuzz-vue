@@ -5,7 +5,7 @@
       <div id="grey">
         <v-container>
           <v-layout>
-            <v-flex xs12 sm6 offset-sm3>
+            <v-flex xs12 sm6 offset-sm3 class="white">
               <v-layout row wrap>
                 <v-flex xs12>
                   <v-card color="yellow darken-2" class="white--text">
@@ -16,13 +16,11 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-              <form @submit.prevent="userLogin"  class="shadow">
-                <input type="email" name="email" v-model="email" placeholder="email" />
-                <br>
-                <input type="password" name="password" v-model="password" placeholder="password" />
-                <br>
+                <v-form @submit.prevent="userLogin">
+                <v-text-field name="email" v-model="email" label="email" required/>
+                <v-text-field name="password" v-model="password" label="password" required/>
                 <button type='submit'>Login</button>
-              </form>
+              </v-form>
             </v-flex>
           </v-layout>
         </v-container>
@@ -64,10 +62,12 @@
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
+  height: 800px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
   background-size: cover;
+  height: 800px;
 } 
   button {
     background-color: rgb(154, 194, 108);
