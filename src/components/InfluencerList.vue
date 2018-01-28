@@ -27,7 +27,7 @@
                       </div>
                     </v-card-title>
                     <v-card-actions>
-                      <v-btn class="view" flat color="green" @click="clickMethod(influencer.id)">
+                      <v-btn id="msgbtn" class="view" flat @click="clickMethod(influencer.id)">
                         <v-icon large left light>account_circle</v-icon>
                         View Profile</v-btn>
                     </v-card-actions>
@@ -44,7 +44,7 @@
   </div>
 </template>
 
-<script scoped>
+<script>
   import axios from 'axios';
   import NavBarLoggedIn from './NavBarLoggedIn.vue';
   import Foot from './Foot.vue';
@@ -77,14 +77,14 @@
 </script>
 
 <style scoped>
-#grey {
-  background-color: rgba(255, 255, 255, 0.637);
-  background-size: cover;
+  #grey {
+    background-color: rgba(255, 255, 255, 0.637);
+    background-size: cover;
+    } 
+  .flowers {
+    background-image: url("../assets/beeplant.jpg");
+    background-size: cover;
   } 
-.flowers {
-  background-image: url("../assets/beeplant.jpg");
-  background-size: cover;
-} 
   .pics {
     height: 250px;
     width: 250px;
@@ -104,6 +104,9 @@
   }
   .description {
     font-family: 'Montserrat', sans-serif;
+  }
+  #msgbtn{
+  color: rgb(154, 194, 108);
   }
   /* .shadow{
     padding: 20px;

@@ -24,10 +24,24 @@
 
 <script>
 import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
+import axios from 'axios';
+
 export default {
   components: {
       'nav-bar-logged-in-buzz': NavBarLoggedInBuzz
     },
+  created() {
+    this.$store.dispatch('LOAD_BUZZ_MESSAGES_LIST')
+  },
+
+  props: ['id'],
+
+  computed: {
+    oneProfile() {
+      // console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
+      return this.$store.getters.loadedBuzzProfile(this.id)
+    }
+  },
 }
 </script>
 

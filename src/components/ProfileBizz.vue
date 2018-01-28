@@ -27,7 +27,7 @@
                     </v-container>
                     <v-card-actions>
                       <v-spacer></v-spacer>
-                      <v-btn flat color="green" @click="clickMethod(oneProfile.id)">
+                      <v-btn id="msgbtn" flat @click="clickMethod(oneProfile.id)">
                         <v-icon left light>send</v-icon>
                         Message</v-btn>
                     </v-card-actions>
@@ -73,7 +73,7 @@
 
 </script>
 
-<style>
+<style scoped>
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
@@ -83,4 +83,7 @@
   background-size: cover;
 } 
 
+#msgbtn{
+  color: rgb(154, 194, 108);
+}
 </style>

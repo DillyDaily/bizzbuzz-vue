@@ -46,6 +46,7 @@
 <script>
   import axios from 'axios';
   import NavBarLoggedIn from './NavBarLoggedIn.vue';
+  
   export default {
 
     created() {

@@ -8,7 +8,9 @@ export const store = new Vuex.Store({
     state: {
         businesses: [],
         influencers: [],
-        user_id: 0
+        user_id: 0,
+        bizz_messages: [],
+        buzz_messages: []
     },
     actions: {
         LOAD_BUSINESSES_LIST: function ({ commit }) {
@@ -29,11 +31,20 @@ export const store = new Vuex.Store({
               console.log(err)
             })
         },
-        LOAD_MESSAGES_LIST: function ({ commit }) {
+        LOAD_BIZZ_MESSAGES_LIST: function ({ commit }) {
             let storedToken = localStorage.getItem('token');
             let parsedToken =  JSON.parse(storedToken)
-            axios.get('/messages?token='+parsedToken.token).then((response) => {
-              commit('SET_MESSAGES_LIST', { list: response.data })
+            axios.get('/my/bizz/messages/:id?token='+parsedToken.token).then((response) => {
+              commit('SET_BIZZ_MESSAGES_LIST', { list: response.data })
+            }, (err) => {
+              console.log(err)
+            })
+        },
+        LOAD_BUZZ_MESSAGES_LIST: function ({ commit }) {
+            let storedToken = localStorage.getItem('token');
+            let parsedToken =  JSON.parse(storedToken)
+            axios.get('/my/buzz/messages/:id?token='+parsedToken.token).then((response) => {
+              commit('SET_BUZZ_MESSAGES_LIST', { list: response.data })
             }, (err) => {
               console.log(err)
             })
@@ -54,9 +65,13 @@ export const store = new Vuex.Store({
             state.influencers = list
             console.log('influencers list ', state.influencers)
         },
-        SET_MESSAGES_LIST: (state, { list }) => {
-            state.messages = list
-            console.log('messages list ', state.messages)
+        SET_BIZZ_MESSAGES_LIST: (state, { list }) => {
+            state.bizz_messages = list
+            console.log('messages list ', state.bizz_messages)
+        },
+        SET_BUZZ_MESSAGES_LIST: (state, { list }) => {
+            state.buzz_messages = list
+            console.log('messages list ', state.buzz_messages)
         },
         SET_USER_OBJECT: function(state, { user_id }) {
             console.log('user_id in mutations', user_id)
@@ -79,6 +94,22 @@ export const store = new Vuex.Store({
                 console.log('profileID ', profileID) 
                 })
             } 
+        },
+        loadedBizzMessages (state) {
+            return (messageID) => {
+              return state.bizz_messages.find((message) => {
+                return message.id == messageID
+                console.log('BIZZ messageID ', messageID)
+                })
+            }
+        },
+        loadedBuzzMessages (state) {
+            return (messageID) => {
+              return state.buzz_messages.find((message) => {
+                return message.id == messageID
+                console.log('BUZZ messageID ', messageID)
+                })
+            }
         }
     }
 });
