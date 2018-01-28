@@ -8,7 +8,7 @@
             <v-flex xs12>
               <v-card color="yellow darken-2" class="white--text">
                 <v-card-title primary-title>
-                  <div class="welcome">This is my Profile</div>
+                 <div class="welcome">Welcome back, {{ myProfile.first_name }}!</div>
                   <v-spacer></v-spacer>
                     <v-dialog width="350px" persistent>
                           <v-btn class="grey" fab accent slot="activator" >
@@ -18,31 +18,31 @@
                             <v-container>
                               <v-layout row wrap>
                                 <v-flex xs12>
-                                  <v-card-title>Edit Profile</v-card-title>
+                                  <v-card-title id="edit" class="white">Edit Profile</v-card-title>
                                 </v-flex>
                               </v-layout>
                               <v-divider></v-divider>
                             </v-container>
                           </v-card>
                         </v-dialog>
-
-                </v-card-title>
-              </v-card>
-            </v-flex>
-            <v-flex xs6>
-              <v-card dark color="secondary">
-                <v-card-text class="px-0">PICTURE</v-card-text>
-                <!-- <v-card-media id="pointer" @click="clickMethod(business.id)" :src="business.image" height="250px" width="250px" /> -->
-              </v-card>
-            </v-flex>
-            <v-flex xs6>
-              <v-card dark color="secondary">
-                <v-card-text class="px-0">TEXT</v-card-text>
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </div>
+                      </v-card-title>
+                    </v-card>
+                  </v-flex>
+              <v-flex xs6>
+                <v-card dark color="secondary">
+                  <v-card-media id="pointer"  :src="myProfile.image" height="250px" width="250px" />
+                </v-card>
+              </v-flex>
+              <v-flex xs6>
+                <v-card dark color="secondary">
+                  <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
+                  <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
+                  <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </div>
      <foot></foot>
     </div>
   </div>
@@ -50,22 +50,38 @@
 
 <script>
 import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
-  import Foot from './Foot.vue';
+import Foot from './Foot.vue';
 
 export default {
-    
+    data: () => ({
+
+    }),
+    created() {
+      this.$store.dispatch('LOAD_BUSINESSES_LIST')
+      // console.log('is this hitting???: ', this.$store.dispatch('LOAD_BUSINESSES_LIST'))
+    },
+    props: ['id'],
+
     components: {
       'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
       'foot': Foot
+    },
+    computed: {
+      myProfile() {
+        console.log('is this hitting???', this.$store.getters.loadedBuzzProfile(this.id))
+        return this.$store.getters.loadedBuzzProfile(this.id)
+      }
     },
 }
 
 </script>
 
+
 <style scoped>
   #grey {
     background-color: rgba(255, 255, 255, 0.637);
     background-size: cover;
+    height: 800px;
     } 
   .flowers {
     background-image: url("../assets/beeplant.jpg");
@@ -74,4 +90,12 @@ export default {
   #pointer {
     cursor: pointer;
   }
+  #edit {
+    color: black;
+  }
+  .welcome {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 5vw;
+}
+
 </style>

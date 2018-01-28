@@ -5,7 +5,7 @@
     <div id="grey">
     <v-container>
       <v-layout>
-        <v-flex xs12 sm6 offset-sm3>
+        <v-flex xs12 sm6 offset-sm3 >
           <v-layout class="shadow">
             <v-flex xs12>
               <v-card color="yellow darken-2" class="white--text">

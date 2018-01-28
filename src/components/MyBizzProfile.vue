@@ -10,21 +10,51 @@
                 <v-card-title primary-title>
                   <div class="welcome">Welcome back, {{ myProfile.first_name }}!</div>
                   <v-spacer></v-spacer>
-                    <v-dialog width="350px" persistent>
-                      <v-btn class="grey" fab accent slot="activator" >
+                   
+                    <v-dialog width="350px" persistent v-model="dialog"> 
+                     <v-btn class="grey" fab accent slot="activator">
                         <v-icon>edit</v-icon>
                       </v-btn>
                       <v-card>
-                        <v-container>
-                          <v-layout row wrap>
+                        <v-container class="white" id="edit">
+                          <v-layout row wrap >
                             <v-flex xs12>
-                              <v-card-title id="edit" class="white">Edit Profile</v-card-title>
+                              <v-card-title>Edit Profile</v-card-title>
                             </v-flex>
                           </v-layout>
                           <v-divider></v-divider>
+                          <v-layout row wrap>
+                            <v-flex xs12>
+                              <v-card-text>
+                                <v-text-field
+                                  name="first_name"
+                                  label="first_name"
+                                  id="first_name"
+                                  v-model="editedName"
+                                  ></v-text-field>
+                                <v-text-field
+                                  name="description"
+                                  label="description"
+                                  id="description"
+                                  multi-line
+                                  v-model="editedDescription"
+                                ></v-text-field>
+                              </v-card-text>
+                            </v-flex>
+                          </v-layout>
+                          <v-divider></v-divider>
+                          <v-layout row wrap>
+                            <v-flex xs12>
+                              <v-card-actions>
+                                <v-btn flat class="blue--text darken-1" @click="dialog = !dialog">Close</v-btn>
+                                <v-btn flat class="blue--text darken-1" >Save</v-btn>
+                              </v-card-actions>
+                            </v-flex>
+                          </v-layout>
                         </v-container>
                       </v-card>
                     </v-dialog>
+
                 </v-card-title>
               </v-card>
             </v-flex>
@@ -54,14 +84,18 @@ import Foot from './Foot.vue';
 import axios from 'axios';
 
 export default {
-    data: () => ({
-
-    }),
+    props: ['id'],
+    
+    data() {
+      return {
+        editedName: this.id.first_name,
+        editedDescription: this.id.description,
+        dialog: false,
+        }
+    },
     created() {
       this.$store.dispatch('LOAD_BUSINESSES_LIST')
-      // console.log('is this hitting???: ', this.$store.dispatch('LOAD_BUSINESSES_LIST'))
     },
-    props: ['id'],
 
     components: {
       'nav-bar-logged-in': NavBarLoggedIn,
