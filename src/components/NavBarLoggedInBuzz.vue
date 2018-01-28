@@ -16,6 +16,9 @@
             </v-container>
           </div>
               <v-spacer></v-spacer>
+            <v-avatar class="grey lighten-1" id="pointer" @click="dashboard">
+                <v-icon color="white">dashboard</v-icon>
+            </v-avatar>
           <v-badge overlap color="red">
             <span slot="badge">3</span>
               <v-avatar class="grey lighten-1" id="pointer" @click="mailbox">
@@ -46,6 +49,9 @@ export default {
       home() {
         this.$router.push('/')
         },
+      dashboard() {
+        this.$router.push('/businesses')
+      },
       profile(id) {
         this.$router.push('/my/buzz/profile/'+this.$store.state.user_id)
       },
