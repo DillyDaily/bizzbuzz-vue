@@ -3,29 +3,30 @@
     <nav-bar-logged-in></nav-bar-logged-in>
     <div class="flowers">
       <div id="grey">
-           <v-flex xs12 sm10 md6 class="white" v-for="message in allMessages" :key="message.id">
-            <v-card>
-              <v-container fluid grid-list-md>
-                <v-layout row>
-                  <v-flex xs12>
-                    <v-card-media id="pointer" @click="clickMethod(message.id)" :src="message.image" height="250px" width="250px" />
-                  </v-flex>
-                  <v-flex>
-                    <v-card-title primary-title>
-                      <div >
-                        <h3 class="bizzcards">{{ message.message }} </h3>
-                      </div>
-                    </v-card-title>
-                    <v-card-actions>
-                      <v-btn id="msgbtn" class="view" flat @click="clickMethod(message.id)">
-                        <v-icon large left light>account_circle</v-icon>
-                        View Profile</v-btn>
-                    </v-card-actions>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
-          </v-flex>
+
+            <v-layout row>
+                <v-flex xs12 sm6 offset-sm3>
+                  <v-card>
+                    <v-toolbar color="cyan" dark>
+                      <v-toolbar-side-icon></v-toolbar-side-icon>
+                      <v-toolbar-title>Inbox</v-toolbar-title>
+                      <v-spacer></v-spacer>
+                      <v-btn icon>
+                        <v-icon>search</v-icon>
+                      </v-btn>
+                    </v-toolbar>
+                    <v-list three-line>
+
+                    <v-flex xs12 sm10 md6 class="white" v-for="message in allMessages" :key="message.id">
+                    <span class="bizzcards">{{ message.message }} </span>   
+                    <v-btn flat>reply</v-btn>
+                    </v-flex>
+                      
+                    </v-list>
+                  </v-card>
+                </v-flex>
+              </v-layout>
+
       </div>
     </div>
     <foot></foot>
