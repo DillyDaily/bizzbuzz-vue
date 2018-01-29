@@ -71,6 +71,7 @@ export default {
             this.axios.patch(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedDescription: this.editedDescription})
             .then(response => {
                 console.log('edit bizz profile: ', response);
+                this.$router.push(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
                 this.dialog = false;
             })
         }
