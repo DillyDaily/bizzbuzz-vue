@@ -26,11 +26,13 @@
         </v-container>
       </div>
     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
   import SimpleNav from './SimpleNav.vue';
+  import Foot from './Foot.vue';
   import axios from 'axios';
   export default {
     name: 'Login',
@@ -53,7 +55,8 @@
       }
     },
     components: {
-      'simple-nav': SimpleNav
+      'simple-nav': SimpleNav,
+      'foot': Foot
     }
   }
 

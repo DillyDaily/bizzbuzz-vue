@@ -28,14 +28,14 @@ export default [
     { path: '/profile/buzz/:id', props: true, component: ProfileBuzz },           //Get One Buzz
     { path: '/contact/buzz/:id', props: true, component: SendMessage },           //Send a Message
    
-    { path: '/my/bizz/messages/:id', props: true, component: BizzMessages },               //Get All Own Messages
-    { path: '/my/buzz/messages/:id', props: true, component: BuzzMessages },               //Get All Own Messages
+    { path: '/my/bizz/messages/:id', props: true, component: BizzMessages },      //Get All Own Messages
+    { path: '/my/buzz/messages/:id', props: true, component: BuzzMessages },      //Get All Own Messages
    
     { path: '/message/:id', props: true, component: OneMessage },                 //Get One Message
     
-    { path: '/my/bizz/profile/:id', props: true, component: MyBizzProfile },                //Get Own Profile
-    { path: '/my/buzz/profile/:id', props: true, component: MyBuzzProfile },                //Get Own Profile
+    { path: '/my/bizz/profile/:id', props: true, component: MyBizzProfile },      //Get Own Profile
+    { path: '/my/buzz/profile/:id', props: true, component: MyBuzzProfile },      //Get Own Profile
     
-    { path: '/login/bizz', component: LoginBizz },                                         //Login
-    { path: '/login/buzz', component: LoginBuzz },                                         //Login
+    { path: '/login/bizz', component: LoginBizz },                                //Login
+    { path: '/login/buzz', component: LoginBuzz },                                //Login
 ]

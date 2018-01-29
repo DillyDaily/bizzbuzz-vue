@@ -3,87 +3,46 @@
     <nav-bar-logged-in></nav-bar-logged-in>
     <div class="flowers">
       <div id="grey">
-        <v-layout row>
-          <v-flex xs12 sm6 offset-sm3>
+           <v-flex xs12 sm10 md6 class="white" v-for="message in allMessages" :key="message.id">
             <v-card>
-              <v-toolbar color="yellow darken-2" dark>
-                <v-toolbar-side-icon></v-toolbar-side-icon>
-                <!-- <v-toolbar-title>{{ oneMessage.message }}</v-toolbar-title> -->
-                <v-spacer></v-spacer>
-                <!-- <v-btn icon>
-                  <v-icon>search</v-icon>
-                </v-btn> -->
-                <!-- <v-btn icon>
-                  <v-icon>check_circle</v-icon>
-                </v-btn> -->
-              </v-toolbar>
-              <v-list two-line>
-                <template v-for="(item, index) in items">
-                  <v-list-tile
-                    avatar
-                    ripple
-                    @click="toggle(index)"
-                    :key="item.title"
-                  >
-                    <v-list-tile-content>
-                      <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-                      <v-list-tile-sub-title class="grey--text text--darken-4">{{ item.headline }}</v-list-tile-sub-title>
-                      <v-list-tile-sub-title>{{ item.subtitle }}</v-list-tile-sub-title>
-                    </v-list-tile-content>
-                    <v-list-tile-action>
-                      <v-list-tile-action-text>{{ item.action }}</v-list-tile-action-text>
-                      <v-icon
-                        color="grey lighten-1"
-                        v-if="selected.indexOf(index) < 0"
-                      >star_border</v-icon>
-                      <v-icon
-                        color="yellow darken-2"
-                        v-else
-                      >star</v-icon>
-                    </v-list-tile-action>
-                  </v-list-tile>
-                  <v-divider v-if="index + 1 < items.length" :key="item.title"></v-divider>
-                </template>
-              </v-list>
+              <v-container fluid grid-list-md>
+                <v-layout row>
+                  <v-flex xs12>
+                    <v-card-media id="pointer" @click="clickMethod(message.id)" :src="message.image" height="250px" width="250px" />
+                  </v-flex>
+                  <v-flex>
+                    <v-card-title primary-title>
+                      <div >
+                        <h3 class="bizzcards">{{ message.message }} </h3>
+                      </div>
+                    </v-card-title>
+                    <v-card-actions>
+                      <v-btn id="msgbtn" class="view" flat @click="clickMethod(message.id)">
+                        <v-icon large left light>account_circle</v-icon>
+                        View Profile</v-btn>
+                    </v-card-actions>
+                  </v-flex>
+                </v-layout>
+              </v-container>
             </v-card>
           </v-flex>
-        </v-layout>
       </div>
     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
 import NavBarLoggedIn from './NavBarLoggedIn.vue';
 import axios from 'axios';
+import Foot from './Foot.vue';
+
 
 export default {
-  data () {
-      return {
-        selected: [2],
-        items: [
-          { action: '15 min', headline: 'Brunch this weekend?', title: 'Ali Connors', subtitle: "I'll be in your neighborhood doing errands this weekend. Do you want to hang out?" },
-          { action: '2 hr', headline: 'Summer BBQ', title: 'me, Scrott, Jennifer', subtitle: "Wish I could come, but I'm out of town this weekend." },
-          { action: '6 hr', headline: 'Oui oui', title: 'Sandra Adams', subtitle: "Do you have Paris recommendations? Have you ever been?" },
-          { action: '12 hr', headline: 'Birthday gift', title: 'Trevor Hansen', subtitle: "Have any ideas about what we should get Heidi for her birthday?" },
-          { action: '18hr', headline: 'Recipe to try', title: 'Britta Holt', subtitle: "We should eat this: Grate, Squash, Corn, and tomatillo Tacos." },
-        ]
-      }
-    },
-    methods: {
-      toggle (index) {
-        const i = this.selected.indexOf(index)
-
-        if (i > -1) {
-          this.selected.splice(i, 1)
-        } else {
-          this.selected.push(index)
-        }
-      }
-    },
 
   components: {
-      'nav-bar-logged-in': NavBarLoggedIn
+      'nav-bar-logged-in': NavBarLoggedIn,
+      'foot': Foot
     },
   created() {
     this.$store.dispatch('LOAD_BIZZ_MESSAGES_LIST')
@@ -92,9 +51,9 @@ export default {
   props: ['id'],
 
   computed: {
-    oneMessage() {
-      console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
-      return this.$store.getters.loadedBizzMessages(this.id)
+    allMessages() {
+      console.log('is this hitting???', this.$store.state.bizz_messages)
+      return this.$store.state.bizz_messages
     }
   },
 }
@@ -104,6 +63,7 @@ export default {
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
+  height: 800px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
