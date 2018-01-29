@@ -52,6 +52,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
     props: ['profile'],
 
@@ -64,11 +65,15 @@ export default {
     },
     methods: {
         saveData () {
-        if (this.editedName.trim() === '' || this.editedDescription.trim() === '') {
-            return
+            let storedToken = localStorage.getItem('token');
+            let parsedToken = JSON.parse(storedToken);
+            console.log('please return something ', parsedToken)
+            this.axios.patch(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedDescription: this.editedDescription})
+            .then(response => {
+                console.log('edit bizz profile: ', response);
+                this.dialog = false;
+            })
         }
-        this.dialog= false
-    }
     },
 }
 </script>

@@ -10,7 +10,9 @@ export const store = new Vuex.Store({
         influencers: [],
         user_id: 0,
         bizz_messages: [],
-        buzz_messages: []
+        buzz_messages: [],
+        // bizz_profile: [],
+        // buzz_profile: []
     },
     actions: {
         LOAD_BUSINESSES_LIST: function ({ commit }) {
@@ -58,7 +60,25 @@ export const store = new Vuex.Store({
             let parsedToken = JSON.parse(storedToken);
             console.log('all the tests', parsedToken)
             commit('SET_USER_OBJECT', { user_id: parsedToken.user_id })
-        }
+        },
+
+        // LOAD_UPDATE_BIZZ_PROFILE: function ({commit}, payload) {
+        //     // const updateBizzObj = {}
+        //     let storedToken = localStorage.getItem('token');
+        //     let parsedToken =  JSON.parse(storedToken)
+        //     axios.patch(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
+        //         .then((response) => {
+        //             commit('SET_UPDATE_BIZZ_MESSAGES_LIST', { list: response.data })
+        //     }, (err) => {
+        //         console.log(err)
+        //     })
+            // if (payload.first_name) {
+            //     updateBizzObj.first_name = payload.first_name
+            // }
+            // if (payload.description) {
+            //     updateBizzObj.description = payload.description
+            // }
+        // }
     },
     mutations: {
         SET_BUSINESSES_LIST: (state, { list }) => {
@@ -80,7 +100,10 @@ export const store = new Vuex.Store({
         SET_USER_OBJECT: function(state, { user_id }) {
             console.log('user_id in mutations', user_id)
             state.user_id = user_id
-        }
+        },
+        // SET_UPDATE_BIZZ_MESSAGES_LIST: function(state, { list }) {
+        //     state.bizzProfile = list 
+        // },
     },
     getters: {
         loadedProfile (state) {

@@ -53,7 +53,6 @@ export default {
 
   computed: {
     allMessages() {
-      console.log('is this hitting???', this.$store.state.bizz_messages)
       return this.$store.state.bizz_messages
     }
   },
