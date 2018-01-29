@@ -4,13 +4,13 @@
     <div id="grey">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
 
-<div class="search-bar">
+          <div>
             <v-container>
-              <v-layout>
-                <v-flex xs 6>
+              <v-layout row wrap>
+                <v-flex xs6  column class="search-bar">
                     <v-text-field 
                     prepend-icon="search" 
-                    color="white" 
+                    color="black" 
                     hide-details single-line
                     v-model="search"
                     placeholder="search"
@@ -134,10 +134,8 @@
   #msgbtn{
     color: rgb(154, 194, 108);
   }
-  /* .shadow{
-    padding: 20px;
-    -webkit-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
-    -moz-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
-    box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
-  } */
+  .search-bar {
+  border-radius: 10px;
+  background-color: rgba(202, 202, 202, 0.315);
+  }
 </style>

@@ -1,8 +1,26 @@
 <template>
   <div id="influencer-list">
-    <nav-bar-logged-in></nav-bar-logged-in>
     <div class="flowers">
       <div id="grey">
+      <nav-bar-logged-in></nav-bar-logged-in>
+
+      <div>
+        <v-container>
+          <v-layout row wrap>
+            <v-flex xs6  column class="search-bar">
+                <v-text-field 
+                prepend-icon="search" 
+                color="black" 
+                hide-details single-line
+                v-model="search"
+                placeholder="search"
+                label="search"
+                ></v-text-field>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+   
       <v-container column>
         <v-layout class="shadow" row wrap>
           <v-flex xs12>
@@ -12,7 +30,7 @@
               </v-card-title>
             </v-card>
           </v-flex>
-          <v-flex xs12 sm10 md6 class="white" v-for="influencer in allInfluencers" :key="influencer.id">
+          <v-flex xs12 sm10 md6 class="white" v-for="influencer in filteredBuzz" :key="influencer.id">
             <v-card>
               <v-container fluid grid-list-md>
                 <v-layout row>
@@ -50,9 +68,11 @@
   import Foot from './Foot.vue';
 
   export default {
-    data: () => ({
-
-    }),
+   data() {
+      return {
+        search: '',
+      }
+    },
     components: {
       'nav-bar-logged-in': NavBarLoggedIn,
       'foot': Foot
@@ -66,6 +86,11 @@
       allInfluencers() {
         console.log("allInfluencers", this.$store.state.influencers)
         return this.$store.state.influencers
+      },
+      filteredBuzz() {
+        return this.$store.state.influencers.filter((influencer) => {
+          return influencer.topics.match(this.search);
+        })
       }
     },
     created() {
@@ -107,6 +132,10 @@
   }
   #msgbtn{
   color: rgb(154, 194, 108);
+  }
+  .search-bar {
+  border-radius: 10px;
+  background-color: rgba(202, 202, 202, 0.315);
   }
   /* .shadow{
     padding: 20px;
