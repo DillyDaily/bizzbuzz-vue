@@ -41,7 +41,8 @@
             <v-flex xs12>
               <v-card-actions>
                 <v-btn flat class="blue--text darken-1" @click="dialog = !dialog">Close</v-btn>
-                <v-btn flat class="blue--text darken-1" >Save</v-btn>
+                <v-btn flat class="blue--text darken-1"
+                @click="saveData"> Save</v-btn>
               </v-card-actions>
             </v-flex>
           </v-layout>
@@ -61,7 +62,14 @@ export default {
         dialog: false,
         }
     },
-
+    methods: {
+        saveData () {
+        if (this.editedName.trim() === '' || this.editedDescription.trim() === '') {
+            return
+        }
+        this.dialog= false
+    }
+    },
 }
 </script>
 
