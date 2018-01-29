@@ -19,14 +19,15 @@
                   <div class="btn-group-create" v-if="createProfile">
                   <div><router-link to ="/register/bizz" exact tag="button" class="button">CREATE BUSINESS ACCT</router-link></div>
                   <div><router-link to ="/register/buzz" exact tag="button" class="button">CREATE INFLUENCER ACCT</router-link></div>
+                    <p>Already have an account?
+                    <v-btn flat class="blue--text" @click="createProfile = !createProfile"> click here </v-btn>to Login 
+                    </p>
                   </div>
                   <div class="btn-group-login" v-else-if="login">
                   <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
                   <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
                   </div>
                   <div>
-                    <v-btn @click="login = !login">Login</v-btn>
-                    <v-btn @click="createProfile = !createProfile">Create A Profile</v-btn>
                   </div>
             </v-flex>
           </v-layout>
@@ -48,7 +49,7 @@ export default {
     return {
       name: '',
       email: '',
-      login: false,
+      login: true,
       createProfile: true,
     }
   },
