@@ -48,11 +48,8 @@ export default {
         this.$router.push('/my/bizz/messages/'+this.$store.state.user_id)
       },
       userLogout() {
-        axios.get("http://localhost:8000/logout").then(()=>{
-          console.log('token', token)
           localStorage.removeItem("token");
           this.$router.push('/')
-        })
       }
     },
 }

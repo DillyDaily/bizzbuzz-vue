@@ -16,12 +16,17 @@
                   </div>
                 </v-card-title>
               </v-card>
-                  <div class="btn-group">
+                  <div class="btn-group-create" v-if="createProfile">
                   <div><router-link to ="/register/bizz" exact tag="button" class="button">CREATE BUSINESS ACCT</router-link></div>
                   <div><router-link to ="/register/buzz" exact tag="button" class="button">CREATE INFLUENCER ACCT</router-link></div>
+                  </div>
+                  <div class="btn-group-login" v-else-if="login">
                   <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
                   <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
-                  <!-- <div><router-link to ="/logout" exact tag="button" class="button">LOGOUT</router-link></div> -->
+                  </div>
+                  <div>
+                    <v-btn @click="login = !login">Login</v-btn>
+                    <v-btn @click="createProfile = !createProfile">Create A Profile</v-btn>
                   </div>
             </v-flex>
           </v-layout>
@@ -42,7 +47,9 @@ export default {
   data() {
     return {
       name: '',
-        email: '',
+      email: '',
+      login: false,
+      createProfile: true,
     }
   },
   methods: {
@@ -77,7 +84,7 @@ export default {
     display: block; /* Make the buttons appear below each other */
     margin-top:1em;
 }
-.btn-group button:hover {
+.button:hover {
     background-color: rgb(96, 122, 67);
 }
 

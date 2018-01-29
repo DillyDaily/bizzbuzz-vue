@@ -49,6 +49,7 @@ export const store = new Vuex.Store({
               console.log(err)
             })
         },
+        
         LOAD_USER_OBJECT: function({ commit }) {
             let storedToken = localStorage.getItem('token');
             let parsedToken = JSON.parse(storedToken);
@@ -67,11 +68,11 @@ export const store = new Vuex.Store({
         },
         SET_BIZZ_MESSAGES_LIST: (state, { list }) => {
             state.bizz_messages = list
-            console.log('messages list ', state.bizz_messages)
+            console.log('bizz messages list ', state.bizz_messages)
         },
         SET_BUZZ_MESSAGES_LIST: (state, { list }) => {
             state.buzz_messages = list
-            console.log('messages list ', state.buzz_messages)
+            console.log('buzz messages list ', state.buzz_messages)
         },
         SET_USER_OBJECT: function(state, { user_id }) {
             console.log('user_id in mutations', user_id)
