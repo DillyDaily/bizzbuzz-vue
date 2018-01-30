@@ -26,7 +26,7 @@
                   <div class="btn-group-login" v-else-if="login">
                   <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
                   <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
-                    <p>j/k I still need to create one.
+                    <p>j/k let's create one.
                     <v-btn flat class="blue--text" @click="createProfile = !createProfile"> click here </v-btn>to create an account 
                     </p>
                   </div>

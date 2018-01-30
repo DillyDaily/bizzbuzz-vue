@@ -7,7 +7,7 @@
             <v-layout row>
                 <v-flex xs12 sm6 offset-sm3>
                   <v-card transition="slide-x-transition">
-                    <v-toolbar color="cyan" dark>
+                    <v-toolbar color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
                       <v-toolbar-title>Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>

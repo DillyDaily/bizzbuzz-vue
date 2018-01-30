@@ -46,7 +46,13 @@
                 <v-text-field name="state" v-model="bizz.state" label="state" required/>
                 <v-text-field name="category" v-model="bizz.category" label="category" required/>
                 <v-text-field name="email" v-model="bizz.email" label="email" required/>
-                <v-text-field name="password" v-model="bizz.password" label="password" required/>
+                <v-text-field name="password" 
+                              v-model="bizz.password" 
+                              label="password" 
+                              :append-icon="el ? 'visibility' : 'visibility_off'"
+                              :append-icon-cb="() => (el = !el)"
+                              :type="el ? 'password' : 'text'"
+                              required/>
                 <v-text-field name="image" v-model="bizz.image" label="logo" required/>
                 <!-- <input type="file" @change="onFileChange()" name="image" accept=".jpg, .jpeg, .png" required/> -->
                 <button @click.prevent="register"> Register </button>
@@ -80,6 +86,7 @@ export default {
             image: '',
             error: null
         },
+        el: false,
         valid: false,
         submitted: false,
         
