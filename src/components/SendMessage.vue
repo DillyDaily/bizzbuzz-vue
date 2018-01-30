@@ -47,7 +47,7 @@
           influencers_id: parsedToken.user_id
 
         })
-        this.$router.push('/businesses')
+        this.$router.push('/influencers')
       }
     }
   }

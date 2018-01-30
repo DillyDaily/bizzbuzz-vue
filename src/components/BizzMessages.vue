@@ -6,20 +6,20 @@
 
           <v-container> 
             <v-layout row>
-                <v-flex xs12 sm6 offset-sm3>
+                <v-flex xs12 sm6 offset-sm3 class="white">
                   <v-card transition="slide-x-transition">
                     <v-toolbar color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
                       <v-toolbar-title>Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>
-                      <v-btn icon>
+                      <!-- <v-btn icon>
                         <v-icon>search</v-icon>
-                      </v-btn>
+                      </v-btn> -->
                     </v-toolbar>
 
-                  <v-expansion-panel>
+                  <!-- <v-expansion-panel>
                   <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
-                    <div slot="header">From: {{ message.first_name }}</div>
+                    <div slot="header">Convo with {{ message.first_name }}</div>
                     <v-card>
                       <div>
                       <v-card-text class="grey lighten-3"> {{ message.message }} 
@@ -28,7 +28,7 @@
                     </div>
                     </v-card>
                   </v-expansion-panel-content>
-                </v-expansion-panel>
+                </v-expansion-panel> -->
 
 
                     <v-list three-line>
