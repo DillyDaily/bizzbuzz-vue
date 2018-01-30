@@ -42,10 +42,17 @@ export default {
         this.$router.push('/influencers')
         },
       profile(id) {
-        this.$router.push('/my/bizz/profile/'+this.$store.state.user_id)
+        let storedToken = localStorage.getItem('token');
+        let parsedToken =  JSON.parse(storedToken)
+
+        this.$router.push(`/my/bizz/profile/${parsedToken.user_id}`)
       },
       mailbox(id) {
-        this.$router.push('/my/bizz/messages/'+this.$store.state.user_id)
+        let storedToken = localStorage.getItem('token');
+        let parsedToken =  JSON.parse(storedToken)
+
+        this.$router.push(`/my/bizz/messages/${parsedToken.user_id}`)
+       
       },
       userLogout() {
           localStorage.removeItem("token");

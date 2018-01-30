@@ -42,7 +42,6 @@ export default {
         this.$router.push('/businesses')
       },
       profile(id) {
-        // this.$router.push('/my/buzz/profile/'+this.$store.state.user_id)
         let storedToken = localStorage.getItem('token');
         let parsedToken =  JSON.parse(storedToken)
 
@@ -50,9 +49,7 @@ export default {
         
         
       },
-      mailbox(id) {
-        // this.$router.push('/my/buzz/messages/'+this.$store.state.user_id)
-        let storedToken = localStorage.getItem('token');
+      mailbox(id) {let storedToken = localStorage.getItem('token');
         let parsedToken =  JSON.parse(storedToken)
 
         this.$router.push(`/my/buzz/messages/${parsedToken.user_id}`)

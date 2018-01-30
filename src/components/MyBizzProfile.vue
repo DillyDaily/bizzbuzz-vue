@@ -58,7 +58,7 @@ export default {
         editedTopics:this.id.topics,
         editedCity:this.id.city,
         editedState:this.id.state,
-        editedImage:this.id.image,
+        // editedImage:this.id.image,
         eidtedCompanyName:this.id.company_name,
         dialog: false,
         }
