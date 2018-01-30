@@ -1,74 +1,72 @@
 <template>
-  <div>
+  <div id="my-buzz-profile">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
         <v-container grid-list-md text-xs-center>
           <v-layout row wrap>
             <v-flex xs12>
-              <v-card color="yellow darken-2" class="white--text">
+              <v-card color="yellow darken-2" class="black--text">
                 <v-card-title primary-title>
-                 <div class="welcome">Welcome back, {{ myProfile.first_name }}!</div>
+                  <div class="welcome">Welcome back, {{ myProfile.first_name }}!</div>
                   <v-spacer></v-spacer>
-                    <v-dialog width="350px" persistent>
-                          <v-btn class="grey" fab accent slot="activator" >
-                            <v-icon>edit</v-icon>
-                          </v-btn>
-                          <v-card>
-                            <v-container>
-                              <v-layout row wrap>
-                                <v-flex xs12>
-                                  <v-card-title id="edit" class="white">Edit Profile</v-card-title>
-                                </v-flex>
-                              </v-layout>
-                              <v-divider></v-divider>
-                            </v-container>
-                          </v-card>
-                        </v-dialog>
-                      </v-card-title>
-                    </v-card>
-                  </v-flex>
-              <v-flex xs6>
-                <v-card dark color="secondary">
-                  <v-card-media id="pointer"  :src="myProfile.image" height="250px" width="250px" />
-                </v-card>
-              </v-flex>
-              <v-flex xs6>
-                <v-card dark color="secondary">
-                  <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
-                  <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
-                  <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
-                </v-card>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </div>
-     <foot></foot>
-    </div>
+                  <template>
+                  <edit-buzz-profile-dialog :profile="myProfile"></edit-buzz-profile-dialog>
+                  </template>
+                   
+                    
+
+                </v-card-title>
+              </v-card>
+            </v-flex>
+            <v-flex xs6>
+              <v-card dark color="secondary">
+                <v-card-media id="pointer"  :src="myProfile.image" height="250px" width="250px" />
+              </v-card>
+            </v-flex>
+            <v-flex xs6>
+              <v-card dark color="secondary">
+                <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
+                <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
+                <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
+              </v-card>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </div>
+     </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
 import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
 import Foot from './Foot.vue';
+import axios from 'axios';
+import EditBuzzProfileDialogVue from './Edit/EditBuzzProfileDialog.vue';
 
 export default {
-    data: () => ({
-
-    }),
-    created() {
-      this.$store.dispatch('LOAD_BUSINESSES_LIST')
-      // console.log('is this hitting???: ', this.$store.dispatch('LOAD_BUSINESSES_LIST'))
-    },
     props: ['id'],
+
+    data() {
+      return {
+        editedName: this.id.first_name,
+        editedDescription: this.id.description,
+        dialog: false,
+        }
+    },
+    created() {
+      this.$store.dispatch('LOAD_INFLUENCERS_LIST')
+    },
 
     components: {
       'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
-      'foot': Foot
+      'foot': Foot,
+      'edit-buzz-profile-dialog': EditBuzzProfileDialogVue
     },
     computed: {
       myProfile() {
-        console.log('is this hitting???', this.$store.getters.loadedBuzzProfile(this.id))
+        console.log('LOADED BUZZ PROFILE???', this.$store.getters.loadedBuzzProfile(this.id))
         return this.$store.getters.loadedBuzzProfile(this.id)
       }
     },
