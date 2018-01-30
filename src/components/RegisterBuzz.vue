@@ -21,11 +21,16 @@
                         <v-text-field
                         name="email"
                         v-model="buzz.email"
-                        label="email"/>
+                        label="email"
+                        required/>
                         <v-text-field
                         name="password"
                         v-model="buzz.password"
-                        label="password"/>
+                        label="password"
+                        :append-icon="el ? 'visibility' : 'visibility_off'"
+                        :append-icon-cb="() => (el = !el)"
+                        :type="el ? 'password' : 'text'"
+                        required/>
                         <v-text-field
                         name="first_name"
                         v-model="buzz.first_name"
@@ -105,6 +110,7 @@ export default {
             state: '',
             image: ''
         },
+        el: false,
         valid: false,
       }
     },

@@ -15,8 +15,8 @@
                         <v-icon>search</v-icon>
                       </v-btn>
                     </v-toolbar>
+                    
                     <v-list three-line>
-
                     <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                       <b>{{message.first_name}}</b>
                     <span class="bizzcards" @click="showMessages(message.influencers_id)">{{ message.message }} </span>   

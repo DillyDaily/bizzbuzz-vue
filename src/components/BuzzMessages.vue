@@ -5,20 +5,35 @@
       <div id="grey">
 
         <v-container>
-          <v-layout>
-            <v-flex>
-            <v-expansion-panel>
-              <v-expansion-panel-content v-for="(item,i) in 5" :key="i">
-                <div slot="header">Item</div>
-                <v-card>
-                  <v-card-text class="grey lighten-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</v-card-text>
-                </v-card>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
+          <v-layout row>
+            <v-flex xs12 sm6 offset-sm3>
+              <v-card>
+                <v-toolbar color="yellow darken-2" dark>
+                  <v-toolbar-side-icon></v-toolbar-side-icon>
+                    <v-toolbar-title>Inbox</v-toolbar-title>
+                    <v-spacer></v-spacer>
+                    <v-btn icon>
+                      <v-icon>search</v-icon>
+                    </v-btn>
+                </v-toolbar>
+                <v-expansion-panel>
+                  <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
+                    <div slot="header">From: {{ message.first_name }}</div>
+                    <v-card>
+                      <div>
+                      <v-card-text class="grey lighten-3"> {{ message.message }} 
+                        <v-btn flat @click="replyMessage(message.influencers_id)">Reply</v-btn>
+                        </v-card-text>
+                    </div>
+                    </v-card>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+
+              </v-card>
             </v-flex>
           </v-layout>
         </v-container>
-        
+
       </div>
     </div>
   </div>
@@ -39,11 +54,26 @@ export default {
   props: ['id'],
 
   computed: {
-    oneProfile() {
-      // console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
-      return this.$store.getters.loadedBuzzProfile(this.id)
+    // oneProfile() {
+    //   // console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
+    //   return this.$store.getters.loadedBuzzProfile(this.id)
+    allMessages() {
+      return this.$store.state.buzz_messages
     }
   },
+  methods:{
+    showMessages:function(business_id){
+      this.showingMessages = false;
+      let storedToken = localStorage.getItem('token');
+      let parsedToken =  JSON.parse(storedToken)
+      console.log(parsedToken)
+      axios.get(`/conversation/bizz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
+        console.log(data)
+        this.viewingMessages = data.data;
+        this.showingMessages = true;
+      })
+    },
+}
 }
 </script>
 
