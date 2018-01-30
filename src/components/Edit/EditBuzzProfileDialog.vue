@@ -122,19 +122,7 @@ export default {
             let storedToken = localStorage.getItem('token');
             let parsedToken = JSON.parse(storedToken);
             console.log('please return something ', parsedToken)
-            this.axios.patch(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, 
-            { 
-              editedName: this.first_name,
-              editedDescription: this.description,
-              editedLastName: this.last_name,
-              editedEmail:this.email,
-              editedPassword:this.password,
-              editedTopics:this.topics,
-              editedCity:this.city,
-              editedState:this.state,
-              // editedImage:this.image,
-              editedPersonalBrand: this.personal_brand,
-              })
+            this.axios.patch(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedEmail: this.editedEmail, editedTopics: this.editedTopics, editedDescription: this.editedDescription})
             .then(response => {
                 console.log('edit buzz profile: ', response);
                 this.$router.push(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
