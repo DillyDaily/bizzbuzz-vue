@@ -20,7 +20,7 @@
                     <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                       <b>{{message.first_name}}</b>
                     <span class="bizzcards" @click="showMessages(message.influencers_id)">{{ message.message }} </span>   
-                    <div class="text-xs-right"><v-btn flat>reply</v-btn></div>
+                    <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">reply</v-btn></div>
                     </v-flex>
                       
                     </v-list>
@@ -74,6 +74,9 @@ export default {
         this.viewingMessages = data.data;
         this.showingMessages = true;
       })
+    },
+    replyMessage: function() {
+      
     }
   },
   computed: {
