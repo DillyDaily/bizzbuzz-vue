@@ -4,6 +4,7 @@
     <div class="flowers">
       <div id="grey">
 
+          <v-container> 
             <v-layout row>
                 <v-flex xs12 sm6 offset-sm3>
                   <v-card transition="slide-x-transition">
@@ -15,7 +16,21 @@
                         <v-icon>search</v-icon>
                       </v-btn>
                     </v-toolbar>
-                    
+
+                  <v-expansion-panel>
+                  <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
+                    <div slot="header">From: {{ message.first_name }}</div>
+                    <v-card>
+                      <div>
+                      <v-card-text class="grey lighten-3"> {{ message.message }} 
+                        <v-btn flat @click="replyMessage(message.influencers_id)">Reply</v-btn>
+                        </v-card-text>
+                    </div>
+                    </v-card>
+                  </v-expansion-panel-content>
+                </v-expansion-panel>
+
+
                     <v-list three-line>
                     <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                       <b>{{message.first_name}}</b>
@@ -27,7 +42,8 @@
                   </v-card>
                 </v-flex>
               </v-layout>
-
+            </v-container>
+             
               <div v-if="showingMessages">
                 <div v-for="message in viewingMessages">
                   <p>{{message.message}}</p>

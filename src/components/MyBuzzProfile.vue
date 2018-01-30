@@ -13,9 +13,6 @@
                   <template>
                   <edit-buzz-profile-dialog :profile="myProfile"></edit-buzz-profile-dialog>
                   </template>
-                   
-                    
-
                 </v-card-title>
               </v-card>
             </v-flex>

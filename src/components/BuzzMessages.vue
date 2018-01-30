@@ -7,7 +7,7 @@
         <v-container>
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-              <v-card>
+              <v-card transition="slide-x-transition">
                 <v-toolbar color="yellow darken-2" dark>
                   <v-toolbar-side-icon></v-toolbar-side-icon>
                     <v-toolbar-title>Inbox</v-toolbar-title>
@@ -18,10 +18,11 @@
                 </v-toolbar>
                 <v-expansion-panel>
                   <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
-                    <div slot="header">From: {{ message.first_name }}</div>
+                    <div slot="header">Convo with: {{ message.first_name }}</div>
                     <v-card>
                       <div>
-                      <v-card-text class="grey lighten-3"> {{ message.message }} 
+                      <v-card-text class="grey lighten-3"> {{ message.message }} </v-card-text>
+                      <v-card-text class="grey lighten-3" @click="showMessages(message.businesses_id)"> show previous messages with {{ message.first_name }}
                         <v-btn flat @click="replyMessage(message.influencers_id)">Reply</v-btn>
                         </v-card-text>
                     </div>
@@ -67,7 +68,7 @@ export default {
       let storedToken = localStorage.getItem('token');
       let parsedToken =  JSON.parse(storedToken)
       console.log(parsedToken)
-      axios.get(`/conversation/bizz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
+      axios.get(`/conversation/buzz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
         console.log(data)
         this.viewingMessages = data.data;
         this.showingMessages = true;

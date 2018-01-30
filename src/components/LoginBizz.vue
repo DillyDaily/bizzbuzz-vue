@@ -17,8 +17,15 @@
                 </v-flex>
               </v-layout>
               <v-form @submit.prevent="userLogin">
-                <v-text-field name="email" v-model="email" label="email" required/>
-                <v-text-field name="password" v-model="password" label="password" required/>
+                <v-text-field name="email" 
+                              v-model="email" 
+                              label="email" 
+                              required/>
+                <v-text-field name="password" 
+                              v-model="password" 
+                              label="password" 
+                              type="password"
+                              required/>
                 <button type='submit'>Login</button>
               </v-form>
             </v-flex>

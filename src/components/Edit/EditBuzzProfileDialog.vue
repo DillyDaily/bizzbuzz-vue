@@ -4,7 +4,7 @@
         <v-icon>edit</v-icon>
     </v-btn>
     <v-card>
-      <v-container class=white>
+      <v-container class="editCard">
         <v-layout row wrap>
           <v-flex xs12 >
             <v-card-title>Edit Profile</v-card-title>
@@ -80,5 +80,8 @@ export default {
 </script>
 
 <style scoped>
-
+.editCard {
+  background-color: white;
+  padding-top: 4%;
+}
 </style>
