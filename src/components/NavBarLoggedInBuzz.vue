@@ -1,5 +1,5 @@
 <template>
-    <div id="nav-bar-logged-in">
+    <div id="nav-bar-logged-in-buzz">
       <v-layout>
         <v-toolbar class="top-nav" color="white">
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>

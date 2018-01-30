@@ -1,14 +1,14 @@
 <template>
   <div id="send-message">
-    <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
-    <h1>SEND Mssg to BIZZ from BUZZ</h1>
+    <nav-bar-logged-in></nav-bar-logged-in>
+    <h1>SEND Mssg to BUZZ from BIZZ</h1>
     <div class="flowers">
       <div id="grey">
         <v-container>
           <v-layout>
             <v-flex xs12>
               <form class="shadow">
-                <input type="textarea" name="message" v-model="bizz.message" placeholder="message" required/>
+                <input type="textarea" name="message" v-model="buzz.message" placeholder="message" required/>
                 <button @click.prevent="send"> Send </button>
               </form>
             </v-flex>
@@ -22,33 +22,33 @@
 
 <script>
   import axios from 'axios';
-  import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
+  import NavBarLoggedIn from './NavBarLoggedIn.vue';
   import Foot from './Foot.vue';
 
   export default {
     data() {
       return {
-        bizz: {
+        buzz: {
           message: '',
           error: null
         }
       }
     },
     components: {
-      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
+      'nav-bar-logged-in': NavBarLoggedIn,
       'foot': Foot
     },
     methods: {
       send() {
         let parsedToken = JSON.parse(localStorage.getItem('token'))
         console.log(parsedToken)
-        this.axios.post('/contact/bizz/' + this.$route.params.id, {
+        this.axios.post('/contact/buzz/' + this.$route.params.id, {
           token: parsedToken.token,
-          message: this.bizz.message,
-          influencers_id: parsedToken.user_id
+          message: this.buzz.message,
+          businesses_id: parsedToken.user_id
 
         })
-        this.$router.push('/businesses')
+        this.$router.push('/influencers')
       }
     }
   }

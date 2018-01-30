@@ -9,6 +9,7 @@ import ProfileBuzz from './components/ProfileBuzz.vue';
 import MyBizzProfile from './components/MyBizzProfile.vue';
 import MyBuzzProfile from './components/MyBuzzProfile.vue';
 import SendMessage from './components/SendMessage.vue';
+import SendMessageToBuzz from './components/SendMessageToBuzz.vue';
 
 import BizzMessages from './components/BizzMessages.vue';
 import BuzzMessages from './components/BuzzMessages.vue';
@@ -27,6 +28,7 @@ export default [
     { path: '/profile/bizz/:id', props: true, component: ProfileBizz },           //Get One Bizz
     { path: '/profile/buzz/:id', props: true, component: ProfileBuzz },           //Get One Buzz
     { path: '/contact/buzz/:id', props: true, component: SendMessage },           //Send a Message
+    { path: '/contact/bizz/:id', props: true, component: SendMessageToBuzz },     //Send a Message
    
     { path: '/my/bizz/messages/:id', props: true, component: BizzMessages },      //Get All Own Messages
     { path: '/my/buzz/messages/:id', props: true, component: BuzzMessages },      //Get All Own Messages
