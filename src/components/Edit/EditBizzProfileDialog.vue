@@ -21,6 +21,42 @@
                 v-model="editedName"
                 ></v-text-field>
                 <v-text-field
+                name="last_name"
+                label="last_name"
+                id="last_name"
+                v-model="editedLastName"
+                ></v-text-field>
+                <v-text-field
+                name="email"
+                label="email"
+                id="email"
+                v-model="editedEmail"
+                ></v-text-field>
+                <v-text-field
+                name="password"
+                label="password"
+                id="password"
+                v-model="editedPassword"
+                ></v-text-field>
+                <v-text-field
+                name="topics"
+                label="topics"
+                id="topics"
+                v-model="editedTopics"
+                ></v-text-field>
+                <v-text-field
+                name="city"
+                label="city"
+                id="city"
+                v-model="editedCity"
+                ></v-text-field>
+                <v-text-field
+                name="state"
+                label="state"
+                id="state"
+                v-model="editedState"
+                ></v-text-field>
+                <v-text-field
                 name="description"
                 label="description"
                 id="description"
@@ -54,6 +90,14 @@ export default {
       return {
         editedName: this.profile.first_name,
         editedDescription: this.profile.description,
+        editedLastName: this.profile.last_name,
+        editedEmail:this.profile.email,
+        editedPassword:this.profile.password,
+        editedTopics:this.profile.topics,
+        editedCity:this.profile.city,
+        editedState:this.profile.state,
+        editedImage:this.profile.image,
+        eidtedCompanyName:this.profile.company_name,
         dialog: false,
         }
     },

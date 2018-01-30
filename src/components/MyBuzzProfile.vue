@@ -51,6 +51,14 @@ export default {
       return {
         editedName: this.id.first_name,
         editedDescription: this.id.description,
+        editedLastName: this.id.last_name,
+        editedEmail:this.id.email,
+        editedPassword:this.id.password,
+        editedTopics:this.id.topics,
+        editedCity:this.id.city,
+        editedState:this.id.state,
+        editedImage:this.id.image,
+        editedPersonalBrand: this.id.personal_brand,
         dialog: false,
         }
     },

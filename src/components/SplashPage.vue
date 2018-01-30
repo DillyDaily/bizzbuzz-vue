@@ -12,7 +12,7 @@
                     <v-card-title primary-title>
                       <div>
                       <h3 class="welcome">Welcome to BizzBuzz Media </h3>
-                      <div class="grow">We're here to help you grow.</div>
+                      <div class="welcome">We're here to help you grow.</div>
                       </div>
                     </v-card-title>
                   </v-card>
