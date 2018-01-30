@@ -1,19 +1,13 @@
 <template>
   <v-dialog xs12 persistent v-model="dialog">
     <v-btn class="grey" fab accent slot="activator">
-        <v-icon>edit</v-icon>
+        <v-icon color="white">edit</v-icon>
     </v-btn>
     <v-card>
       <v-container class=white>
         <v-layout row wrap>
           <v-flex xs12 >
             <v-card-title>Edit Profile</v-card-title>
-          </v-flex>
-        </v-layout>
-        <v-divider></v-divider>
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card-title>content</v-card-title>
           </v-flex>
         </v-layout>
         <v-divider></v-divider>

@@ -13,9 +13,6 @@
                   <template>
                   <edit-bizz-profile-dialog :profile="myProfile"></edit-bizz-profile-dialog>
                   </template>
-                   
-                    
-
                 </v-card-title>
               </v-card>
             </v-flex>
@@ -27,8 +24,11 @@
             <v-flex xs6>
               <v-card dark color="secondary">
                 <v-card-text class="px-0"><h1>Company: {{ myProfile.company_name}}</h1></v-card-text>
+                <v-card-text class="px-0"><h3>Email: {{ myProfile.email}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
+                <v-card-text class="px-0"><h3>City: {{ myProfile.city}}</h3></v-card-text>
+                <v-card-text class="px-0"><h3>State: {{ myProfile.state}}</h3></v-card-text>
               </v-card>
             </v-flex>
           </v-layout>

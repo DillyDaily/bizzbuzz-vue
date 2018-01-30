@@ -26,6 +26,8 @@
                 <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
                 <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
+                <v-card-text class="px-0"><h3>City: {{ myProfile.city}}</h3></v-card-text>
+                <v-card-text class="px-0"><h3>State: {{ myProfile.state}}</h3></v-card-text>
               </v-card>
             </v-flex>
           </v-layout>

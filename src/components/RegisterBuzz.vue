@@ -5,7 +5,7 @@
         <div id="grey">
           <v-container>
             <v-layout >
-              <v-flex xs12 sm8 offset-sm2>
+              <v-flex xs12 sm6 offset-sm3 class="shadow">
                 <v-layout row wrap>
                 <v-flex xs12 >
                 <v-card color="yellow darken-2" class="white--text">
@@ -17,7 +17,7 @@
               </v-flex>
             </v-layout>
 
-                    <v-form class="white">
+                    <v-form class="shadow">
                         <v-text-field
                         name="email"
                         v-model="buzz.email"
@@ -83,7 +83,7 @@
                         Register
                         </button>
                     </v-form>
-            </v-flex>
+                 </v-flex>
             </v-layout>
         </v-container>
       </div>
@@ -119,7 +119,7 @@ export default {
     },
 
     methods: {
-      register(e) {
+      register() {
             this.axios.post('/register/buzz', {
                 email: this.buzz.email,
                 password: this.buzz.password,
@@ -137,16 +137,13 @@ export default {
             }) 
         }
     },
-    computed: {
-    
-    },
 }
 
 </script>
 
 <style scoped >
 #grey {
-  background-color: rgba(255, 255, 255, 0.637);
+  background-color: rgba(22, 22, 22, 0.637);
   background-size: cover;
   } 
 .flowers {
@@ -181,29 +178,37 @@ export default {
     text-align: center;
     padding: 50px 0;
   }
-
-/* CSS */
-#register-bizz {
-   margin: 20px auto;
-}
-label{
-    display: block;
-    margin: 20px 0 10px;
-}
-input {
-    display: block;
-    background-color: #eee;
-    width: 100%;
-    padding: 1%;
-}
-button {
+  #register-buzz {
+    margin: 20px auto;
+  }
+  label{
+      display: block;
+      margin: 20px 0 10px;
+  }
+  input {
+      display: block;
+      background-color: #eee;
+      width: 100%;
+      padding: 1%;
+  }
+  button {
     background-color: rgb(154, 194, 108); /* Green */
-    border: none;
+    border-radius: 3px;
     color: white;
     padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
     font-size: 16px;
-}
+    cursor: pointer; 
+    margin-top:1em;
+    }
+    button:hover {
+      background-color: rgb(96, 122, 67);
+    }
+    .shadow{
+    padding: 20px;
+    -webkit-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+    -moz-box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+    box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
+    background-color: rgb(228, 227, 227);
+    border-radius: 4px;
+    }
 </style>
