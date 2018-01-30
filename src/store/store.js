@@ -110,7 +110,7 @@ export const store = new Vuex.Store({
             return (profileID) => {
               return state.businesses.find((profile) => {
                 return profile.id == profileID   
-                console.log('profileID ', profileID) 
+                console.log('BIZZ profileID ', profileID) 
                 })
             } 
         },
@@ -118,7 +118,7 @@ export const store = new Vuex.Store({
             return (profileID) => {
               return state.influencers.find((profile) => {
                 return profile.id == profileID   
-                console.log('profileID ', profileID) 
+                console.log('BUZZ profileID ', profileID) 
                 })
             } 
         },

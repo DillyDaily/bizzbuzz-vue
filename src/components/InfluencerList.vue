@@ -96,7 +96,6 @@
     created() {
       this.$store.dispatch('LOAD_INFLUENCERS_LIST')
     },
-    mounted() {}
   }
 
 </script>

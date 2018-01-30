@@ -58,12 +58,12 @@
                       id="state"
                       v-model="editedState"
                       ></v-text-field>
-                      <v-text-field
+                      <!-- <v-text-field
                       name="image"
                       label="image"
                       id="image"
                       v-model="editedImage"
-                      ></v-text-field>
+                      ></v-text-field> -->
                       <v-text-field
                       name="personal_brand"
                       label="personal_brand"
@@ -112,7 +112,7 @@ export default {
         editedTopics:this.profile.topics,
         editedCity:this.profile.city,
         editedState:this.profile.state,
-        editedImage:this.profile.image,
+        // editedImage:this.profile.image,
         editedPersonalBrand: this.profile.personal_brand,
         dialog: false,
         }
@@ -122,7 +122,19 @@ export default {
             let storedToken = localStorage.getItem('token');
             let parsedToken = JSON.parse(storedToken);
             console.log('please return something ', parsedToken)
-            this.axios.patch(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedDescription: this.editedDescription})
+            this.axios.patch(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, 
+            { 
+              editedName: this.first_name,
+              editedDescription: this.description,
+              editedLastName: this.last_name,
+              editedEmail:this.email,
+              editedPassword:this.password,
+              editedTopics:this.topics,
+              editedCity:this.city,
+              editedState:this.state,
+              // editedImage:this.image,
+              editedPersonalBrand: this.personal_brand,
+              })
             .then(response => {
                 console.log('edit buzz profile: ', response);
                 this.$router.push(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
