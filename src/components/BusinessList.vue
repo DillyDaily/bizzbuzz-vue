@@ -88,7 +88,7 @@
       },
       filteredBizz() {
         return this.$store.state.businesses.filter((business)=> {
-          return business.topics.match(this.search);
+          return business.topics.includes(this.search) || business.city.includes(this.search) || business.state.includes(this.search);
         })
       }
     },

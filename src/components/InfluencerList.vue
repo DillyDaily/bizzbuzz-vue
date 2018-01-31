@@ -88,7 +88,7 @@
       },
       filteredBuzz() {
         return this.$store.state.influencers.filter((influencer) => {
-          return influencer.topics.match(this.search);
+          return influencer.topics.includes(this.search) || influencer.city.includes(this.search) || influencer.state.includes(this.search);
         })
       }
     },

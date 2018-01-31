@@ -11,7 +11,7 @@
           <v-badge overlap color="red">
             <span slot="badge">3</span>
               <v-avatar class="grey lighten-1" id="pointer" @click="mailbox">
-                <v-icon color="white">notifications</v-icon>
+                <v-icon color="white">mail</v-icon>
               </v-avatar>
           </v-badge>
             <v-avatar class="grey lighten-1" id="pointer" @click="profile">
