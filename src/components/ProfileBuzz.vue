@@ -4,7 +4,7 @@
     <div class="flowers">
       <div id="grey">
       <v-container>
-        <v-layout row >
+        <v-layout row class="white">
           <v-flex xs12>
             <v-card>
               <v-container fluid>

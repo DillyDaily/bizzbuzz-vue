@@ -9,11 +9,12 @@
               <v-layout class="shadow">
                 <v-flex xs12>
                   <v-card color="yellow darken-2" class="white--text">
-                    <v-card-title primary-title>
-                      <div>
-                      <div class="welcome">Welcome to <span class="bizzbuzz">BizzBuzz Media</span></div>
-                      <div class="welcome">We're here to help you grow.</div>
-                      </div>
+                    <v-card-title primary-title id="splash-card">
+                      
+                      <div class="welcome">Welcome to</div> 
+                      <div class="bizzbuzz">BizzBuzz Media</div>
+                      <div class="grow">We're here to help you grow.</div>
+                      
                     </v-card-title>
                   </v-card>
                   <div class="btn-group-create" v-if="createProfile">
@@ -104,17 +105,31 @@ export default {
 }
 .welcome {
   font-family: 'Shadows Into Light Two', cursive;
+  font-size: 3vw;
+  font-style: bold;
+  color:white;
+  display: flex;
+  justify-content: center;
+}
+.grow{
+  font-family: 'Shadows Into Light Two', cursive;
   font-size: 2vw;
   color:white;
+  display: flex;
+  justify-content: center;
 }
 .bizzbuzz{
   font-family: 'Cabin Sketch', cursive;
-  font-size: 2.5vw;
+  font-size: 3vw;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 .splash{
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 2em;
 }
-
+#splash-card{
+  display: block;
+}
 </style>

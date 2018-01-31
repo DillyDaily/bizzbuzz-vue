@@ -3,7 +3,7 @@
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
-      <v-container >
+      <v-container>
         <v-layout row class="white">
           <v-flex xs12>
             <v-card>
