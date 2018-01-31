@@ -1,10 +1,8 @@
 <template>
-    <v-layout>
-      <v-flex xs12>
-        <v-dialog persistent v-model="dialog" >
-          <v-btn class="grey" fab accent slot="activator">
-              <v-icon color="white">edit</v-icon>
-          </v-btn>
+  <v-dialog persistent v-model="dialog" >
+      <v-btn class="grey" fab accent slot="activator">
+          <v-icon color="white">edit</v-icon>
+      </v-btn>
           <v-card id="smaller">
             <v-container class="editCard">
               <v-layout row wrap >
@@ -87,8 +85,6 @@
       </v-container>
     </v-card>
   </v-dialog>
-  </v-flex>
- </v-layout>
 </template>
 
 <script>

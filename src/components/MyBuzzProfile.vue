@@ -25,12 +25,12 @@
               </v-card>
             </v-flex>
             <v-flex xs6 offset-6 class="white">
-              <div>
-                <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
-                <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
-                <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
-                <v-card-text class="px-0"><h3>City: {{ myProfile.city}}</h3></v-card-text>
-                <v-card-text class="px-0"><h3>State: {{ myProfile.state}}</h3></v-card-text>
+              <div class="profile-card">
+                <v-card-text class="px-0"><div><b>Personal Brand:</b> {{ myProfile.personal_brand}}</div></v-card-text>
+                <v-card-text class="px-0"><div><b>Description:</b> {{ myProfile.description}}</div></v-card-text>
+                <v-card-text class="px-0"><div><b>Topics:</b> {{ myProfile.topics}}</div></v-card-text>
+                <v-card-text class="px-0"><div><b>City:</b> {{ myProfile.city}}</div></v-card-text>
+                <v-card-text class="px-0"><div><b>State: </b>{{ myProfile.state}}</div></v-card-text>
               </div>
             </v-flex>
           </v-layout>
@@ -122,5 +122,10 @@ export default {
   .shadow{
     padding: 10%;
     }
+  .profile-card{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5em;
+    padding-top: 4%;
+  }
 
 </style>

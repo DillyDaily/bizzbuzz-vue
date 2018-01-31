@@ -3,8 +3,8 @@
     <nav-bar-logged-in></nav-bar-logged-in>
     <div class="flowers">
       <div id="grey">
-          <v-container> 
-            <v-layout row>
+          <v-container class="shadow"> 
+            <v-layout row class="top-pad">
                 <v-flex xs12 sm6 offset-sm3 class="white">
                   <v-card transition="slide-x-transition">
                     <v-toolbar color="yellow darken-2" dark>
@@ -98,11 +98,18 @@ export default {
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
-  height: 800px;
+  height: 900px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
   background-size: cover;
-}
-
+  }
+.shadow{
+    padding: 10% 5%;
+  }
+.welcome {
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 3vw;
+    color: white;
+  }
 </style>

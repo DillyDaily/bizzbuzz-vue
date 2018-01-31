@@ -183,6 +183,8 @@ export default {
       font-size: 16px;
       cursor: pointer; 
       margin-top:1em;
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 1.5em;
     }
     button:hover {
       background-color: rgb(96, 122, 67);
