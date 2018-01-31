@@ -43,7 +43,7 @@
                 <v-text-field name="topics" v-model="bizz.topics" label="topics" required/>
                 <v-text-field name="city" v-model="bizz.city" label="city" required/>
                 <v-text-field name="state" v-model="bizz.state" label="state" required/>
-                <v-text-field name="category" v-model="bizz.category" label="category" required/>
+                <v-text-field name="category" v-model="bizz.category" label="website" required/>
                 <v-text-field name="email" v-model="bizz.email" label="email" required/>
                 <v-text-field name="password" 
                               v-model="bizz.password" 

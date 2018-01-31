@@ -61,7 +61,7 @@
                         <v-text-field
                         name="category"
                         v-model="buzz.category"
-                        label="buzz category"
+                        label="website"
                         required/>
                         <v-text-field
                         name="city"

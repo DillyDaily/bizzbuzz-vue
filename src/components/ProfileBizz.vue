@@ -26,6 +26,10 @@
                             <br>
                             <div><b>Description:</b> {{ oneProfile.description }} </div>
                             <br>
+                            <div><b>Website:</b> {{ oneProfile.category }} </div>
+                            <br>
+                            <div><b>Relevant Topics:</b> {{ oneProfile.topics }} </div>
+                            <br>
                             <div><b>Contact:</b> {{ oneProfile.first_name }} </div>
                         </v-card-text>
                       </div>
