@@ -3,7 +3,6 @@
     <nav-bar-logged-in></nav-bar-logged-in>
     <div class="flowers">
       <div id="grey">
-
           <v-container> 
             <v-layout row>
                 <v-flex xs12 sm6 offset-sm3 class="white">
@@ -12,24 +11,18 @@
                       <v-toolbar-side-icon></v-toolbar-side-icon>
                       <v-toolbar-title>Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>
-                      <!-- <v-btn icon>
-                        <v-icon>search</v-icon>
-                      </v-btn> -->
                     </v-toolbar>
-
-              
-                  <v-layout row wrap>
-                    <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
-                      <b>Convo with {{message.first_name}}</b>
-                      <p> Most Recent Message {{ message.message }} </p> 
-                      <div dark @click.stop="dialog = true">  
-                      <v-btn class="bizzcards" @click="showMessages(message.influencers_id)">Hx</v-btn>
-                      <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div>
-                      <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
-                      </div>
-                    </v-flex>
-                  </v-layout>
-
+                    <v-layout row wrap>
+                      <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
+                        <b>Convo with {{message.first_name}}</b>
+                        <p> Most Recent Message {{ message.message }} </p> 
+                        <div dark @click.stop="dialog = true">  
+                        <v-btn @click="showMessages(message.influencers_id)">Hx</v-btn>
+                        <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div>
+                        <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
+                        </div>
+                      </v-flex>
+                    </v-layout>
                   <v-dialog v-model="dialog" max-width="500px">
                     <v-card class="white">
                       <v-card-title>
@@ -40,18 +33,17 @@
                           <!-- <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div> -->
                         </div>
                       </v-card-title>
-                    <v-card-actions>
+                      <v-card-actions>
                       <v-btn color="primary" flat @click.stop="dialog=false">Close</v-btn>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
-                  </v-card>
-                </v-flex>
-              </v-layout>
-            </v-container>
-             
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </div>
       </div>
-    </div>
     <foot></foot>
   </div>
 </template>

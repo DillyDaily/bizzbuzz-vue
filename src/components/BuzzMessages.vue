@@ -4,78 +4,95 @@
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
-
-        <v-container>
-          <v-layout row>
-            <v-flex xs12 sm6 offset-sm3>
-              <v-card transition="slide-x-transition">
-                <v-toolbar color="yellow darken-2" dark>
-                  <v-toolbar-side-icon></v-toolbar-side-icon>
-                    <v-toolbar-title>Inbox</v-toolbar-title>
-                    <v-spacer></v-spacer>
-                    <v-btn icon>
-                      <v-icon>search</v-icon>
-                    </v-btn>
-                </v-toolbar>
-                <v-expansion-panel>
-                  <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
-                    <div slot="header">Convo with: {{ message.first_name }}</div>
-                    <v-card>
-                      <div>
-                      <v-card-text class="grey lighten-3"> {{ message.message }} </v-card-text>
-                      <v-card-text class="grey lighten-3" @click="showMessages(message.businesses_id)"> show previous messages with {{ message.first_name }}
-                        <v-btn flat @click="replyMessage(message.influencers_id)">Reply</v-btn>
-                        </v-card-text>
-                    </div>
+        <v-container> 
+            <v-layout row>
+                <v-flex xs12 sm6 offset-sm3 class="white">
+                  <v-card transition="slide-x-transition">
+                    <v-toolbar color="yellow darken-2" dark>
+                      <v-toolbar-side-icon></v-toolbar-side-icon>
+                      <v-toolbar-title>Inbox</v-toolbar-title>
+                      <v-spacer></v-spacer>
+                    </v-toolbar>
+                    <v-layout row wrap>
+                      <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
+                        <b>Convo with {{message.first_name}}</b>
+                        <p> Most Recent Message {{ message.message }} </p> 
+                        <div dark @click.stop="dialog = true">  
+                        <v-btn @click="showMessages(message.businesses_id)">Hx</v-btn>
+                        <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
+                        <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
+                        </div>
+                      </v-flex>
+                    </v-layout>
+                  <v-dialog v-model="dialog" max-width="500px">
+                    <v-card class="white">
+                      <v-card-title>
+                        <div v-if="showingMessages">
+                          <div v-for="message in viewingMessages">
+                            <p>Past messages: {{message.message}}</p>
+                          </div>
+                          <!-- <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div> -->
+                        </div>
+                      </v-card-title>
+                      <v-card-actions>
+                      <v-btn color="primary" flat @click.stop="dialog=false">Close</v-btn>
+                      </v-card-actions>
                     </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel>
-
-              </v-card>
-            </v-flex>
-          </v-layout>
-        </v-container>
-
+                  </v-dialog>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-container>
+        </div>
       </div>
-    </div>
+    <foot></foot>
   </div>
 </template>
 
 <script>
 import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
 import axios from 'axios';
+import Foot from './Foot.vue';
 
 export default {
   components: {
-      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz
+      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
+      'foot' : Foot
     },
   created() {
     this.$store.dispatch('LOAD_BUZZ_MESSAGES_LIST')
   },
 
   props: ['id'],
+  data(){
+    return({
+      showingMessages: false,
+      viewingMessages: [],
+      dialog: false
+    })
+  },
+    methods:{
+      showMessages:function(business_id){
+        this.showingMessages = false;
+        let storedToken = localStorage.getItem('token');
+        let parsedToken =  JSON.parse(storedToken)
+        console.log(parsedToken)
+        axios.get(`/conversation/buzz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
+          console.log(data)
+          this.viewingMessages = data.data;
+          this.showingMessages = true;
+        })
+      },
+    },
+    replyMessage(businesses_id) {
+      this.$router.push('/contact/buzz/'+ businesses_id)
+    },
 
   computed: {
-    // oneProfile() {
-    //   // console.log('is this hitting???', this.$store.getters.loadedProfile(this.id))
-    //   return this.$store.getters.loadedBuzzProfile(this.id)
     allMessages() {
       return this.$store.state.buzz_messages
     }
   },
-  methods:{
-    showMessages:function(business_id){
-      this.showingMessages = false;
-      let storedToken = localStorage.getItem('token');
-      let parsedToken =  JSON.parse(storedToken)
-      console.log(parsedToken)
-      axios.get(`/conversation/buzz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
-        console.log(data)
-        this.viewingMessages = data.data;
-        this.showingMessages = true;
-      })
-    },
-}
 }
 </script>
 
