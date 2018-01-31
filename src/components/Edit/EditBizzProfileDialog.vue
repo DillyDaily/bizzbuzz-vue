@@ -30,7 +30,7 @@
                 name="company_name"
                 label="company_name"
                 id="company_name"
-                v-model="eidtedCompanyName"
+                v-model="editedCompanyName"
                 ></v-text-field>
                 <v-text-field
                 name="email"
@@ -103,7 +103,7 @@ export default {
         editedCity:this.profile.city,
         editedState:this.profile.state,
         // editedImage:this.profile.image,
-        eidtedCompanyName:this.profile.company_name,
+        editedCompanyName:this.profile.company_name,
         dialog: false,
         }
     },
@@ -112,7 +112,7 @@ export default {
             let storedToken = localStorage.getItem('token');
             let parsedToken = JSON.parse(storedToken);
             console.log('please return something ', parsedToken)
-            this.axios.patch(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedEmail: this.editedEmail, editedTopics: this.editedTopics, editedDescription: this.editedDescription, eidtedCompanyName: this.eidtedCompanyName})
+            this.axios.patch(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedEmail: this.editedEmail, editedTopics: this.editedTopics, editedDescription: this.editedDescription, editedCompanyName: this.editedCompanyName, editedCity: this.editedCity, editedState: this.editedState})
             .then(response => {
                 console.log('edit bizz profile: ', response);
                 this.$router.push(`/my/bizz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
