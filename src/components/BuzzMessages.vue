@@ -9,7 +9,7 @@
                   <v-card transition="slide-x-transition">
                     <v-toolbar class="inbox-header" color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
-                      <v-toolbar-title class="welcome">Inbox</v-toolbar-title>
+                      <v-toolbar-title class="welcome">Inbox TESTING</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
                     <v-layout row wrap class="inbox-body">
@@ -76,16 +76,16 @@ export default {
         this.showingMessages = false;
         let storedToken = localStorage.getItem('token');
         let parsedToken =  JSON.parse(storedToken)
-        console.log(parsedToken)
+        // console.log(parsedToken)
         axios.get(`/conversation/buzz/${business_id}/?token=${parsedToken.token}`).then((data)=>{
-          console.log(data)
+          // console.log(data)
           this.viewingMessages = data.data;
           this.showingMessages = true;
         })
       },
-    },
     replyMessage(businesses_id) {
       this.$router.push('/contact/buzz/'+ businesses_id)
+      },
     },
 
   computed: {

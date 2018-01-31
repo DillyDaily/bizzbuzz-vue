@@ -37,7 +37,7 @@ export const store = new Vuex.Store({
         LOAD_BIZZ_MESSAGES_LIST: function ({ commit }) {
             let storedToken = localStorage.getItem('token');
             let parsedToken =  JSON.parse(storedToken)
-            console.log('parsed Token: ', parsedToken)
+            // console.log('parsed Token: ', parsedToken)
             axios.get(`/my/bizz/messages/${parsedToken.user_id}?token=${parsedToken.token}`)
                 .then((response) => {
                     commit('SET_BIZZ_MESSAGES_LIST', { list: response.data })
