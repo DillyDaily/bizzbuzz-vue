@@ -40,7 +40,7 @@
                 <v-text-field name="last_name" v-model="bizz.last_name" label="last name" required/>
                 <v-text-field name="company_name" v-model="bizz.company_name" label="company name" required/>
                 <v-text-field name="description" v-model="bizz.description" label="description" textarea required/>
-                <v-text-field name="topics" v-model="bizz.topics" label="topics" required/>
+                <v-text-field name="topics" v-model="bizz.topics" label="key words" required/>
                 <v-text-field name="city" v-model="bizz.city" label="city" required/>
                 <v-text-field name="state" v-model="bizz.state" label="state" required/>
                 <v-text-field name="category" v-model="bizz.category" label="website" required/>

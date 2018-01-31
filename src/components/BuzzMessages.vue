@@ -9,20 +9,42 @@
                   <v-card transition="slide-x-transition">
                     <v-toolbar class="inbox-header" color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
-                      <v-toolbar-title class="welcome">Inbox</v-toolbar-title>
+                      <v-toolbar-title class="welcome">Inbox TESTING</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
+
                     <v-layout row wrap class="inbox-body">
-                      <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
-                        <b>Convo with {{message.first_name}}</b>
-                        <p> Most Recent Message {{ message.message }} </p> 
+                    <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
+                        <v-card>
+                        <v-toolbar>
+                          <v-toolbar-title>
+                      <v-list two-line>
+                        <div>
+                          <v-list-tile-content>Keep chatting with {{message.first_name}} from {{ message.company_name }}</v-list-tile-content>
+                        
+                        </div>
+                        <div>
+                          <v-list-tile-title> {{ message.message }} </v-list-tile-title>  
+                        </div>
+                      </v-list>
+                        
+                          </v-toolbar-title>
+                        </v-toolbar>
+                        
+
                         <div dark @click.stop="dialog = true">  
-                        <v-btn flat @click="showMessages(message.businesses_id)">Show Convo</v-btn>
+                          <v-div class="pointer" flat @click="showMessages(message.businesses_id)"><v-avatar class="grey lighten-1">
+                              <v-icon>question_answer</v-icon>
+                            </v-avatar>
+                          </v-div>
                         <div class="text-xs-right"> <v-btn @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
                         <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
                         <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
+                        </v-card>
                       </v-flex>
+
+
                     </v-layout>
                   <v-dialog v-model="dialog" max-width="500px">
                     <v-card class="white">
@@ -122,5 +144,8 @@ export default {
   }
   #divide-pad{
     margin-bottom: 4%;
+  }
+  .pointer {
+   cursor: pointer;
   }
 </style>

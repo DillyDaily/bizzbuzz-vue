@@ -50,7 +50,7 @@
                         <v-text-field
                         name="topics"
                         v-model="buzz.topics"
-                        label="topics"
+                        label="key words"
                         textarea
                         required/>
                         <v-text-field
