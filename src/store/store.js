@@ -66,6 +66,10 @@ export const store = new Vuex.Store({
         LOAD_UPDATE_BUZZ_PROFILE: function({ commit }, data) {
             console.log('Buzz Update data: ', data)
             commit('SET_UPDATE_BUZZ_PROFILE', data)
+        },
+        LOAD_UPDATE_BIZZ_PROFILE: function({ commit }, data) {
+            console.log('Buzz Update data: ', data)
+            commit('SET_UPDATE_BIZZ_PROFILE', data)
         }
     },
     mutations: {
@@ -92,6 +96,9 @@ export const store = new Vuex.Store({
         SET_UPDATE_BUZZ_PROFILE: function(state, list) {
             console.log('UPDATE Buzz LIST: ', list)
             state.influencers = list 
+        },
+        SET_UPDATE_BIZZ_PROFILE: function(state, list) {
+            state.businesses = list 
         },
     },
     getters: {
