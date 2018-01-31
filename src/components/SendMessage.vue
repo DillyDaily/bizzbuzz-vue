@@ -1,7 +1,6 @@
 <template>
   <div id="send-message">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
-    <h1>SEND Mssg to BIZZ from BUZZ</h1>
     <div class="flowers">
       <div id="grey">
         <v-container>

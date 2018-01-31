@@ -53,9 +53,7 @@ import NavBarLoggedIn from './NavBarLoggedIn.vue';
 import axios from 'axios';
 import Foot from './Foot.vue';
 
-
 export default {
-
   components: {
       'nav-bar-logged-in': NavBarLoggedIn,
       'foot': Foot
