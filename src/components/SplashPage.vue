@@ -20,14 +20,14 @@
                   <div class="btn-group-create" v-if="createProfile">
                     <div class="splash"><router-link to ="/register/bizz" exact tag="button" class="button">Create Business Acct</router-link></div>
                     <div class="splash"><router-link to ="/register/buzz" exact tag="button" class="button">Create Influencer Acct</router-link></div>
-                    <p>Already have an account?
+                    <p class="toggle-login">Already have an account?
                       <v-btn flat class="blue--text" @click="createProfile = !createProfile"> login </v-btn> 
                     </p>
                   </div>
                   <div class="btn-group-login" v-else-if="login">
                     <div class="splash"><router-link to ="/login/bizz" exact tag="button" class="button">Login as Bizz</router-link></div>
                     <div class="splash"><router-link to ="/login/buzz" exact tag="button" class="button">Login as Buzz</router-link></div>
-                    <p>j/k let's create one.
+                    <p class="toggle-login">Need to create an account?
                       <v-btn flat class="blue--text" @click="createProfile = !createProfile"> click here </v-btn>
                     </p>
                   </div>
@@ -131,5 +131,8 @@ export default {
 }
 #splash-card{
   display: block;
+}
+.toggle-login{
+  font-family: 'Montserrat', sans-serif;
 }
 </style>

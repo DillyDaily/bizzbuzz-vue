@@ -1,44 +1,44 @@
 <template>
   <div id="profile-bizz">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
-    <div class="flowers">
-      <div id="grey">
-      <v-container>
-        <v-layout row class="white">
-          <v-flex xs12>
-            <v-card>
-              <v-container fluid>
-                <v-layout row>
-                  <v-flex>
-                    <v-card-title primary-title>
-                      <div>
-                        <h3>Company Name: {{ oneProfile.company_name }} </h3>
-                      </div>
-                    </v-card-title>
-                    <v-container column>
-                      <v-layout row>
-                        <v-flex xs12 sm6 med6>
-                          <v-card-media :src="oneProfile.image" height="400px" width="250px"></v-card-media>
-                          <v-card-text>
-                            <div>Description: {{ oneProfile.description }} </div>
-                          </v-card-text>
-                        </v-flex>
-                      </v-layout>
-                    </v-container>
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-                      <v-btn id="msgbtn" flat @click="clickMethod(oneProfile.id)">
-                        <v-icon left light>send</v-icon>
-                        Message</v-btn>
-                    </v-card-actions>
+      <div class="flowers">
+        <div id="grey">
+          <v-container grid-list-md text-xs-center class="shadow">
+            <v-layout row wrap class="white">
+
+              <v-flex xs12>
+                <v-card color="yellow darken-2" class="black--text">
+                  <v-card-title primary-title>
+                    <div class="welcome">Bizz Profile</div>
+                  </v-card-title>
+                </v-card>
+              </v-flex>
+
+                  <v-flex xs6>
+                    <v-card>
+                      <v-card-media :src="oneProfile.image" height="400px" width="400px"></v-card-media>  
+                    </v-card>
                   </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </div>
+                    <v-flex xs6 offset-6>
+                      <div class="profile-card">
+                        <v-card-text>
+                            <div><b>Company Name:</b> {{ oneProfile.company_name }} </div>
+                            <br>
+                            <div><b>Description:</b> {{ oneProfile.description }} </div>
+                            <br>
+                            <div><b>Contact:</b> {{ oneProfile.first_name }} </div>
+                        </v-card-text>
+                      </div>
+                        <v-card-actions>
+                          <v-spacer></v-spacer>
+                          <v-btn id="msgbtn" flat @click="clickMethod(oneProfile.id)">
+                            <v-icon left light>send</v-icon>
+                          Message</v-btn>
+                        </v-card-actions>
+                    </v-flex>
+            </v-layout>
+          </v-container>
+      </div>
     </div>
   </div>
 </template>
@@ -77,13 +77,25 @@
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
-  } 
+} 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
   background-size: cover;
 } 
-
 #msgbtn{
   color: rgb(154, 194, 108);
+}
+.profile-card{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  padding-top: 4%;
+}
+.shadow{
+  padding: 10%;
+}
+.welcome {
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 3vw;
+  color: white !important;
 }
 </style>
