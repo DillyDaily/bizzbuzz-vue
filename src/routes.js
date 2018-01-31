@@ -14,7 +14,6 @@ import SendMessageToBuzz from './components/SendMessageToBuzz.vue';
 import BizzMessages from './components/BizzMessages.vue';
 import BuzzMessages from './components/BuzzMessages.vue';
 
-import OneMessage from './components/OneMessage.vue';
 import LoginBizz from './components/LoginBizz.vue';
 import LoginBuzz from './components/LoginBuzz.vue';
 
@@ -33,8 +32,6 @@ export default [
     { path: '/my/bizz/messages/:id', props: true, component: BizzMessages },      //Get All Own Messages
     { path: '/my/buzz/messages/:id', props: true, component: BuzzMessages },      //Get All Own Messages
    
-    { path: '/message/:id', props: true, component: OneMessage },                 //Get One Message
-    
     { path: '/my/bizz/profile/:id', props: true, component: MyBizzProfile },      //Get Own Profile
     { path: '/my/buzz/profile/:id', props: true, component: MyBuzzProfile },      //Get Own Profile
     

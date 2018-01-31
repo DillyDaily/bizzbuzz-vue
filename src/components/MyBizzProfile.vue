@@ -102,6 +102,7 @@ export default {
   .welcome {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 5vw;
+  color: white !important;
 }
 
 </style>

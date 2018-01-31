@@ -11,21 +11,21 @@
                   <v-card color="yellow darken-2" class="white--text">
                     <v-card-title primary-title>
                       <div>
-                      <h3 class="welcome">Welcome to BizzBuzz Media </h3>
+                      <div class="welcome">Welcome to <span class="bizzbuzz">BizzBuzz Media</span></div>
                       <div class="welcome">We're here to help you grow.</div>
                       </div>
                     </v-card-title>
                   </v-card>
                   <div class="btn-group-create" v-if="createProfile">
-                    <div><router-link to ="/register/bizz" exact tag="button" class="button">CREATE BUSINESS ACCT</router-link></div>
-                    <div><router-link to ="/register/buzz" exact tag="button" class="button">CREATE INFLUENCER ACCT</router-link></div>
+                    <div class="splash"><router-link to ="/register/bizz" exact tag="button" class="button">Create Business Acct</router-link></div>
+                    <div class="splash"><router-link to ="/register/buzz" exact tag="button" class="button">Create Influencer Acct</router-link></div>
                     <p>Already have an account?
                       <v-btn flat class="blue--text" @click="createProfile = !createProfile"> login </v-btn> 
                     </p>
                   </div>
                   <div class="btn-group-login" v-else-if="login">
-                    <div><router-link to ="/login/bizz" exact tag="button" class="button">LOGIN AS BIZZ</router-link></div>
-                    <div><router-link to ="/login/buzz" exact tag="button" class="button">LOGIN AS BUZZ</router-link></div>
+                    <div class="splash"><router-link to ="/login/bizz" exact tag="button" class="button">Login as Bizz</router-link></div>
+                    <div class="splash"><router-link to ="/login/buzz" exact tag="button" class="button">Login as Buzz</router-link></div>
                     <p>j/k let's create one.
                       <v-btn flat class="blue--text" @click="createProfile = !createProfile"> click here </v-btn>
                     </p>
@@ -105,7 +105,16 @@ export default {
 .welcome {
   font-family: 'Shadows Into Light Two', cursive;
   font-size: 2vw;
+  color:white;
 }
-
+.bizzbuzz{
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 2.5vw;
+  color: white;
+}
+.splash{
+  font-family: 'Shadows Into Light Two', cursive;
+  font-size: 2em;
+}
 
 </style>

@@ -1,13 +1,13 @@
 <template>
-    <v-layout >
-      <v-flex >
-        <v-dialog xs12 persistent v-model="dialog">
+    <v-layout>
+      <v-flex xs12>
+        <v-dialog persistent v-model="dialog" >
           <v-btn class="grey" fab accent slot="activator">
               <v-icon color="white">edit</v-icon>
           </v-btn>
-          <v-card>
+          <v-card id="smaller">
             <v-container class="editCard">
-              <v-layout row wrap>
+              <v-layout row wrap >
                 <v-flex xs12>
                   <v-card-title>Edit Profile</v-card-title>
                 </v-flex>
@@ -139,7 +139,10 @@ export default {
   padding-top: 4%;
 }
 .editDialog {
-  padding: 4%;
-  margin: 10%;
+  padding: 10%;
+  margin: 20%;
+}
+#smaller{
+  margin: 10% 30%;
 }
 </style>

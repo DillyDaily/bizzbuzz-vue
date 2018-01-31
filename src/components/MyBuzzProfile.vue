@@ -3,8 +3,8 @@
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
-        <v-container grid-list-md text-xs-center>
-          <v-layout row wrap>
+        <v-container grid-list-md text-xs-center class="shadow">
+          <v-layout row wrap class="top-pad">
             <v-flex xs12>
               <v-card color="yellow darken-2" class="black--text">
                 <v-card-title primary-title>
@@ -16,13 +16,13 @@
                 </v-card-title>
               </v-card>
             </v-flex>
-            <v-flex xs6>
-              <v-card dark color="secondary">
-                <v-card-media id="pointer"  :src="myProfile.image" height="250px" width="250px" />
+            <v-flex xs4 class="white">
+              <v-card  >
+                <v-card-media id="pointer"  :src="myProfile.image" height="400px" width="400px" />
               </v-card>
             </v-flex>
-            <v-flex xs6>
-              <v-card dark color="secondary">
+            <v-flex xs8 offset-6 class="white">
+              <v-card >
                 <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
                 <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
@@ -99,8 +99,15 @@ export default {
     color: black;
   }
   .welcome {
-  font-family: 'Shadows Into Light Two', cursive;
-  font-size: 5vw;
-}
+    font-family: 'Shadows Into Light Two', cursive;
+    font-size: 5vw;
+    color: white !important;
+  }
+  .top-pad {
+    margin-top: 10%;
+  }
+  .shadow{
+    padding: 10%;
+    }
 
 </style>
