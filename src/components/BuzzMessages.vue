@@ -1,5 +1,6 @@
 <template>
   <div id="messages">
+    <h1>BUZZ MESSAGES - doesn't display all messages when clicked</h1>
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">

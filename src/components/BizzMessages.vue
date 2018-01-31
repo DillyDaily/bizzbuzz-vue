@@ -17,39 +17,39 @@
                       </v-btn> -->
                     </v-toolbar>
 
-                  <!-- <v-expansion-panel>
-                  <v-expansion-panel-content v-for="message in allMessages" :key="message.id">
-                    <div slot="header">Convo with {{ message.first_name }}</div>
-                    <v-card>
-                      <div>
-                      <v-card-text class="grey lighten-3"> {{ message.message }} 
-                        <v-btn flat @click="replyMessage(message.influencers_id)">Reply</v-btn>
-                        </v-card-text>
-                    </div>
-                    </v-card>
-                  </v-expansion-panel-content>
-                </v-expansion-panel> -->
-
-
-                    <v-list three-line>
+              
+                  <v-layout row wrap>
                     <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
-                      <b>{{message.first_name}}</b>
-                    <span class="bizzcards" @click="showMessages(message.influencers_id)">{{ message.message }} </span>   
-                    <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">reply</v-btn></div>
+                      <b>Convo with {{message.first_name}}</b>
+                      <p> Most Recent Message {{ message.message }} </p> 
+                      <div dark @click.stop="dialog = true">  
+                      <v-btn class="bizzcards" @click="showMessages(message.influencers_id)">Hx</v-btn>
+                      <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div>
+                      <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
+                      </div>
                     </v-flex>
-                      
-                    </v-list>
+                  </v-layout>
+
+                  <v-dialog v-model="dialog" max-width="500px">
+                    <v-card class="white">
+                      <v-card-title>
+                        <div v-if="showingMessages">
+                          <div v-for="message in viewingMessages">
+                            <p>Past messages: {{message.message}}</p>
+                          </div>
+                          <!-- <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div> -->
+                        </div>
+                      </v-card-title>
+                    <v-card-actions>
+                      <v-btn color="primary" flat @click.stop="dialog=false">Close</v-btn>
+                      </v-card-actions>
+                    </v-card>
+                  </v-dialog>
                   </v-card>
                 </v-flex>
               </v-layout>
             </v-container>
              
-              <div v-if="showingMessages">
-                <div v-for="message in viewingMessages">
-                  <p>{{message.message}}</p>
-                </div>
-              </div>
-
       </div>
     </div>
     <foot></foot>
@@ -76,7 +76,8 @@ export default {
   data(){
     return({
       showingMessages: false,
-      viewingMessages:[]
+      viewingMessages:[],
+      dialog: false,
     })
   },
   methods:{
@@ -91,8 +92,8 @@ export default {
         this.showingMessages = true;
       })
     },
-    replyMessage: function() {
-      
+    replyMessage(influencers_id) {
+      this.$router.push('/contact/bizz/' + influencers_id)
     }
   },
   computed: {
