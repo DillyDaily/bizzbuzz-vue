@@ -13,7 +13,7 @@
                       
                       <div class="welcome">Welcome to</div> 
                       <div class="bizzbuzz">BizzBuzz Media</div>
-                      <div class="grow">We're here to help you grow.</div>
+                      <div class="grow">We're here to help you grow</div>
                       
                     </v-card-title>
                   </v-card>

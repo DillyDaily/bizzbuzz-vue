@@ -13,6 +13,9 @@
                   <template>
                   <edit-buzz-profile-dialog :profile="myProfile"></edit-buzz-profile-dialog>
                   </template>
+                  <v-btn class="red" fab @click="deleteForever(myProfile.id)">
+                    <v-icon color="white">delete</v-icon>
+                  </v-btn>
                 </v-card-title>
               </v-card>
             </v-flex>
@@ -77,6 +80,16 @@ export default {
         return this.$store.getters.loadedBuzzProfile(this.id)
       }
     },
+    methods: {
+      deleteForever(){
+      let storedToken = localStorage.getItem('token');
+      let parsedToken = JSON.parse(storedToken);
+      this.axios.delete(`/delete/influencer/${parsedToken.user_id}?token=${parsedToken.token}`)
+      .then(response => {
+        this.$router.push('/');
+        })
+      }
+    }
 }
 
 </script>
