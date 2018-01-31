@@ -1,19 +1,21 @@
 <template>
-  <v-dialog xs12 persistent v-model="dialog">
-    <v-btn class="grey" fab accent slot="activator">
-        <v-icon color="white">edit</v-icon>
-    </v-btn>
-    <v-card>
-      <v-container class=white>
-        <v-layout row wrap>
-          <v-flex xs12 >
-            <v-card-title>Edit Profile</v-card-title>
-          </v-flex>
-        </v-layout>
-        <v-divider></v-divider>
-        <v-layout row wrap>
-          <v-flex xs12>
-            <v-card-text>
+    <v-layout>
+      <v-flex xs12>
+        <v-dialog persistent v-model="dialog" >
+          <v-btn class="grey" fab accent slot="activator">
+              <v-icon color="white">edit</v-icon>
+          </v-btn>
+          <v-card id="smaller">
+            <v-container class="editCard">
+              <v-layout row wrap >
+                <v-flex xs12>
+                  <v-card-title>Edit Profile</v-card-title>
+                </v-flex>
+              </v-layout>
+              <v-divider></v-divider>
+              <v-layout row wrap>
+                <v-flex xs12>
+               <v-card-text>
                 <v-text-field
                 name="first_name"
                 label="first_name"
@@ -85,6 +87,8 @@
       </v-container>
     </v-card>
   </v-dialog>
+  </v-flex>
+ </v-layout>
 </template>
 
 <script>
@@ -124,5 +128,15 @@ export default {
 </script>
 
 <style scoped>
-
+.editCard {
+  background-color: white;
+  padding-top: 4%;
+}
+.editDialog {
+  padding: 10%;
+  margin: 20%;
+}
+#smaller{
+  margin: 10% 30%;
+}
 </style>

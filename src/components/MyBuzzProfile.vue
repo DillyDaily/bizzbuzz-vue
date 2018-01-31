@@ -22,13 +22,13 @@
               </v-card>
             </v-flex>
             <v-flex xs8 offset-6 class="white">
-              <v-card >
+              <div>
                 <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
                 <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>Topics: {{ myProfile.topics}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>City: {{ myProfile.city}}</h3></v-card-text>
                 <v-card-text class="px-0"><h3>State: {{ myProfile.state}}</h3></v-card-text>
-              </v-card>
+              </div>
             </v-flex>
           </v-layout>
         </v-container>
@@ -100,7 +100,7 @@ export default {
   }
   .welcome {
     font-family: 'Shadows Into Light Two', cursive;
-    font-size: 5vw;
+    font-size: 3vw;
     color: white !important;
   }
   .top-pad {

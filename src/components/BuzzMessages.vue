@@ -9,7 +9,7 @@
                   <v-card transition="slide-x-transition">
                     <v-toolbar color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
-                      <v-toolbar-title>Inbox</v-toolbar-title>
+                      <v-toolbar-title>Inbox TEST</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
                     <v-layout row wrap>
