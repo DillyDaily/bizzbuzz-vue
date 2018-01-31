@@ -1,7 +1,6 @@
 <template>
   <div id="messages">
-    <h1>BUZZ MESSAGES - doesn't display all messages when clicked</h1>
-    <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
+  <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
     <div class="flowers">
       <div id="grey">
         <v-container> 
@@ -100,6 +99,7 @@ export default {
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
+  height: 800px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
