@@ -19,12 +19,12 @@
                 </v-card-title>
               </v-card>
             </v-flex>
-            <v-flex xs4 class="white">
+            <v-flex xs6 class="white">
               <v-card  >
                 <v-card-media id="pointer"  :src="myProfile.image" height="400px" width="400px" />
               </v-card>
             </v-flex>
-            <v-flex xs8 offset-6 class="white">
+            <v-flex xs6 offset-6 class="white">
               <div>
                 <v-card-text class="px-0"><h1>Personal Brand: {{ myProfile.personal_brand}}</h1></v-card-text>
                 <v-card-text class="px-0"><h3>Description: {{ myProfile.description}}</h3></v-card-text>

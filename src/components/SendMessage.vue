@@ -70,27 +70,14 @@
   #grey {
     background-color: rgba(255, 255, 255, 0.637);
     background-size: cover;
-    height: 800px;
+    height: 900px;
   }
-
   .flowers {
     background-image: url("../assets/beeplant.jpg");
     background-size: cover;
   }
-
-<style scoped>
   .top-pad {
     margin-top: 10%;
-  }
-  #grey {
-    background-color: rgba(255, 255, 255, 0.637);
-    background-size: cover;
-    height: 800px;
-  }
-
-  .flowers {
-    background-image: url("../assets/beeplant.jpg");
-    background-size: cover;
   }
   .shadow{
     padding: 20px;

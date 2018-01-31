@@ -40,12 +40,15 @@
           </v-container>
       </div>
     </div>
+   <foot></foot>
   </div>
 </template>
 
 <script>
   import axios from 'axios';
   import NavBarLoggedInBuzz from './NavBarLoggedInBuzz.vue';
+  import Foot from './Foot.vue';
+
   export default {
 
     created() {
@@ -62,7 +65,8 @@
     },
 
     components: {
-      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz
+      'nav-bar-logged-in-buzz': NavBarLoggedInBuzz,
+       'foot': Foot
     },
     methods: {
       clickMethod(id) {
@@ -77,6 +81,7 @@
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
+  height: 900px;
 } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
