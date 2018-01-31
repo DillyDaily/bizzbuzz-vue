@@ -2,7 +2,7 @@
     <div id="nav-bar-logged-in">
       <v-layout>
         <v-toolbar class="top-nav" color="white">
-          <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title>
+          <!-- <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/bee1.png"></v-toolbar-title> -->
           <v-toolbar-title class="black--text" id="pointer" @click="home"><img id="bee1" src="../assets/BIZZBUZZ2.png"></v-toolbar-title>
         </v-toolbar>
       </v-layout>
@@ -31,6 +31,8 @@ h1{
   padding-top: 1%;
   padding-left: 7%;
   padding-right: 7%;
+  display:flex;
+  justify-content: center;  
 }
 #bee1{
   height:3em;

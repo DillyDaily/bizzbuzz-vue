@@ -71,8 +71,8 @@ h1{
 .top-nav {
   height: 6em;
   padding-top: 1%;
-  padding-left: 7%;
-  padding-right: 7%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 #bee1{
   height:3em;

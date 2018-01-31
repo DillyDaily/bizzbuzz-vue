@@ -73,7 +73,7 @@ export default {
 #grey {
   background-color: rgba(22, 22, 22, 0.637);
   background-size: cover;
-  height: 800px;
+  height: 900px;
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");

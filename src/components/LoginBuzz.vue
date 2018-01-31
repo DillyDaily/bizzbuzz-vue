@@ -10,8 +10,10 @@
                 <v-flex xs12>
                   <v-card color="yellow darken-2" class="white--text">
                     <v-card-title primary-title>
-                      <h3 class="welcome">Welcome to BizzBuzz Media</h3>
+                     <div id="card-logo">
+                        <div class="logo"></div>
                       <div class="welcome">Congrats on your Buzz! Now let's find you some Bizz...</div>
+                      </div>
                     </v-card-title>
                   </v-card>
                 </v-flex>
@@ -75,12 +77,11 @@
   #grey {
     background-color: rgba(22, 22, 22, 0.637);
     background-size: cover;
-    height: 800px;
+    height: 900px;
   } 
   .flowers {
     background-image: url("../assets/beeplant.jpg");
     background-size: cover;
-    height: 800px;
   } 
   button {
     background-color: rgb(154, 194, 108); /* Green */
@@ -105,6 +106,16 @@
   .welcome {
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 2vw;
+  }
+  .logo {
+    background-image: url("../assets/bee1.png");
+    background-size: cover;
+    height: 50px;
+    width: 75px;
+    margin-right: 1%;
+  }
+  #card-logo{
+    display: flex;
   }
 
 </style>

@@ -77,12 +77,11 @@
   #grey {
     background-color: rgba(22, 22, 22, 0.637);
     background-size: cover;
-    height: 800px;
+    height: 900px;
   } 
   .flowers {
     background-image: url("../assets/beeplant.jpg");
     background-size: cover;
-    height: 800px;
   } 
   button {
     background-color: rgb(154, 194, 108); /* Green */
