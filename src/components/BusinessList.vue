@@ -3,7 +3,6 @@
     <div class="flowers">
     <div id="grey">
     <nav-bar-logged-in-buzz></nav-bar-logged-in-buzz>
-
           <div>
             <v-container>
               <v-layout row wrap>
@@ -34,14 +33,14 @@
             <v-card>
               <v-container fluid grid-list-md>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-flex xs6>
                     <v-card-media id="pointer" @click="clickMethod(business.id)" :src="business.image" height="250px" width="250px" />
                   </v-flex>
-                  <v-flex>
+                  <v-flex xs6 offset-6>
                     <v-card-title primary-title>
                       <div >
                         <h3 class="bizzcards">{{ business.company_name }} </h3>
-                        <div class="description">What we're about: {{ business.description }} </div>
+                        <div class="description"> {{ business.description }} </div>
                       </div>
                     </v-card-title>
                     <v-card-actions>

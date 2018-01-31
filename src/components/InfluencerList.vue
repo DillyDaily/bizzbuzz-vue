@@ -3,7 +3,6 @@
     <div class="flowers">
       <div id="grey">
       <nav-bar-logged-in></nav-bar-logged-in>
-
       <div>
         <v-container>
           <v-layout row wrap>
@@ -34,14 +33,14 @@
             <v-card>
               <v-container fluid grid-list-md>
                 <v-layout row>
-                  <v-flex xs12>
+                  <v-flex xs6>
                     <v-card-media id="pointer" @click="clickMethod(influencer.id)" :src="influencer.image" height="250px" width="250px" />
                   </v-flex>
-                  <v-flex>
+                  <v-flex x6 offset-6>
                     <v-card-title primary-title>
                       <div >
                         <h3 class="buzzcards">{{ influencer.personal_brand }} </h3>
-                        <div class="description">What we're about: {{ influencer.description }} </div>
+                        <div class="description"> {{ influencer.description }} </div>
                       </div>
                     </v-card-title>
                     <v-card-actions>
