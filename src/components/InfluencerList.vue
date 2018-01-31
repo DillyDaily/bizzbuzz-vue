@@ -33,7 +33,7 @@
             <v-card>
               <v-container fluid grid-list-md>
                 <v-layout row>
-                  <v-flex xs6>
+                  <v-flex xs10>
                     <v-card-media id="pointer" @click="clickMethod(influencer.id)" :src="influencer.image" height="250px" width="250px" />
                   </v-flex>
                   <v-flex x6 offset-6>
