@@ -7,18 +7,19 @@
             <v-layout row class="top-pad">
                 <v-flex xs12 sm6 offset-sm3 class="white">
                   <v-card transition="slide-x-transition">
-                    <v-toolbar color="yellow darken-2" dark>
+                    <v-toolbar class="inbox-header" color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
                       <v-toolbar-title class="welcome">Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
-                    <v-layout row wrap>
+                    <v-layout row wrap class="inbox-body">
                       <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                         <b>Convo with {{message.first_name}}</b>
                         <p> Most Recent Message {{ message.message }} </p> 
                         <div dark @click.stop="dialog = true">  
-                        <v-btn @click="showMessages(message.businesses_id)">Hx</v-btn>
-                        <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
+                        <v-btn flat @click="showMessages(message.businesses_id)">Show Convo</v-btn>
+                        <div class="text-xs-right"> <v-btn @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
+                        <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
                         <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
                       </v-flex>
@@ -106,11 +107,20 @@ export default {
   background-size: cover;
   }
 .shadow{
-    padding: 10% 5%;
+    padding: 10% .5%;
   }
 .welcome {
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 3vw;
     color: white;
+  }
+  .inbox-header{
+    padding: 4% 1%;
+  }
+  .inbox-body{
+    padding: 5% 1%;
+  }
+  #divide-pad{
+    margin-bottom: 4%;
   }
 </style>
