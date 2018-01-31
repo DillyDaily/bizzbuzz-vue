@@ -29,9 +29,9 @@
                 <v-card-text class="px-0"><div><b>Company:</b> {{ myProfile.company_name}}</div></v-card-text>
                 <!-- <v-card-text class="px-0"><h3>Email: {{ myProfile.email}}</h3></v-card-text> -->
                 <v-card-text class="px-0"><div><b>Description:</b> {{ myProfile.description}}</div></v-card-text>
-                <v-card-text class="px-0"><div><b>Topics:</b> {{ myProfile.topics}}</div></v-card-text>
-                <v-card-text class="px-0"><div><b>City: </b>{{ myProfile.city}}</div></v-card-text>
-                <v-card-text class="px-0"><div><b>State:</b> {{ myProfile.state}}</div></v-card-text>
+                <v-card-text class="px-0"><div><b>Topics:</b> {{ myProfile.topics}} </div></v-card-text>
+                <v-card-text class="px-0"><div><b>City: </b>{{ myProfile.city}} </div></v-card-text>
+                <v-card-text class="px-0"><div><b>State:</b> {{ myProfile.state}} </div></v-card-text>
               </div>
             </v-flex>
           </v-layout>

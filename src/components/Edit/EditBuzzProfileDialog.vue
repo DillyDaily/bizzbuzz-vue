@@ -82,9 +82,10 @@
           <v-layout row wrap>
             <v-flex xs12>
               <v-card-actions>
-                <v-btn flat class="blue--text darken-1" @click="dialog = !dialog">Close</v-btn>
+                <v-btn flat class="blue--text darken-1" 
+                @click="dialog = !dialog">Close</v-btn>
                 <v-btn flat class="blue--text darken-1"
-                @click="saveData"> Save</v-btn>
+                @click.prevent="saveData"> Save</v-btn>
               </v-card-actions>
             </v-flex>
           </v-layout>
@@ -121,6 +122,7 @@ export default {
             this.axios.patch(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`, {editedName: this.editedName, editedEmail: this.editedEmail, editedTopics: this.editedTopics, editedDescription: this.editedDescription, editedCity: this.editedCity, editedState: this.editedState, editedPersonalBrand: this.editedPersonalBrand})
             .then(response => {
                 console.log('edit buzz profile: ', response);
+                this.$store.dispatch('LOAD_UPDATE_BUZZ_PROFILE', response.data)
                 this.$router.push(`/my/buzz/profile/${parsedToken.user_id}?token=${parsedToken.token}`)
                 this.dialog = false;
             })
