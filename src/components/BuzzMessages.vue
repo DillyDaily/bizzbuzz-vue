@@ -23,7 +23,7 @@
                           <v-list-tile-content>Keep chatting with {{message.first_name}} from {{ message.company_name }}</v-list-tile-content>
                         
                         </div>
-                        <div>
+                        <div class="mssg-bubble">
                           <v-list-tile-title> {{ message.message }} </v-list-tile-title>  
                         </div>
                       </v-list>
@@ -33,7 +33,8 @@
                         
 
                         <div dark @click.stop="dialog = true">  
-                          <v-div class="pointer" flat @click="showMessages(message.businesses_id)"><v-avatar class="grey lighten-1">
+                          <v-div class="pointer" flat @click="showMessages(message.businesses_id)">
+                            <v-avatar class="grey lighten-1">
                               <v-icon>question_answer</v-icon>
                             </v-avatar>
                           </v-div>
@@ -51,7 +52,9 @@
                       <v-card-title>
                         <div v-if="showingMessages">
                           <div v-for="message in viewingMessages">
-                            <p>Past messages: {{message.message}}</p>
+                           <span><v-icon>comment</v-icon></span>
+                            
+                            <span> {{message.message}}</span>
                           </div>
                           <!-- <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div> -->
                         </div>
@@ -122,7 +125,7 @@ export default {
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
-  height: 900px;
+  /* height: 900px; */
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
@@ -147,5 +150,11 @@ export default {
   }
   .pointer {
    cursor: pointer;
+  }
+  .mssg-bubble {
+    background-color: grey;
+    border-radius: 8px;
+    color: white;
+    padding: 1%;
   }
 </style>

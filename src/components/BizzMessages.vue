@@ -14,11 +14,16 @@
                     </v-toolbar>
                     <v-layout row wrap class="inbox-body">
                       <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
-                        <b>Convo with {{message.first_name}}</b>
-                        <p> Most Recent Message {{ message.message }} </p> 
+                        <div class="inbox-chat">Keep chatting with {{message.first_name}}</div>
+                        <div class="mssg-bubble">
+                      <v-list-tile-title>{{ message.message }} </v-list-tile-title> 
+                        </div>
                         <div dark @click.stop="dialog = true">  
                         <v-btn flat @click="showMessages(message.influencers_id)">Show Convo</v-btn>
-                        <div class="text-xs-right"> <v-btn @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div>
+                        <div class="text-xs-right"> 
+                          <v-btn id="msgbtn" flat @click="replyMessage(message.influencers_id)">
+                            <v-icon left light>send</v-icon>Send New Message</v-btn>
+                          </div>
                         <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
                         <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
@@ -29,7 +34,10 @@
                       <v-card-title>
                         <div v-if="showingMessages">
                           <div v-for="message in viewingMessages">
-                            <p>Past messages: {{message.message}}</p>
+                          
+                              <span><v-icon>comment</v-icon></span>
+                            
+                            <span> {{message.message}}</span>
                           </div>
                           <!-- <div class="text-xs-right"> <v-btn flat @click="replyMessage(message.influencers_id)">Send New Message</v-btn></div> -->
                         </div>
@@ -99,7 +107,7 @@ export default {
 #grey {
   background-color: rgba(255, 255, 255, 0.637);
   background-size: cover;
-  height: 900px;
+  /* height: 900px; */
   } 
 .flowers {
   background-image: url("../assets/beeplant.jpg");
@@ -113,13 +121,29 @@ export default {
     font-size: 3vw;
     color: white;
   }
-  .inbox-header{
+.inbox-header{
     padding: 4% 1%;
   }
-  .inbox-body{
+.inbox-body{
     padding: 5% 1%;
   }
-  #divide-pad{
+#divide-pad{
     margin-bottom: 4%;
+  }
+#msgbtn{
+  color: rgb(154, 194, 108);
+  }
+.mssg-bubble {
+  background-color: rgb(76, 158, 252);
+  border-radius: 20px;
+  color: white;
+  padding: 4%;
+  margin: 3%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  }
+  .inbox-chat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
   }
 </style>
