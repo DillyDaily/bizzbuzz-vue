@@ -9,41 +9,25 @@
                   <v-card transition="slide-x-transition">
                     <v-toolbar class="inbox-header" color="yellow darken-2" dark>
                       <v-toolbar-side-icon></v-toolbar-side-icon>
-                      <v-toolbar-title class="welcome">Inbox TESTING</v-toolbar-title>
+                      <v-toolbar-title class="welcome">Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
 
                     <v-layout row wrap class="inbox-body">
-                    <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
-                        <v-card>
-                        <v-toolbar>
-                          <v-toolbar-title>
-                            <v-list two-line>
-                              <div>
-                                <v-list-tile-content>Keep chatting with {{message.first_name}} from {{ message.company_name }}</v-list-tile-content>
-                              </div>
-                              
-                              
-                              
-                              <div class="mssg-bubble" dark @click.stop="dialog = true">
+                      <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
+                        <div class="inbox-chat">Keep chatting with {{message.first_name}}</div>
+                        
+                        <div class="mssg-bubble" dark @click.stop="dialog = true">
                                 <v-list-tile-title class="pointer" flat @click="showMessages(message.businesses_id)"> {{ message.message }} </v-list-tile-title>  
                               </div>
-                            </v-list>
-                          </v-toolbar-title>
-                        </v-toolbar>
-                        
-
-                        <div >  
-                        <div class="text-xs-right"> <v-btn @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
+                              <div>
+                        <div class="text-xs-right"> 
+                          <v-btn id="msgbtn" flat @click="replyMessage(message.businesses_id)">
+                            <v-icon left light>send</v-icon>Send New Message</v-btn>
+                            </div>
                         <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
-                        <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
-
-
-                        </v-card>
                       </v-flex>
-
-
                     </v-layout>
                   <v-dialog v-model="dialog" max-width="500px">
                     <v-card class="white">
@@ -137,22 +121,32 @@ export default {
     font-size: 3vw;
     color: white;
   }
-  .inbox-header{
+.inbox-header{
     padding: 4% 1%;
   }
-  .inbox-body{
+.inbox-body{
     padding: 5% 1%;
   }
-  #divide-pad{
+#divide-pad{
     margin-bottom: 4%;
   }
-  .pointer {
-   cursor: pointer;
+#msgbtn{
+  color: rgb(154, 194, 108);
   }
-  .mssg-bubble {
-    background-color: grey;
-    border-radius: 8px;
-    color: white;
-    padding: 1%;
+.mssg-bubble {
+  background-color: rgb(76, 158, 252);
+  border-radius: 20px;
+  color: white;
+  padding: 6%;
+  margin: 3%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  }
+  .inbox-chat {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5em;
+  }
+   .pointer {
+   cursor: pointer;
   }
 </style>
