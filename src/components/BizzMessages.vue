@@ -15,11 +15,12 @@
                     <v-layout row wrap class="inbox-body">
                       <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                         <div class="inbox-chat">Keep chatting with {{message.first_name}}</div>
-                        <div class="mssg-bubble">
-                      <v-list-tile-title>{{ message.message }} </v-list-tile-title> 
+                        
+                        <div class="mssg-bubble" dark @click.stop="dialog = true">
+                      <v-list-tile-title class="pointer" flat @click="showMessages(message.influencers_id)" >{{ message.message }} </v-list-tile-title> 
                         </div>
-                        <div dark @click.stop="dialog = true">  
-                        <v-btn flat @click="showMessages(message.influencers_id)">Show Convo</v-btn>
+                        <div >  
+                        <!-- <v-btn flat @click="showMessages(message.influencers_id)">Show Convo</v-btn> -->
                         <div class="text-xs-right"> 
                           <v-btn id="msgbtn" flat @click="replyMessage(message.influencers_id)">
                             <v-icon left light>send</v-icon>Send New Message</v-btn>
@@ -137,7 +138,7 @@ export default {
   background-color: rgb(76, 158, 252);
   border-radius: 20px;
   color: white;
-  padding: 4%;
+  padding: 6%;
   margin: 3%;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
@@ -145,5 +146,8 @@ export default {
   .inbox-chat {
   font-family: 'Montserrat', sans-serif;
   font-size: 1.5em;
+  }
+   .pointer {
+   cursor: pointer;
   }
 </style>

@@ -18,30 +18,28 @@
                         <v-card>
                         <v-toolbar>
                           <v-toolbar-title>
-                      <v-list two-line>
-                        <div>
-                          <v-list-tile-content>Keep chatting with {{message.first_name}} from {{ message.company_name }}</v-list-tile-content>
-                        
-                        </div>
-                        <div class="mssg-bubble">
-                          <v-list-tile-title> {{ message.message }} </v-list-tile-title>  
-                        </div>
-                      </v-list>
-                        
+                            <v-list two-line>
+                              <div>
+                                <v-list-tile-content>Keep chatting with {{message.first_name}} from {{ message.company_name }}</v-list-tile-content>
+                              </div>
+                              
+                              
+                              
+                              <div class="mssg-bubble" dark @click.stop="dialog = true">
+                                <v-list-tile-title class="pointer" flat @click="showMessages(message.businesses_id)"> {{ message.message }} </v-list-tile-title>  
+                              </div>
+                            </v-list>
                           </v-toolbar-title>
                         </v-toolbar>
                         
 
-                        <div dark @click.stop="dialog = true">  
-                          <v-div class="pointer" flat @click="showMessages(message.businesses_id)">
-                            <v-avatar class="grey lighten-1">
-                              <v-icon>question_answer</v-icon>
-                            </v-avatar>
-                          </v-div>
+                        <div >  
                         <div class="text-xs-right"> <v-btn @click="replyMessage(message.businesses_id)">Send New Message</v-btn></div>
                         <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
                         <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
+
+
                         </v-card>
                       </v-flex>
 
