@@ -10,8 +10,8 @@
                 <v-flex xs12 >
                 <v-card color="yellow darken-2" class="white--text">
                     <v-card-title primary-title>
-                    <div >Welcome to BizzBuzz Media</div>
-                    <div >Congrats on your Bizz! Now let's find you some Buzz...</div>
+                    <div class='welcome'><b>Welcome to BizzBuzz Media</b></div>
+                    <div class="grow">Congrats on your Bizz! Now let's find you some Buzz...</div>
                     </v-card-title>
                 </v-card>
               </v-flex>
@@ -198,6 +198,19 @@ export default {
     border-radius: 4px;
     }
     .welcome {
-      margin: 2%
+      /* margin: 2%; */
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 2vw;
+      font-style: bold;
+      color:white;
+      display: flex;
+      justify-content: center;
+    }
+    .grow{
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 2vw;
+      color:white;
+      display: flex;
+      justify-content: center;
     }
 </style>

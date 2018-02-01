@@ -11,7 +11,7 @@
                 <v-card color="yellow darken-2" class="white--text">
                     <v-card-title primary-title>
                     <div class="welcome">Welcome to BizzBuzz Media</div>
-                    <div class="welcome">Great job creating all the Buzz! Now let's find you some Bizz...</div>
+                    <div class="grow">Great job creating all the Buzz! Now let's find you some Bizz...</div>
                     </v-card-title>
                 </v-card>
               </v-flex>
@@ -212,5 +212,21 @@ export default {
     box-shadow: 3px 4px 19px -4px rgba(84,83,84,1);
     background-color: rgb(228, 227, 227);
     border-radius: 4px;
+    }
+    .welcome {
+      /* margin: 2%; */
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 2vw;
+      font-style: bold;
+      color:white;
+      display: flex;
+      justify-content: center;
+    }
+    .grow{
+      font-family: 'Shadows Into Light Two', cursive;
+      font-size: 2vw;
+      color:white;
+      display: flex;
+      justify-content: center;
     }
 </style>
