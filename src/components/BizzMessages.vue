@@ -12,12 +12,13 @@
                       <v-toolbar-title class="welcome">Inbox</v-toolbar-title>
                       <v-spacer></v-spacer>
                     </v-toolbar>
+
                     <v-layout row wrap class="inbox-body">
                       <v-flex xs12 class="white" v-for="message in allMessages" :key="message.id">
                         <div class="inbox-chat">Keep chatting with {{message.first_name}}</div>
                         
                         <div class="mssg-bubble" dark @click.stop="dialog = true">
-                      <v-list-tile-title class="pointer" flat @click="showMessages(message.influencers_id)" >{{ message.message }} </v-list-tile-title> 
+                         <v-list-tile-title class="pointer" flat @click="showMessages(message.influencers_id)" >{{ message.message }} </v-list-tile-title> 
                         </div>
                         <div >  
                         <!-- <v-btn flat @click="showMessages(message.influencers_id)">Show Convo</v-btn> -->
@@ -28,6 +29,7 @@
                         <v-divider id="divide-pad" class="grey lighten-2"></v-divider>
                         <!-- <v-btn color="primary" dark @click.stop="dialog = true">Previous Messages</v-btn> -->
                         </div>
+
                       </v-flex>
                     </v-layout>
                   <v-dialog v-model="dialog" max-width="500px">

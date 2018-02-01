@@ -7,7 +7,7 @@
       <v-container class="editCard">
         <v-layout row wrap >
           <v-flex xs12>
-            <v-card-title>Edit Profile</v-card-title>
+            <v-card-title class="edit-profile">Edit Your Profile</v-card-title>
           </v-flex>
         </v-layout>
         <v-divider></v-divider>
@@ -36,6 +36,7 @@
                 name="password"
                 label="password"
                 id="password"
+                type="password"
                 v-model="editedPassword"
                 ></v-text-field>
                 <v-text-field
@@ -133,8 +134,10 @@ export default {
 
 <style scoped>
 .editCard {
-  background-color: white;
+  background-color:white;
   padding-top: 4%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
 }
 .editDialog {
   padding: 10%;
@@ -142,5 +145,8 @@ export default {
 }
 #smaller{
   margin: 10% 30%;
+}
+.edit-profile{
+  font-size: 2em;
 }
 </style>

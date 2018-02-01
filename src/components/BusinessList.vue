@@ -25,7 +25,7 @@
           <v-flex xs12>
             <v-card color="yellow darken-2" class="white--text">
               <v-card-title primary-title>
-                <div class="welcome">Hot dog! Look at all that Bizz!</div>
+                <div class="welcome">Here you can find BIZZ-nesses to BUZZ about</div>
               </v-card-title>
             </v-card>
           </v-flex>
@@ -122,6 +122,8 @@
   .welcome {
     font-family: 'Shadows Into Light Two', cursive;
     font-size: 3em;
+    display:flex;
+    justify-content: center;
   }
 
   .bizzcards {

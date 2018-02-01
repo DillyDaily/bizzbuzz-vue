@@ -25,7 +25,7 @@
           <v-flex xs12>
             <v-card color="yellow darken-2" class="white--text">
               <v-card-title primary-title>
-                <div class="welcome">Hot dog! Look at all that buzz!</div>
+                <div class="welcome">Find influencers to help create some BUZZ around your BIZZ</div>
               </v-card-title>
             </v-card>
           </v-flex>
